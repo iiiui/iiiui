@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	
+    <title>Buttons - Fortuna Admin Template</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+	<link href="../css/combine_fonts.css" rel="stylesheet" />
+	<link href="../plugins/datepicker/css/datepicker.css" rel="stylesheet" />
+	<link href="../plugins/colorpicker/css/colorpicker.css" rel="stylesheet" />
+	<link href="../plugins/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" />
+	<link href="../plugins/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css" rel="stylesheet" />
+	
+	<link href="../css/buttons.css" rel="stylesheet" />
+	<link href="../style.css" rel="stylesheet" />
+	
+	<!-- color style -->
+	<link href="../css/dark.css" rel="stylesheet" />
+	
+	<link href="../css/cms.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- bootstrap fav and touch icons, replace with your own -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+	
+  </head>
+
+  <body>
+	
+	<!-- top fixed navbar -->
+	<div id="header" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="brand" href="index.html"><img src="../examples/logo.png" /></a>
+				
+				<ul class="nav">
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-th-1"></i> Components <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="navbar.html"><i class="icon-large icon-list-alt"></i> Navbar</a></li>
+							<li><a href="collapse.html"><i class="icon-large icon-list-alt"></i> Collapse</a></li>
+							<li><a href="tabs.html"><i class="icon-large icon-list-alt"></i> Tabs</a></li>
+							<li class="active"><a href="buttons.html"><i class="icon-large icon-list-alt"></i> Buttons</a></li>
+							<li><a href="tables.html"><i class="icon-large icon-list-alt"></i> Tables</a></li>
+							<li><a href="paginations.html"><i class="icon-large icon-list-alt"></i> Paginations</a></li>
+							<li><a href="breadcrumbs.html"><i class="icon-large icon-list-alt"></i> Breadcrumbs</a></li>
+							<li><a href="labels.html"><i class="icon-large icon-list-alt"></i> Labels</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-cog-2"></i> Plugins <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="datepicker.html"><i class="icon-large icon-list-alt"></i> Datepicker</a></li>
+							<li><a href="colorpicker.html"><i class="icon-large icon-list-alt"></i> Colorpicker</a></li>
+							<li><a href="font-icon-packs.html"><i class="icon-large icon-list-alt"></i> Font Icon Packs</a></li>
+							<li><a href="charts.html"><i class="icon-large icon-list-alt"></i> Google Charts</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-layers"></i> Color Styles <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../dark/buttons.html" class="dark"><i class="icon-large icon-list-alt"></i> Dark</a></li>
+							<li><a href="../brownish/buttons.html" class="brownish"><i class="icon-large icon-list-alt"></i> Brownish</a></li>
+							<li><a href="../golden/buttons.html" class="golden"><i class="icon-large icon-list-alt"></i> Golden</a></li>
+							<li><a href="../blue/buttons.html" class="blue"><i class="icon-large icon-list-alt"></i> Blue</a></li>
+							<li><a href="../maroon/buttons.html" class="maroon"><i class="icon-large icon-list-alt"></i> Maroon</a></li>
+							<li><a href="../orange/buttons.html" class="orange"><i class="icon-large icon-list-alt"></i> Orange</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<div class="btn-toolbar pull-right">
+				
+				<div class="btn-group">
+				<a class="btn dropdown-toggle rel" data-toggle="dropdown" href="#"><i class="icon-large icon-th-2"></i><span class="badge badge-important abs">20</span></a>
+				<ul class="dropdown-menu fb-one">
+					<li class="heading">
+					<h3>Friend Requests</h3><a href="#">Find Friends</a>
+					</li>
+					
+					<li class="confirm_fb">
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-01.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Esther</a></h4><span>10 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small"><i class="icon-ok"></i> Friends</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-02.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Nadya</a></h4><span>5 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-06.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Daniel</a></h4><span>37 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-03.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Yedida</a></h4><span>30 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-04.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Simeon</a></h4><span>32 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-05.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Theressia</a></h4><span>16 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li class="fb_dd_footer">
+					<a href="#">See All Friend Requests</a>
+					</li>
+				</ul>
+				</div><!-- /btn-group -->
+				
+				<div class="btn-group">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-user-1"></i> Olas Navigator
+						<span class="caret"></span>
+					</a>
+					
+					<ul class="dropdown-menu megamenu col2 ud">
+						<li class="sub">
+						<div class="img_round img_c_margin"><img width="70" height="70" src="../examples/avatar-sample.png" /></div>
+						</li>
+						<li class="sub">
+						<ul>
+						<li><a href="#"><i class="icon-large icon-cog-2"></i> Profile</a></li>
+						<li><a href="#"><i class="icon-large icon-key"></i> Privacy Settings</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="icon-large icon-logout-1"></i> Logout</a></li>
+						</ul>
+						</li>
+					</ul>
+					
+				</div>
+				</div>
+				
+			</div>
+		</div>
+	</div><!-- top fixed navbar -->
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+		
+			<!-- sidebar -->
+			<div id="sidebar" class="span2">			
+				<div class="accordion custom-acc" id="accordionSB">
+
+					<div class="accordion-group fs">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#dashboardsb">
+								<i class="icon-large icon-th-large head_icon"></i> Dashboard
+							</a>
+						</div>
+						<div id="dashboardsb" class="accordion-body collapse in">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="index.html"><i class="icon-large icon-th"></i> Dashboard</a></li>
+									<li><a href="stats.html"><i class="icon-large icon-th"></i> Stats</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#articlesb">
+								<i class="icon-large icon-th-large head_icon"></i> Articles
+							</a>
+						</div>
+						<div id="articlesb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="articles.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-article.html"><i class="icon-large icon-th"></i> Add New</a></li>
+									<li><a href="article-category.html"><i class="icon-large icon-th"></i> Categories</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#pagesb">
+								<i class="icon-large icon-th-large head_icon"></i> Pages
+							</a>
+						</div>
+						<div id="pagesb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="pages.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-page.html"><i class="icon-large icon-th"></i> Add New</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>					
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#reportsb">
+								<i class="icon-large icon-th-large head_icon"></i> Field Reports
+							</a>
+						</div>
+						<div id="reportsb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="field-reports.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-field-report.html"><i class="icon-large icon-th"></i> Add New</a></li>
+									<li><a href="field-report-category.html"><i class="icon-large icon-th"></i> Categories</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#mediasb">
+								<i class="icon-large icon-th-large head_icon"></i> Media
+							</a>
+						</div>
+						<div id="mediasb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="media-library.html"><i class="icon-large icon-th"></i> Library</a></li>
+									<li><a href="add-new-media.html"><i class="icon-large icon-th"></i> Add New</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#commentsb">
+								<i class="icon-large icon-th-large head_icon"></i> Comments
+							</a>
+						</div>
+						<div id="commentsb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="comments.html"><i class="icon-large icon-th"></i> Comments</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div><!-- sidebar -->
+			
+			<!-- main content -->
+			<div id="main_content" class="span10">
+			
+				<div class="row-fluid">
+
+					<!-- widget -->
+					<section class="span12">
+						<div class="widget_container">
+							<div class="well">
+								
+								<!-- navbar as heading -->
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">Buttons</a>
+										</div>
+									</div>
+								</div><!-- navbar as heading -->
+								
+								<p><button class="btn btn-large btn-satu">Action</button>
+								<button class="btn btn-large btn-dua">Action</button>
+								<button class="btn btn-large btn-tiga">Action</button> 
+								<button class="btn btn-large btn-empat">Action</button> 
+								<button class="btn btn-large btn-lima">Action</button>
+								<button class="btn btn-large btn-enam">Action</button> 
+								<button class="btn btn-large btn-tujuh">Action</button> 
+								<button class="btn btn-large btn-delapan">Action</button> 
+								<button class="btn btn-large btn-sembilan">Action</button> 
+								<button class="btn btn-large btn-sepuluh">Action</button>
+								<button class="btn btn-large btn-sebelas">Action</button> 
+								<button class="btn btn-large btn-duabelas">Action</button> 
+								<button class="btn btn-large btn-tigabelas">Action</button> 
+								<button class="btn btn-large btn-empatbelas">Action</button> 
+								<button class="btn btn-large btn-limabelas">Action</button>
+								<button class="btn btn-large btn-enambelas">Action</button> 
+								<button class="btn btn-large btn-tujuhbelas">Action</button> 
+								<button class="btn btn-large btn-delapanbelas">Action</button> 
+								<button class="btn btn-large btn-sembilanbelas">Action</button> 
+								<button class="btn btn-large btn-duapuluh">Action</button>
+								<button class="btn btn-large btn-duasatu">Action</button> 
+								<button class="btn btn-large btn-duadua">Action</button> 
+								<button class="btn btn-large btn-duatiga">Action</button> 
+								<button class="btn btn-large btn-duaempat">Action</button> 
+								<button class="btn btn-large btn-dualima">Action</button>
+								<button class="btn btn-large btn-duaenam">Action</button> 
+								<button class="btn btn-large btn-duatujuh">Action</button> 
+								<button class="btn btn-large btn-duadelapan">Action</button> 
+								<button class="btn btn-large btn-duasembilan">Action</button> 
+								<button class="btn btn-large btn-tigapuluh">Action</button>
+								<button class="btn btn-large btn-tigasatu">Action</button> 
+								<button class="btn btn-large btn-tigadua">Action</button> 
+								<button class="btn btn-large btn-tigatiga">Action</button> 
+								<button class="btn btn-large btn-tigaempat">Action</button> 
+								<button class="btn btn-large btn-tigalima">Action</button>
+								<button class="btn btn-large btn-tigaenam">Action</button>
+								<button class="btn btn-large btn-tigatujuh">Action</button> 
+								<button class="btn btn-large btn-tigadelapan">Action</button> 
+								<button class="btn btn-large btn-tigasembilan">Action</button> 
+								<button class="btn btn-large btn-empatpuluh">Action</button>
+								<button class="btn btn-large btn-empatsatu">Action</button> 
+								<button class="btn btn-large btn-empatdua">Action</button> 
+								<button class="btn btn-large btn-empattiga">Action</button> 
+								<button class="btn btn-large btn-empatempat">Action</button> 
+								<button class="btn btn-large btn-empatlima">Action</button>
+								<button class="btn btn-large btn-empatenam">Action</button> 
+								<button class="btn btn-large btn-empattujuh">Action</button> 
+								<button class="btn btn-large btn-empatdelapan">Action</button> 
+								<button class="btn btn-large btn-empatsembilan">Action</button> 
+								<button class="btn btn-large btn-limapuluh">Action</button></p>
+							
+							</div>
+						</div>
+					</section><!-- widget -->
+
+				</div>
+			
+			</div><!-- main content -->
+			
+		</div>
+	</div>
+
+    <!-- JS Files
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+	<script src="../plugins/wysiwyg/wysihtml5-0.3.0_rc3.min.js"></script>
+	<script src="../assets/js/bootstrap.js"></script>	
+	
+	<script src="../plugins/datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="../plugins/colorpicker/js/bootstrap-colorpicker.js"></script>
+	<script src="../plugins/wysiwyg/bootstrap-wysihtml5.js"></script>
+	
+	<script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+	<script type="text/javascript" src="../plugins/plupload/js/plupload.full.js"></script>
+	<script type="text/javascript" src="../plugins/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+	
+	<script src="../js/demo.js"></script>
+	
+  </body>
+</html>

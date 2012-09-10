@@ -1,0 +1,37 @@
+<div class="account-container btm10">
+  <div class="form-content clearfix">
+    <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <h1><i class="iconbig-lock"></i> Sign In</h1>	
+      <div class="login-fields">
+        <p>Sign in using your registered account:</p>
+        <div class="field">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" required />
+        </div> <!-- /field -->
+
+        <div class="field">
+          <label for="username">Email:</label>
+          <input type="text" id="user[email]" name="user[email]" value="" placeholder="Email" class="login email-field" required />
+        </div> <!-- /field -->
+
+        <div class="field">
+          <label for="password">Password:</label>
+          <input type="password" id="user[password]" name="user[password]" value="" placeholder="Password" class="password email-field" required />
+        </div> <!-- /password -->
+
+      </div> <!-- /login-fields -->			
+
+      <div class="login-actions">
+        <span class="login-checkbox">
+          <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+        </span>
+        <%= f.button :submit, "Sign in" ,:class=>"btn-signin btn btn-primary" %>
+      </div> <!-- .actions -->
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+  </div> <!-- /form-content -->
+
+</div> <!-- /account-container -->
+

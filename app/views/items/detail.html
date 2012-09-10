@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fransisca Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/icon-style.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="source/jquery.fancybox.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="index.html"><img src="img/logo.png"/></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+			  <li class="divider-vertical"></li>
+              <li><a href="about.html">About</a></li>
+			  <li class="divider-vertical"></li>
+              <form class="navbar-search pull-left" action="">
+                <input type="text" class="search-query span2" placeholder="Search" required>
+              </form>
+			  <li class="divider-vertical"></li>
+            </ul>
+            <ul class="nav pull-right">
+            <li class="divider-vertical"></li>
+            <li class="gravatar"><a href="profile.html"></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">John Doe <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="account_setting.html"><i class="icon-user"></i> Account Setting</a></li>
+                <li class="divider"></li>
+                <li><a href="signin.html"><i class="icon-off"></i> Sign out</a></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+          </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+        
+            <div class="span9">
+                <div class="row">
+                    <div class="span9 image-detail">
+                        <div class="auto image-single">
+                            <img src="img/4_b.jpg" class="centered" />
+                        </div>
+                    </div>
+                    <div class="span9 image-description">
+                        <h3>Description</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed erat tristique sem rutrum laoreet facilisis ut tortor. 
+                        Cras tristique ultricies est sit amet consequat. Quisque nibh nunc, consequat at molestie vel, fermentum sit amet felis. 
+                        Donec id lectus ligula, non tempus ante. Aliquam ut turpis enim, eget rhoncus arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Morbi feugiat accumsan felis, in mattis sapien fringilla et. Nullam placerat viverra massa, eu vestibulum neque blandit in. 
+                        Morbi ac diam ac elit interdum tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet, enim sit amet faucibus rhoncus, eros tortor.</p>
+                    </div>
+                    <div class="span9 image-comments">
+                        <div class="comment">
+                            <h3>3 Comments On This Image</h3>
+                            <ul>
+                                <li>
+                                    <div class="avatar">
+                                        <a href="#"><img src="img/gravatar.jpg" /></a>
+                                        <span class="comment-name"><a href="#">John Doe</a></span>
+                                        <span class="comment-date"><p>July 16th, 2012 at 4:49 pm</p></span>
+                                    </div>
+                                    <div class="comment-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis condimentum dignissim. 
+                                        Curabitur sapien nisi, ultrices vitae iaculis quis, consectetur ac neque. Phasellus vitae lorem.</p>
+                                    </div>
+                                </li>
+                                <li class="comment-blue">
+                                    <div class="avatar">
+                                        <a href="#"><img src="img/gravatar.jpg" /></a>
+                                        <span class="comment-name"><a href="#">John Doe</a></span>
+                                        <span class="comment-date"><p>July 16th, 2012 at 5:09 pm</p></span>
+                                    </div>
+                                    <div class="comment-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis condimentum dignissim. 
+                                        Curabitur sapien nisi, ultrices vitae iaculis quis, consectetur ac neque. Phasellus vitae lorem.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis condimentum dignissim. 
+                                        Curabitur sapien nisi, ultrices vitae iaculis quis, consectetur ac neque. Phasellus vitae lorem.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="avatar">
+                                        <a href="#"><img src="img/gravatar.jpg" /></a>
+                                        <span class="comment-name"><a href="#">John Doe</a></span>
+                                        <span class="comment-date"><p>July 16th, 2012 at 5:49 pm</p></span>
+                                    </div>
+                                    <div class="comment-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis condimentum dignissim. 
+                                        Curabitur sapien nisi, ultrices vitae iaculis quis, consectetur ac neque. Phasellus vitae lorem.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                         </div>
+                        
+                        <br class="clearfix" />
+                        <h3>Post Comment</h3>
+                        <div class="post-comment">
+                            <form class="form-horizontal">
+                                <textarea rows="5" class="input-xxlarge inp-btm" name="comments" style="resize: none;" placeholder="Enter your comment here.."></textarea><br />
+                                <input type="email" name="email" class="input-xxlarge inp-btm" placeholder="Enter your email address" required/><br />
+                                <input type="text" name="name" class="input-xxlarge inp-btm" placeholder="Enter your name" required /><br />
+                                <input type="text" name="site" class="input-xxlarge inp-btm" placeholder="Enter your site" required /><br />
+                                <input type="submit" name="submit" value="Submit" class="btn btn-primary" /> <input type="reset" name="reset" value="Reset" class="btn" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="span3">
+                <div class="row">
+                    <div class="span3 sidebar-detail-menu">
+                        <ul>
+                            <li><a href="#" rel="tooltip" title="Share">Share</a></li>
+                            <li><a href="#" rel="tooltip" title="Add Comment">Comment</a></li>
+                            <li><a href="#" rel="tooltip" title="Download">Download</a></li>
+                            <li><a href="#" rel="tooltip" title="Like">Like</a></li>
+                        </ul>
+                    </div>
+                    <div class="span3 sidebar-detail-similiar">
+                        <div class="similiar-image">
+                            <h4>Similar Image</h4>
+                            <a href="#"><img src="img/1_b.jpg" class="img-thumbs" /></a><a href="#"><img src="img/2_b.jpg" class="img-thumbs" /></a><a href="#"><img src="img/3_b.jpg" class="img-thumbs" /></a>
+                            <a href="#"><img src="img/4_b.jpg" class="img-thumbs" /></a><a href="#"><img src="img/5_b.jpg" class="img-thumbs" /></a><a href="#"><img src="img/1_b.jpg" class="img-thumbs" /></a>
+                        </div>    
+                    </div>
+                    <div class="span3 sidebar-detail-category">
+                        <div class="category-image">
+                            <div class="cat-tags">Tags : <a href="#">Building</a>, <a href="#">Tower</a>, <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></div>
+                            <div class="cat-category">Category : <a href="#">image</a>, <a href="#">building</a>, <a href="#">photography</a> </div>
+                            <div class="cat-downloaded">Downloaded by : <a href="#">John Doe</a>, <a href="#">Lisa</a>, <a href="#">Andra</a>, <a href="#">Avriq</a>, <a href="#">Aji satria</a> </div>
+                            <div class="cat-liked">Liked by : <a href="#">Lisa</a>, <a href="#">John Doe</a>, <a href="#">Avriq</a>, <a href="#">Aji satria</a> </div>
+                            <div class="cat-shared">Shared by : <a href="#">Nichols</a>, <a href="#">John Doe</a>, <a href="#">Avriq</a>, <a href="#">Abraham</a>, <a href="#">Jordan</a>, <a href="#">James</a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="span12 more-images">
+                <h3>More Images from <a href="#">John Doe</a></h3>
+            </div>
+            
+            <div class="span3 galery">
+                <div class="menu-galery">
+                    <ul>
+                        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+                        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+                    </ul>
+                </div>
+                <div class="image-galery"><a class="images1" href="img/1_b.jpg"><img src="img/1_b.jpg" /></a></div>
+                <div class="count-galery">
+                    <ul>
+                        <li><i class="icon-comment"></i> 5</li>
+                        <li><i class="icon-download-alt"></i> 7</li>
+                        <li><i class="icon-star"></i> 2</li>
+                        <li><i class="icon-eye-open"></i> 20</li>
+                    </ul>
+                </div>
+                <div class="tags-galery">
+                    <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+                    <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+                </div>
+            </div>
+            <div class="span3 galery">
+                <div class="menu-galery">
+                    <ul>
+                        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+                        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+                    </ul>
+                </div>
+                <div class="image-galery"><a class="images1" href="img/2_b.jpg"><img src="img/2_b.jpg" /></a></div>
+                <div class="count-galery">
+                    <ul>
+                        <li><i class="icon-comment"></i> 5</li>
+                        <li><i class="icon-download-alt"></i> 7</li>
+                        <li><i class="icon-star"></i> 2</li>
+                        <li><i class="icon-eye-open"></i> 20</li>
+                    </ul>
+                </div>
+                <div class="tags-galery">
+                    <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+                    <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+                </div>
+            </div>
+            <div class="span3 galery">
+                <div class="menu-galery">
+                    <ul>
+                        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+                        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+                    </ul>
+                </div>
+                <div class="image-galery"><a class="images1" href="img/3_b.jpg"><img src="img/3_b.jpg" /></a></div>
+                <div class="count-galery">
+                    <ul>
+                        <li><i class="icon-comment"></i> 5</li>
+                        <li><i class="icon-download-alt"></i> 7</li>
+                        <li><i class="icon-star"></i> 2</li>
+                        <li><i class="icon-eye-open"></i> 20</li>
+                    </ul>
+                </div>
+                <div class="tags-galery">
+                    <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+                    <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+                </div>
+            </div>
+            <div class="span3 galery">
+                <div class="menu-galery">
+                    <ul>
+                        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+                        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+                    </ul>
+                </div>
+                <div class="image-galery"><a class="images1" href="img/5_b.jpg"><img src="img/5_b.jpg" /></a></div>
+                <div class="count-galery">
+                    <ul>
+                        <li><i class="icon-comment"></i> 5</li>
+                        <li><i class="icon-download-alt"></i> 7</li>
+                        <li><i class="icon-star"></i> 2</li>
+                        <li><i class="icon-eye-open"></i> 20</li>
+                    </ul>
+                </div>
+                <div class="tags-galery">
+                    <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+                    <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+                </div>
+            </div>
+            
+            <div class="span12 other-images">
+                <h3>Other similar images</h3>
+            </div>
+            
+            <div class="span3 galery">
+                <div class="menu-galery">
+                    <ul>
+                        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+                        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+                    </ul>
+                </div>
+                <div class="image-galery"><a class="images1" href="img/1_b.jpg"><img src="img/1_b.jpg" /></a></div>
+                <div class="count-galery">
+                    <ul>
+                        <li><i class="icon-comment"></i> 5</li>
+                        <li><i class="icon-download-alt"></i> 7</li>
+                        <li><i class="icon-star"></i> 2</li>
+                        <li><i class="icon-eye-open"></i> 20</li>
+                    </ul>
+                </div>
+                <div class="tags-galery">
+                    <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+                    <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+                </div>
+            </div>
+            <div class="span3 galery">
+                <div class="menu-galery">
+                    <ul>
+                        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+                        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+                    </ul>
+                </div>
+                <div class="image-galery"><a class="images1" href="img/2_b.jpg"><img src="img/2_b.jpg" /></a></div>
+                <div class="count-galery">
+                    <ul>
+                        <li><i class="icon-comment"></i> 5</li>
+                        <li><i class="icon-download-alt"></i> 7</li>
+                        <li><i class="icon-star"></i> 2</li>
+                        <li><i class="icon-eye-open"></i> 20</li>
+                    </ul>
+                </div>
+                <div class="tags-galery">
+                    <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+                    <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+                </div>
+            </div>
+            <div class="span3 galery">
+                <div class="menu-galery">
+                    <ul>
+                        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+                        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+                    </ul>
+                </div>
+                <div class="image-galery"><a class="images1" href="img/3_b.jpg"><img src="img/3_b.jpg" /></a></div>
+                <div class="count-galery">
+                    <ul>
+                        <li><i class="icon-comment"></i> 5</li>
+                        <li><i class="icon-download-alt"></i> 7</li>
+                        <li><i class="icon-star"></i> 2</li>
+                        <li><i class="icon-eye-open"></i> 20</li>
+                    </ul>
+                </div>
+                <div class="tags-galery">
+                    <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+                    <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+                </div>
+            </div>
+            <div class="span3 galery">
+                <div class="menu-galery">
+                    <ul>
+                        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+                        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+                        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+                    </ul>
+                </div>
+                <div class="image-galery"><a class="images1" href="img/5_b.jpg"><img src="img/5_b.jpg" /></a></div>
+                <div class="count-galery">
+                    <ul>
+                        <li><i class="icon-comment"></i> 5</li>
+                        <li><i class="icon-download-alt"></i> 7</li>
+                        <li><i class="icon-star"></i> 2</li>
+                        <li><i class="icon-eye-open"></i> 20</li>
+                    </ul>
+                </div>
+                <div class="tags-galery">
+                    <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+                    <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="container footer">
+        <hr class="alt" />
+        <div class="row">
+            <div class="span6">&copy; 2012 Fransisca Gallery. All right reserved.</div>
+            <div class="span6">
+                <ul>
+                    <li><a href="#">Terms Of Service</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/image-gallery.js"></script>
+    <script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script src="source/jquery.fancybox.js"></script>
+
+  </body>
+</html>

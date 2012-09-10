@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	
+    <title>Web Statistics - Fortuna Admin Template</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+	<link href="../css/combine_fonts.css" rel="stylesheet" />
+	<link href="../plugins/datepicker/css/datepicker.css" rel="stylesheet" />
+	<link href="../plugins/colorpicker/css/colorpicker.css" rel="stylesheet" />
+	<link href="../plugins/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" />
+	<link href="../plugins/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css" rel="stylesheet" />
+	
+	<link href="../css/buttons.css" rel="stylesheet" />
+	<link href="../style.css" rel="stylesheet" />
+	
+	<!-- color style -->
+	<link href="../css/dark.css" rel="stylesheet" />
+	
+	<link href="../css/cms.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- bootstrap fav and touch icons, replace with your own -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+	
+  </head>
+
+  <body>
+	
+	<!-- top fixed navbar -->
+	<div id="header" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="brand" href="index.html"><img src="../examples/logo.png" /></a>
+				
+				<ul class="nav">
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-th-1"></i> Components <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="navbar.html"><i class="icon-large icon-list-alt"></i> Navbar</a></li>
+							<li><a href="collapse.html"><i class="icon-large icon-list-alt"></i> Collapse</a></li>
+							<li><a href="tabs.html"><i class="icon-large icon-list-alt"></i> Tabs</a></li>
+							<li><a href="buttons.html"><i class="icon-large icon-list-alt"></i> Buttons</a></li>
+							<li><a href="tables.html"><i class="icon-large icon-list-alt"></i> Tables</a></li>
+							<li><a href="paginations.html"><i class="icon-large icon-list-alt"></i> Paginations</a></li>
+							<li><a href="breadcrumbs.html"><i class="icon-large icon-list-alt"></i> Breadcrumbs</a></li>
+							<li><a href="labels.html"><i class="icon-large icon-list-alt"></i> Labels</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-cog-2"></i> Plugins <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="datepicker.html"><i class="icon-large icon-list-alt"></i> Datepicker</a></li>
+							<li><a href="colorpicker.html"><i class="icon-large icon-list-alt"></i> Colorpicker</a></li>
+							<li><a href="font-icon-packs.html"><i class="icon-large icon-list-alt"></i> Font Icon Packs</a></li>
+							<li><a href="charts.html"><i class="icon-large icon-list-alt"></i> Google Charts</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-layers"></i> Color Styles <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../dark/stats.html" class="dark"><i class="icon-large icon-list-alt"></i> Dark</a></li>
+							<li><a href="../brownish/stats.html" class="brownish"><i class="icon-large icon-list-alt"></i> Brownish</a></li>
+							<li><a href="../golden/stats.html" class="golden"><i class="icon-large icon-list-alt"></i> Golden</a></li>
+							<li><a href="../blue/stats.html" class="blue"><i class="icon-large icon-list-alt"></i> Blue</a></li>
+							<li><a href="../maroon/stats.html" class="maroon"><i class="icon-large icon-list-alt"></i> Maroon</a></li>
+							<li><a href="../orange/stats.html" class="orange"><i class="icon-large icon-list-alt"></i> Orange</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<div class="btn-toolbar pull-right">
+				
+				<div class="btn-group">
+				<a class="btn dropdown-toggle rel" data-toggle="dropdown" href="#"><i class="icon-large icon-th-2"></i><span class="badge badge-important abs">20</span></a>
+				<ul class="dropdown-menu fb-one">
+					<li class="heading">
+					<h3>Friend Requests</h3><a href="#">Find Friends</a>
+					</li>
+					
+					<li class="confirm_fb">
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-01.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Esther</a></h4><span>10 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small"><i class="icon-ok"></i> Friends</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-02.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Nadya</a></h4><span>5 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-06.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Daniel</a></h4><span>37 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-03.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Yedida</a></h4><span>30 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-04.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Simeon</a></h4><span>32 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-05.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Theressia</a></h4><span>16 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li class="fb_dd_footer">
+					<a href="#">See All Friend Requests</a>
+					</li>
+				</ul>
+				</div><!-- /btn-group -->
+				
+				<div class="btn-group">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-user-1"></i> Olas Navigator
+						<span class="caret"></span>
+					</a>
+					
+					<ul class="dropdown-menu megamenu col2 ud">
+						<li class="sub">
+						<div class="img_round img_c_margin"><img width="70" height="70" src="../examples/avatar-sample.png" /></div>
+						</li>
+						<li class="sub">
+						<ul>
+						<li><a href="#"><i class="icon-large icon-cog-2"></i> Profile</a></li>
+						<li><a href="#"><i class="icon-large icon-key"></i> Privacy Settings</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="icon-large icon-logout-1"></i> Logout</a></li>
+						</ul>
+						</li>
+					</ul>
+					
+				</div>
+				</div>
+				
+			</div>
+		</div>
+	</div><!-- top fixed navbar -->
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+		
+			<!-- sidebar -->
+			<div id="sidebar" class="span2">			
+				<div class="accordion custom-acc" id="accordionSB">
+
+					<div class="accordion-group fs">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#dashboardsb">
+								<i class="icon-large icon-th-large head_icon"></i> Dashboard
+							</a>
+						</div>
+						<div id="dashboardsb" class="accordion-body collapse in">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="index.html"><i class="icon-large icon-th"></i> Dashboard</a></li>
+									<li class="active"><a href="stats.html"><i class="icon-large icon-th"></i> Stats</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#articlesb">
+								<i class="icon-large icon-th-large head_icon"></i> Articles
+							</a>
+						</div>
+						<div id="articlesb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="articles.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-article.html"><i class="icon-large icon-th"></i> Add New</a></li>
+									<li><a href="article-category.html"><i class="icon-large icon-th"></i> Categories</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#pagesb">
+								<i class="icon-large icon-th-large head_icon"></i> Pages
+							</a>
+						</div>
+						<div id="pagesb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="pages.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-page.html"><i class="icon-large icon-th"></i> Add New</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>					
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#reportsb">
+								<i class="icon-large icon-th-large head_icon"></i> Field Reports
+							</a>
+						</div>
+						<div id="reportsb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="field-reports.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-field-report.html"><i class="icon-large icon-th"></i> Add New</a></li>
+									<li><a href="field-report-category.html"><i class="icon-large icon-th"></i> Categories</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#mediasb">
+								<i class="icon-large icon-th-large head_icon"></i> Media
+							</a>
+						</div>
+						<div id="mediasb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="media-library.html"><i class="icon-large icon-th"></i> Library</a></li>
+									<li><a href="add-new-media.html"><i class="icon-large icon-th"></i> Add New</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#commentsb">
+								<i class="icon-large icon-th-large head_icon"></i> Comments
+							</a>
+						</div>
+						<div id="commentsb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="comments.html"><i class="icon-large icon-th"></i> Comments</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div><!-- sidebar -->
+			
+			<!-- main content -->
+			<div id="main_content" class="span10">			
+			
+				<div class="widget_container">
+					<div class="well nomargin">
+						<ul class="breadcrumbs-custom in-well">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Dashboard</a></li>
+							<li class="active">Website Statistics</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="widget_container">
+					<div class="well">
+						<div class="navbar navbar-static navbar_as_heading">
+							<div class="navbar-inner">
+								<div class="container" style="width: auto;">
+									<a class="brand">Last Visits Graph</a>
+								</div>
+							</div>
+						</div>
+						<div id="last_visit" style="width:100%;height:250px;"></div>
+					</div>
+				</div>				
+			
+				<div class="row-fluid">
+						
+					<div class="span4">					
+						<div class="widget_container">
+							<div class="well nomargin">
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">Visitors in Real Time</a>
+										</div>
+									</div>
+								</div>
+								
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Date</th>
+											<th>Visits</th>
+											<th>Pageviews</th>
+										</tr>
+									</thead><!-- table heading -->
+									<tbody>
+										<tr>
+											<td>Last 24 Hours</td>
+											<td><span class="badge badge-info">451</span></td>
+											<td><span class="badge badge-info">1251</span></td>
+										</tr>
+										<tr>
+											<td>Last 30 Minutes</td>
+											<td><span class="badge badge-info">8</span></td>
+											<td><span class="badge badge-info">72</span></td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Mon 11 Jun - 05:28:19</th>
+											<th><img src="../examples/stats/countries/us.gif" /> <img src="../examples/stats/browsers/FF.gif" /> <img src="../examples/stats/os/wxp.gif" /></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<a href="#" class="top_tooltip" title="192.168.10.1"><i class="icon-large icon-user-1"></i></a> 
+												Source: <a href="#">yourwebsite.com</a><br />Pages: 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Mon 11 Jun - 04:16:42</th>
+											<th><img src="../examples/stats/countries/id.gif" /> <img src="../examples/stats/browsers/FF.gif" /> <img src="../examples/stats/os/LIN.gif" /></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<a href="#" class="top_tooltip" title="192.168.20.111"><i class="icon-large icon-user-1"></i></a> 
+												Source: <a href="#">Google</a> - "php child pid 20304 exit signal segmentation fault".
+												<br />Pages: 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Mon 11 Jun - 03:09:24</th>
+											<th><img src="../examples/stats/countries/us.gif" /> <img src="../examples/stats/browsers/FF.gif" /> <img src="../examples/stats/os/MAC.gif" /></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<a href="#" class="top_tooltip" title="192.168.120.37"><i class="icon-large icon-user-1"></i></a> 
+												Source: <a href="#">Google</a> - "php child pid 20304 exit signal segmentation fault".
+												<br />Pages: 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Mon 11 Jun - 02:19:44</th>
+											<th><img src="../examples/stats/countries/sg.gif" /> <img src="../examples/stats/browsers/FF.gif" /> <img src="../examples/stats/os/WPH.gif" /></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<a href="#" class="top_tooltip" title="192.168.120.37"><i class="icon-large icon-user-1"></i></a> 
+												Source: <a href="#">Google</a> - "php child pid 20304 exit signal segmentation fault".
+												<br />Pages: 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a> 
+												<a href="#" class="top_tooltip" title="post title"><i class="icon-large icon-doc-inv"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<a class="btn btn-duadua" style="margin:20px;" href="#">view detailed logs</a>
+								
+							</div>
+						</div>
+						
+						<div class="widget_container">
+							<div class="well">
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">Length of Visits</a>
+										</div>
+									</div>
+								</div>
+								<div id="visit_length" style="width:100%;height:250px;"></div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="span4">
+					
+						<div class="widget_container">
+							<div class="well nomargin">
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">Keywords</a>
+										</div>
+									</div>
+								</div>
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Keyword</th>
+											<th>Visits</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr><td>Keyword not defined</td><td>127</td></tr>
+										<tr><td>downloads anzeigen</td><td>3</td></tr>
+										<tr><td>piwik funktioniert nicht mehr</td><td>2</td></tr>
+										<tr><td>piwik upgrade</td><td>2</td></tr>
+										<tr><td>usernamen</td><td>2</td></tr>
+										<tr><td>alle downloads anzeigen</td><td>1</td></tr>
+										<tr><td>anyone used clickheat</td><td>1</td></tr>
+										<tr><td>apache child pid exit signal segmentation fault</td><td>1</td></tr>
+										<tr><td>apache signal segmentation fault (11)</td><td>1</td></tr>
+										<tr><td>apache [notice] child pid exit signal segmentation...</td><td>1</td></tr>
+										<tr><td>api proxy</td><td>1</td></tr>
+										<tr><td>awstats or piwik</td><td>1</td></tr>
+										<tr><td>can't find variable: $</td><td>1</td></tr>
+										<tr><td>cloudflare piwik</td><td>1</td></tr>
+										<tr><td>cross domain and conversion tracking</td><td>1</td></tr>
+										<tr><td>fehler</td><td>324</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+						<div class="widget_container">
+							<div class="well">
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">External Websites</a>
+										</div>
+									</div>
+								</div>
+								<div id="external_websites" style="width:100%;height:200px;"></div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="span4">
+					
+						<div class="widget_container">
+							<div class="well nomargin">
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">Visitor Countries</a>
+										</div>
+									</div>
+								</div>
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Country</th>
+											<th>Visits</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr><td><img src="../examples/stats/countries/id.gif" /></td><td>12700</td></tr>
+										<tr><td><img src="../examples/stats/countries/sg.gif" /></td><td>3000</td></tr>
+										<tr><td><img src="../examples/stats/countries/us.gif" /></td><td>2456</td></tr>
+										<tr><td><img src="../examples/stats/countries/my.gif" /></td><td>2768</td></tr>
+										<tr><td><img src="../examples/stats/countries/au.gif" /></td><td>2114</td></tr>
+										<tr><td><img src="../examples/stats/countries/br.gif" /></td><td>154</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+						<div class="widget_container">
+							<div class="well nomargin">
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">Visitor Browsers</a>
+										</div>
+									</div>
+								</div>
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Browser</th>
+											<th>Visits</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr><td><img src="../examples/stats/browsers/FF.gif" /></td><td>12700</td></tr>
+										<tr><td><img src="../examples/stats/browsers/CH.gif" /></td><td>3000</td></tr>
+										<tr><td><img src="../examples/stats/browsers/OP.gif" /></td><td>2456</td></tr>
+										<tr><td><img src="../examples/stats/browsers/SF.gif" /></td><td>2768</td></tr>
+										<tr><td><img src="../examples/stats/browsers/IE.gif" /></td><td>154</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+						<div class="widget_container">
+							<div class="well nomargin">
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">Search Engines</a>
+										</div>
+									</div>
+								</div>
+								<table class="table smallfont">
+									<thead>
+										<tr>
+											<th>Search Engine</th>
+											<th>Visits</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr><td><img src="../examples/stats/searchEngines/blogsearch.google.com.png" /></td><td>12700</td></tr>
+										<tr><td><img src="../examples/stats/searchEngines/www.alltheweb.com.png" /></td><td>3000</td></tr>
+										<tr><td><img src="../examples/stats/searchEngines/www.facebook.com.png" /></td><td>2456</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+						<div class="widget_container">
+							<div class="well">
+								<div class="navbar navbar-static navbar_as_heading">
+									<div class="navbar-inner">
+										<div class="container" style="width: auto;">
+											<a class="brand">Visit by Server Times</a>
+										</div>
+									</div>
+								</div>
+								<p class="smallfont">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div><!-- main content -->
+			
+		</div>
+	</div>
+
+    <!-- JS Files
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://www.google.com/jsapi"></script>
+    <script src="../assets/js/jquery.js"></script>
+	<script src="../plugins/wysiwyg/wysihtml5-0.3.0_rc3.min.js"></script>
+	<script src="../assets/js/bootstrap.js"></script>	
+	
+	<script src="../plugins/datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="../plugins/colorpicker/js/bootstrap-colorpicker.js"></script>
+	<script src="../plugins/wysiwyg/bootstrap-wysihtml5.js"></script>
+	
+	<script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+	<script type="text/javascript" src="../plugins/plupload/js/plupload.full.js"></script>
+	<script type="text/javascript" src="../plugins/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+	
+	<script src="../js/demo.js"></script>
+	<script src="../js/stats.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+.table.smallfont th, .table.smallfont td, p.smallfont, ul.smallfont{
+	font-size:11px;
+}
+.nav.nav-tabs.myTab.smallfont li a {
+padding: 4px 8px;
+}
+.wm {
+	margin-bottom:20px;
+}
+.operation {
+	height:30px;
+}
+.big_icon {
+	font-size:20px;
+	line-height:40px;
+}
+.thumb {
+	background:#fefefe;
+	padding:4px;
+	border:1px solid #dedede;
+}
+#quick_view a b {
+	font-size:16px;
+	font-weight:bold;
+	color:#7cc127;
+	display:inline-block;
+	width:40px;
+}
+#quick_view a b.cmd {
+	color:#454545;
+	width:50px;
+}
+#quick_view a.approved {
+	color:#008000;
+}
+#quick_view a.pending {
+	color:#e66f00;
+}
+#quick_view a.spam {
+	color:#ff0000;
+}
+#quick_view.table td.blank {
+  border-top: 1px solid transparent;
+}
+#quick_view.table tbody tr:hover td.blank {
+	background-color:transparent;
+}
+#quick_settings .btn-large {
+font-size: 28px;
+font-weight: normal;
+margin-right: 10px;
+}
+#quick_settings .well {
+	text-align:center;
+}
+#right_sidebar .tabbable {
+	margin:-10px;
+}
+#right_sidebar .myTab, #right_sidebar .inner {
+	font-size:11px;
+}
+#right_sidebar .inner {
+	margin:10px;
+}
+#right_sidebar span.label {
+	display:inline-block;
+	margin-bottom:10px!important;
+}
