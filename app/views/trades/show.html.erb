@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="span12">
+    <div class="slate">
+      <div class="page-header">
+        <h2>预定成功</h2>
+      </div>
+      <p><strong>Order #:</strong> 12345</p>
+      <p><strong>Order Date:</strong> Today at 13:42</p>
+      <p><strong>Payment Method:</strong> PayPal</p>
+      <p><strong>Transaction ID:</strong> 123456789012</p>
+      <p><strong>Voucher Code:</strong> 12345 (10% Discount)</p>
+      <p><strong>Member:</strong> <a href="">Joe Bloggs</a></p>
+    </div>
+  </div>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+<b>Status:</b>
+<%= @trade.status %>
+</p>
+
+<p>
+<b>Receiver name:</b>
+<%= @trade.receiver_name %>
+</p>
+
+<p>
+<b>Receiver state:</b>
+<%= @trade.receiver_state %>
+</p>
+
+<p>
+<b>Receiver city:</b>
+<%= @trade.receiver_city %>
+</p>
+
+<p>
+<b>Receiver district:</b>
+<%= @trade.receiver_district %>
+</p>
+
+<p>
+<b>Receiver address:</b>
+<%= @trade.receiver_address %>
+</p>
+
+<p>
+<b>Receiver zip:</b>
+<%= @trade.receiver_zip %>
+</p>
+
+<p>
+<b>Receiver mobile:</b>
+<%= @trade.receiver_mobile %>
+</p>
+
+<p>
+<b>Seller mobile:</b>
+<%= @trade.seller_mobile %>
+</p>
+
+
+<p>
+<b>Seller email:</b>
+<%= @trade.seller_email %>
+</p>
+
+<p>
+<b>Seller:</b>
+<%= @trade.seller_id %>
+</p>
+
+<p>
+<b>Received payment:</b>
+<%= @trade.received_payment %>
+</p>
+
+<p>
+<b>Available confirm fee:</b>
+<%= @trade.available_confirm_fee %>
+</p>
+
+<p>
+<b>Total fee:</b>
+<%= @trade.total_fee %>
+</p>
+
+<p>
+<b>Price:</b>
+<%= @trade.price %>
+</p>
+
+
+<%= link_to '回到会员中心', '/dashboard' %> |
+<%= link_to '查看我的订单', '/trades' %> |
+<%= link_to '回到首页', '/' %>

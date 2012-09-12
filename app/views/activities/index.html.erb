@@ -1,0 +1,31 @@
+<h1>Listing activities</h1>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Object</th>
+    <th>Object type</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @activities.each do |activity| %>
+  <tr>
+    <td><%= activity.from_id %></td>
+    <td><%= activity.to_id %></td>
+    <td><%= activity.object_id %></td>
+    <td><%= activity.object_type %></td>
+    <td><%= activity.description %></td>
+    <td><%= link_to 'Show', activity %></td>
+    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+    <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Activity', new_activity_path %>

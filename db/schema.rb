@@ -11,13 +11,60 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910085527) do
+ActiveRecord::Schema.define(:version => 20120912095118) do
+
+  create_table "activities", :force => true do |t|
+    t.integer  "from_id"
+    t.integer  "to_id"
+    t.integer  "object_id"
+    t.string   "object_type"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "items", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "owner_id"
+    t.integer  "buyer_id"
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "from_id"
+    t.integer  "to_id"
+    t.integer  "object_id"
+    t.string   "object_type"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.string   "title"
+    t.integer  "item_id"
+    t.integer  "count"
+    t.string   "order_from"
+    t.string   "total_fee"
+    t.string   "price"
+    t.integer  "trade_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "pages", :force => true do |t|
@@ -37,6 +84,67 @@ ActiveRecord::Schema.define(:version => 20120910085527) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "trades", :force => true do |t|
+    t.string   "status"
+    t.string   "receiver_name"
+    t.string   "receiver_state"
+    t.string   "receiver_city"
+    t.string   "receiver_district"
+    t.string   "receiver_address"
+    t.string   "receiver_zip"
+    t.string   "receiver_mobile"
+    t.string   "seller_mobile"
+    t.string   "seller_email"
+    t.integer  "seller_id"
+    t.integer  "buyer_id"
+    t.string   "received_payment"
+    t.string   "available_confirm_fee"
+    t.string   "total_fee"
+    t.string   "price"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  create_table "user_addresses", :force => true do |t|
+    t.string   "name"
+    t.string   "state"
+    t.string   "city"
+    t.string   "district"
+    t.string   "address"
+    t.string   "zip"
+    t.string   "mobile"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_infos", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "about"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_likes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_shares", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

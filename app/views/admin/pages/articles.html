@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	
+    <title>Articles - Fortuna Admin Template</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+	<link href="../css/combine_fonts.css" rel="stylesheet" />
+	<link href="../plugins/datepicker/css/datepicker.css" rel="stylesheet" />
+	<link href="../plugins/colorpicker/css/colorpicker.css" rel="stylesheet" />
+	<link href="../plugins/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" />
+	<link href="../plugins/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css" rel="stylesheet" />
+	
+	<link href="../css/buttons.css" rel="stylesheet" />
+	<link href="../style.css" rel="stylesheet" />
+	
+	<!-- color style -->
+	<link href="../css/dark.css" rel="stylesheet" />
+	
+	<link href="../css/cms.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- bootstrap fav and touch icons, replace with your own -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+	
+  </head>
+
+  <body>
+	
+	<!-- top fixed navbar -->
+	<div id="header" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="brand" href="index.html"><img src="../examples/logo.png" /></a>
+				
+				<ul class="nav">
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-th-1"></i> Components <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="navbar.html"><i class="icon-large icon-list-alt"></i> Navbar</a></li>
+							<li><a href="collapse.html"><i class="icon-large icon-list-alt"></i> Collapse</a></li>
+							<li><a href="tabs.html"><i class="icon-large icon-list-alt"></i> Tabs</a></li>
+							<li><a href="buttons.html"><i class="icon-large icon-list-alt"></i> Buttons</a></li>
+							<li><a href="tables.html"><i class="icon-large icon-list-alt"></i> Tables</a></li>
+							<li><a href="paginations.html"><i class="icon-large icon-list-alt"></i> Paginations</a></li>
+							<li><a href="breadcrumbs.html"><i class="icon-large icon-list-alt"></i> Breadcrumbs</a></li>
+							<li><a href="labels.html"><i class="icon-large icon-list-alt"></i> Labels</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-cog-2"></i> Plugins <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="datepicker.html"><i class="icon-large icon-list-alt"></i> Datepicker</a></li>
+							<li><a href="colorpicker.html"><i class="icon-large icon-list-alt"></i> Colorpicker</a></li>
+							<li><a href="font-icon-packs.html"><i class="icon-large icon-list-alt"></i> Font Icon Packs</a></li>
+							<li><a href="charts.html"><i class="icon-large icon-list-alt"></i> Google Charts</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-large icon-layers"></i> Color Styles <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../dark/articles.html" class="dark"><i class="icon-large icon-list-alt"></i> Dark</a></li>
+							<li><a href="../brownish/articles.html" class="brownish"><i class="icon-large icon-list-alt"></i> Brownish</a></li>
+							<li><a href="../golden/articles.html" class="golden"><i class="icon-large icon-list-alt"></i> Golden</a></li>
+							<li><a href="../blue/articles.html" class="blue"><i class="icon-large icon-list-alt"></i> Blue</a></li>
+							<li><a href="../maroon/articles.html" class="maroon"><i class="icon-large icon-list-alt"></i> Maroon</a></li>
+							<li><a href="../orange/articles.html" class="orange"><i class="icon-large icon-list-alt"></i> Orange</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<div class="btn-toolbar pull-right">
+				
+				<div class="btn-group">
+				<a class="btn dropdown-toggle rel" data-toggle="dropdown" href="#"><i class="icon-large icon-th-2"></i><span class="badge badge-important abs">20</span></a>
+				<ul class="dropdown-menu fb-one">
+					<li class="heading">
+					<h3>Friend Requests</h3><a href="#">Find Friends</a>
+					</li>
+					
+					<li class="confirm_fb">
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-01.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Esther</a></h4><span>10 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small"><i class="icon-ok"></i> Friends</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-02.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Nadya</a></h4><span>5 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-06.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Daniel</a></h4><span>37 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-03.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Yedida</a></h4><span>30 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-04.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Simeon</a></h4><span>32 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li>
+					<ul class="content">
+					<li class="fb_avatar"><img src="../examples/avatar-sample-05.jpg"></li>
+					<li class="fb_uname"><h4><a href="#">Theressia</a></h4><span>16 Mutual Friends</span></li>
+					<li class="fb_action"><button class="btn btn-small btn-primary">Confirm</button> <button class="btn btn-small">Not Now</button></li>
+					</ul>
+					</li>
+					
+					<li class="fb_dd_footer">
+					<a href="#">See All Friend Requests</a>
+					</li>
+				</ul>
+				</div><!-- /btn-group -->
+				
+				<div class="btn-group">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-user-1"></i> Olas Navigator
+						<span class="caret"></span>
+					</a>
+					
+					<ul class="dropdown-menu megamenu col2 ud">
+						<li class="sub">
+						<div class="img_round img_c_margin"><img width="70" height="70" src="../examples/avatar-sample.png" /></div>
+						</li>
+						<li class="sub">
+						<ul>
+						<li><a href="#"><i class="icon-large icon-cog-2"></i> Profile</a></li>
+						<li><a href="#"><i class="icon-large icon-key"></i> Privacy Settings</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="icon-large icon-logout-1"></i> Logout</a></li>
+						</ul>
+						</li>
+					</ul>
+					
+				</div>
+				</div>
+				
+			</div>
+		</div>
+	</div><!-- top fixed navbar -->
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+		
+			<!-- sidebar -->
+			<div id="sidebar" class="span2">			
+				<div class="accordion custom-acc" id="accordionSB">
+
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#dashboardsb">
+								<i class="icon-large icon-th-large head_icon"></i> Dashboard
+							</a>
+						</div>
+						<div id="dashboardsb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="index.html"><i class="icon-large icon-th"></i> Dashboard</a></li>
+									<li><a href="stats.html"><i class="icon-large icon-th"></i> Stats</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group fs">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#articlesb">
+								<i class="icon-large icon-th-large head_icon"></i> Articles
+							</a>
+						</div>
+						<div id="articlesb" class="accordion-body collapse in">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li class="active"><a href="articles.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-article.html"><i class="icon-large icon-th"></i> Add New</a></li>
+									<li><a href="article-category.html"><i class="icon-large icon-th"></i> Categories</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#pagesb">
+								<i class="icon-large icon-th-large head_icon"></i> Pages
+							</a>
+						</div>
+						<div id="pagesb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="pages.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-page.html"><i class="icon-large icon-th"></i> Add New</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>					
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#reportsb">
+								<i class="icon-large icon-th-large head_icon"></i> Field Reports
+							</a>
+						</div>
+						<div id="reportsb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="field-reports.html"><i class="icon-large icon-th"></i> List</a></li>
+									<li><a href="add-new-field-report.html"><i class="icon-large icon-th"></i> Add New</a></li>
+									<li><a href="field-report-category.html"><i class="icon-large icon-th"></i> Categories</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#mediasb">
+								<i class="icon-large icon-th-large head_icon"></i> Media
+							</a>
+						</div>
+						<div id="mediasb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="media-library.html"><i class="icon-large icon-th"></i> Library</a></li>
+									<li><a href="add-new-media.html"><i class="icon-large icon-th"></i> Add New</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#commentsb">
+								<i class="icon-large icon-th-large head_icon"></i> Comments
+							</a>
+						</div>
+						<div id="commentsb" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<ul class="nav nav-list">
+									<li><a href="comments.html"><i class="icon-large icon-th"></i> Comments</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div><!-- sidebar -->
+			
+			<!-- main content -->
+			<div id="main_content" class="span10">
+			
+				<div class="widget_container">
+					<div class="well nomargin">
+						<ul class="breadcrumbs-custom in-well">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Contents</a></li>
+							<li><a href="#">Articles</a></li>
+							<li class="active">List</li>
+						</ul>
+					</div>
+				</div>	
+			
+				<div class="row-fluid">
+					<div class="widget_container">
+						<div class="well nomargin">
+							<div class="navbar navbar-static navbar_as_heading">
+								<div class="navbar-inner">
+									<div class="container" style="width: auto;">
+										<a class="brand">Articles</a>
+										<a class="btn pull-right" href="add-new-article.html">Add New</a>
+									</div>
+								</div>
+							</div>
+							<div class="subnav">
+								<div class="btn-toolbar pull-left">
+									<div class="btn-group">
+										<button class="btn btn-small active btn-duadua">All<span class="badge abs1">30</span></button>
+										<button class="btn btn-small btn-duadua"><i class="icon-ok-3"></i> Published <span class="badge badge-info abs1">30</span></button>
+										<button class="btn btn-small btn-duadua"><i class="icon-pencil"></i> Draft <span class="badge badge-warning abs1">0</span></button>
+										<button class="btn btn-small btn-duadua"><i class="icon-trash-2 btn-duadua"></i> Trash <span class="badge badge-important abs1">0</span></button>
+									</div>
+								</div>
+								<form class="navbar-search pull-right" action="">
+									<input type="text" class="search-query" placeholder="Search">
+								</form>
+							</div>
+							
+							<div class="subnav nobg">
+								<div class="span2">
+									<select name="action">
+										<option value="-1" selected="selected">Bulk Actions</option>
+										<option value="edit">Edit</option>
+										<option value="trash">Move to Trash</option>
+									</select>
+								</div>
+								<div class="span1">
+									<button class="btn btn-small btn-duadua">Apply</button>
+								</div>
+								<div class="span2">
+									<select name="m">
+									<option selected="selected" value="0">Show all dates</option>
+									<option value="201206">June 2012</option>
+									<option value="201205">May 2012</option>
+									<option value="201204">April 2012</option>
+									<option value="201203">March 2012</option>
+									<option value="201202">February 2012</option>
+									<option value="201201">January 2012</option>
+									<option value="201111">November 2011</option>
+									<option value="201105">May 2011</option>
+									<option value="201102">February 2011</option>
+									<option value="201007">July 2010</option>
+									<option value="201003">March 2010</option>
+									<option value="201002">February 2010</option>
+									<option value="200912">December 2009</option>
+									<option value="200908">August 2009</option>
+									<option value="200906">June 2009</option>
+									<option value="200902">February 2009</option>
+									<option value="200901">January 2009</option>
+									</select>
+								</div>
+								<div class="span2">
+									<select name="cat" id="cat" class="postform">
+										<option value="0">View all categories</option>
+										<option class="level-0" value="1">Breaking News</option>
+									</select>
+								</div>
+								<div class="span1">
+									<button class="btn btn-small btn-duadua">Filter</button>
+								</div>
+								<div class="span4">
+									<div class="pagination">
+										<ul>
+											<li class="active"><a href="#">1</a></li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li><a href="#">4</a></li>
+											<li><a href="#">5</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<table class="table smallfont">
+								<thead>
+									<tr>
+										<td style="width:20px;"><input type="checkbox" id="chkbck" /></td>
+										<td>Title</td>
+										<td>Author</td>
+										<td>Categories</td>
+										<td>Tags</td>
+										<td><i class="icon-large icon-comment-alt-1"></i></td>
+										<td>Date</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Serah Terima Jabatan Eselon IV Lingkup Balai Taman Nasional Baluran</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Teknik Budidaya Sentigi (Phempis acidula) Stek Mulai Memperlihatkan Hasil</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Pembinaan Habitat Savana Bekol, Bama & Balanan</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Konsolidasi Konservasi ( K 2 )</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Pelepasliaran Merak Hijau di Savana Bekol</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td nowrap><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td nowrap>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Perpisahan Sekaligus Merayakan Hut 56 Thn</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Launching dan Penandatanganan Surat Perjanjian Sponsorship 3rd Annual Baluran-PLN Birding Competition 2012</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Pengumuman Penetapan Pemenang Pelelangan Umum Pengadaan Jetski Di Taman Nasional Baluran</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Pengumuman Pelelangan Umum Pengadaan Jetski Di Taman Nasional Baluran</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Serah Terima Jabatan Eselon IV Lingkup Balai Taman Nasional Baluran</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Teknik Budidaya Sentigi (Phempis acidula) Stek Mulai Memperlihatkan Hasil</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Pembinaan Habitat Savana Bekol, Bama & Balanan</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" class="chkbck" /></td>
+										<td>
+											<a href="#" class="post_title">Konsolidasi Konservasi ( K 2 )</a>
+											<div class="operation">
+												<div class="btn-group" style="display:none;">
+												  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+												  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+												  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+												</div>
+											</div>
+										</td>
+										<td>Admin</td>
+										<td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+										<td>No Tags</td>
+										<td><span class="badge badge-info">0</span></td>
+										<td>2012/05/03<br />Published</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="subnav nobg">
+								<div class="span2">
+									<select name="action">
+										<option value="-1" selected="selected">Bulk Actions</option>
+										<option value="edit">Edit</option>
+										<option value="trash">Move to Trash</option>
+									</select>
+								</div>
+								<div class="span1">
+									<button class="btn btn-small btn-duadua">Apply</button>
+								</div>
+								<div class="span2">
+								
+								</div>
+								<div class="span2">
+								
+								</div>
+								<div class="span1">
+									
+								</div>
+								<div class="span4">
+									<div class="pagination">
+										<ul>
+											<li class="active"><a href="#">1</a></li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li><a href="#">4</a></li>
+											<li><a href="#">5</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- main content -->
+			
+		</div>
+	</div>
+
+    <!-- JS Files
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+	<script src="../plugins/wysiwyg/wysihtml5-0.3.0_rc3.min.js"></script>
+	<script src="../assets/js/bootstrap.js"></script>	
+	
+	<script src="../plugins/datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="../plugins/colorpicker/js/bootstrap-colorpicker.js"></script>
+	<script src="../plugins/wysiwyg/bootstrap-wysihtml5.js"></script>
+	
+	<script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+	<script type="text/javascript" src="../plugins/plupload/js/plupload.full.js"></script>
+	<script type="text/javascript" src="../plugins/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+	
+	<script src="../js/demo.js"></script>
+  </body>
+</html>

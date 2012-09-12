@@ -1,12 +1,13 @@
 class PagesController < ApplicationController
+  before_filter :authenticate_user!
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
-
+    # @pages = Page.all
+    @items = Item.all
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @pages }
+      # format.json { render json: @pages }
     end
   end
 

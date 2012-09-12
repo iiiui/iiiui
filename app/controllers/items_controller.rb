@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /items
   # GET /items.json
   def index
@@ -41,9 +42,8 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(params[:item])
-
     respond_to do |format|
-      if @item.save
+      if @item.insert(current_user.id)
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render json: @item, status: :created, location: @item }
       else

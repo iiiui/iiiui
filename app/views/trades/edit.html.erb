@@ -1,0 +1,34 @@
+<h1>Editing trade</h1>
+
+<%= simple_form_for(@trade) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :status %>
+    <%= f.input :receiver_id %>
+    <%= f.input :receiver_name %>
+    <%= f.input :receiver_state %>
+    <%= f.input :receiver_city %>
+    <%= f.input :receiver_district %>
+    <%= f.input :receiver_address %>
+    <%= f.input :receiver_zip %>
+    <%= f.input :receiver_mobile %>
+    <%= f.input :seller_mobile %>
+    <%= f.input :seller_email %>
+    <%= f.input :seller_id %>
+    <%= f.input :received_payment %>
+    <%= f.input :available_confirm_fee %>
+    <%= f.input :total_fee %>
+    <%= f.input :price %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @trade %> |
+<%= link_to 'Back', trades_path %>
+
+
+

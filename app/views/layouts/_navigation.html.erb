@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="/">iiui</a>
+      <a class="brand" href="/">iiiui</a>
       <div class="nav-collapse">
         <ul class="nav">
           <form class="navbar-search pull-left" action="">
@@ -21,6 +21,8 @@
             <li><a href="<%= new_user_registration_path %>"><i class="icon-edit"></i> Sign up</a></li>
           <% end %>
           <% if user_signed_in? %>
+            <li class="divider-vertical"></li>
+            <li><a href="/items/new">分享</a></li>
             <li class="divider-vertical"></li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>

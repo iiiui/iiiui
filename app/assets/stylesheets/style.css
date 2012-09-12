@@ -865,9 +865,9 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 }
 
 .account-settings{
-  width:210px;
+  width:105px;
   border: 1px solid #ccc;
-  height:230px;
+  height:103px;
   margin: 20px auto 10px auto;
   padding:5px;
 }

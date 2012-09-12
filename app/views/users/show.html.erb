@@ -1,4 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<div class="span12 more-images">
+  <h3>More Images from <a href="#"><%=@user.email %></a></h3>
+</div>
+
+<% @user.items.each do |item| %>
+  <div class="span3 galery">
+    <div class="image-galery"><a class="images1" href="/items/<%=item.id%>"><img src="<%=asset_path "4_b.jpg" %>"/></a></div>
+    <div class="menu-galery">
+      <ul>
+        <li><a href="detail.html" rel="tooltip" title="Detail"><i class="iconbig-search"></i></a></li>
+        <li><a href="detail.html" rel="tooltip" title="Add Comment"><i class="iconbig-speak"></i></a></li>
+        <li><a href="#" rel="tooltip" title="Download"><i class="iconbig-download"></i></a></li>
+        <li><a href="#" rel="tooltip" title="Like"><i class="iconbig-black-star"></i></a></li>
+      </ul>
+    </div>
+    <div class="tags-galery">
+      <p><i class="icon-tags"></i> Tags : <a href="#">Building</a>, <a href="#">Tower</a>, 
+      <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></p>
+    </div>
+  </div>
+<% end  %>

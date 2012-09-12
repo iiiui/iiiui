@@ -1,0 +1,25 @@
+<h1>Listing user_shares</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Item</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_shares.each do |user_share| %>
+  <tr>
+    <td><%= user_share.user_id %></td>
+    <td><%= user_share.item_id %></td>
+    <td><%= link_to 'Show', user_share %></td>
+    <td><%= link_to 'Edit', edit_user_share_path(user_share) %></td>
+    <td><%= link_to 'Destroy', user_share, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User share', new_user_share_path %>
