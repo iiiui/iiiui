@@ -1,0 +1,4 @@
+<%= simple_form_for(@cart_item) do |f| %>
+  <%= f.input :item_id, :as => :hidden, :input_html => { :value =>@user_share.item.id }%>
+  <%= f.button :submit,:value => "我要买" %>
+<% end %>

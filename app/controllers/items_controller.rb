@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   # GET /items/new.json
   def new
     @item = Item.new
-
+    @share = UserShare.find(params["share"])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @item }
@@ -36,6 +36,7 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
+    @share = UserShare.find(@item.user_shares_id)
   end
 
   # POST /items

@@ -1,5 +1,9 @@
 Iiiui::Application.routes.draw do
 
+  resources :cart_items
+
+  resources :carts
+
   resources :activities
   resources :notifications
 
@@ -23,7 +27,6 @@ Iiiui::Application.routes.draw do
   resources :comments
   resources :pages
   resources :items
-  resources :cart
 
   get "dashboard" => "dashboard#index"
   authenticated :user do

@@ -15,7 +15,7 @@ class UserSharesController < ApplicationController
   # GET /user_shares/1.json
   def show
     @user_share = UserShare.find(params[:id])
-
+    @cart_item = CartItem.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user_share }
@@ -26,7 +26,6 @@ class UserSharesController < ApplicationController
   # GET /user_shares/new.json
   def new
     @user_share = UserShare.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user_share }

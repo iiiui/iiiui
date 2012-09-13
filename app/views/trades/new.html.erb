@@ -35,28 +35,21 @@
             <tr>
               <th>商品名称</th>
               <th class="value">价格</th>
+              <th class="value">数量</th>
               <th class="actions">操作</th>
             </tr>
           </thead>
           <tbody>
+            <% @cart.cart_items.each do |cart_item| %>
             <tr>
-              <td><a href="">Product Name</a> <span class="label label-info">6 In Stock</span><br><span class="meta">Item summary or notes</span></td>
-              <td class="value">
-                $132.00
-              </td>
+              <td><a href="">Product Name</a> <span class="meta"><%= cart_item.item_id %></span></td>
+              <td class="value">$132.00</td>
+              <td>1</td>
               <td class="actions">
-                <input type="checkbox">
+                <input type="button" value="删除" class="btn"/>
               </td>
             </tr>
-            <tr>
-              <td><a href="">Product Name</a> <span class="label label-success">Dispatched</span><br><span class="meta">Item summary or notes</span></td>
-              <td class="value">
-                $132.00
-              </td>
-              <td class="actions">
-                <input type="checkbox">
-              </td>
-            </tr>
+            <% end %>
           </tbody>
         </table>
       </div>

@@ -35,7 +35,7 @@ class TradesController < ApplicationController
   # GET /trades/new.json
   def new
     @trade = Trade.new
-
+    @cart = current_cart
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @trade }
@@ -51,9 +51,10 @@ class TradesController < ApplicationController
   # POST /trades.json
   def create
     @trade = Trade.new(params[:trade])
-
+    @cart = current_cart
     respond_to do |format|
-      if @trade.insert(current_user.id,Item.first.owner.id)
+      if @trade.insert(current_user.id,@cart.cart_items.first.item.owner.id)
+        @cart.destroy
         format.html { redirect_to @trade, notice: 'Trade was successfully created.' }
         format.json { render json: @trade, status: :created, location: @trade }
       else

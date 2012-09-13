@@ -1,5 +1,4 @@
 <div class="row">
-
   <div class="span9">
     <div class="row">
       <div class="span9 image-detail">
@@ -71,18 +70,27 @@
   <div class="span3">
     <div class="row">
       <div class="span3 sidebar-detail-menu">
-      <% if !@user_share.isown?(current_user.id) %>
-        <ul>
-          <li><a href="#" rel="tooltip" title="Share">转享</a></li>
-          <li><a href="/" rel="tooltip" title="Buy">我想买</a></li>
-          <li><a href="#" rel="tooltip" title="Like">喜欢</a></li>
-        </ul>
-      <% else %>
-        <ul>
-          <li><a href="/" class="btn btn-large" >求购</a></li>
-          <li><a href="/items/new?share=<%=@user_share.id %>" class="btn btn-large" >我想卖</a></li>
-        </ul>
-      <% end  %>
+        <% if !@user_share.isown?(current_user.id) %>
+          <ul>
+            <li><a href="#" rel="tooltip" title="Share">转享</a></li>
+            <li><a href="#" rel="tooltip" title="Like">喜欢</a></li>
+          </ul>
+            <% if @user_share.can_buy? %>
+              <%=render "cart_items/form" %>
+            <% end %>
+        <% else %>
+          <ul>
+            <% if @user_share.can_buy? %>
+              <li>
+                <font color="red">正在销售中</font>
+                <a href="/items/<%=@user_share.item.id %>/edit" class="btn btn-large" >编辑</a>
+              </li>
+            <% else %>
+              <li><a href="/" class="btn btn-large" >求购</a></li>
+              <li><a href="/items/new?share=<%=@user_share.id %>" class="btn btn-large" >我想卖</a></li>
+            <% end %>
+          </ul>
+        <% end  %>
       </div>
       <div class="span3 sidebar-detail-similiar">
         <div class="similiar-image">
