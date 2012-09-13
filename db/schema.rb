@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912095118) do
+ActiveRecord::Schema.define(:version => 20120913072214) do
 
   create_table "activities", :force => true do |t|
     t.integer  "from_id"
@@ -39,10 +39,11 @@ ActiveRecord::Schema.define(:version => 20120912095118) do
   create_table "items", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "owner_id"
     t.integer  "buyer_id"
+    t.integer  "user_shares_id"
   end
 
   create_table "notifications", :force => true do |t|
@@ -142,8 +143,11 @@ ActiveRecord::Schema.define(:version => 20120912095118) do
   create_table "user_shares", :force => true do |t|
     t.integer  "user_id"
     t.integer  "item_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "title"
+    t.string   "description"
+    t.string   "picture_url"
   end
 
   create_table "users", :force => true do |t|

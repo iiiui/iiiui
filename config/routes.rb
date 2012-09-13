@@ -3,13 +3,21 @@ Iiiui::Application.routes.draw do
   resources :activities
   resources :notifications
 
+  get "share" => "user_shares#new"
   resources :user_shares
   resources :user_likes
   resources :user_addresses
   resources :user_infos
 
   resources :orders
-  resources :trades
+
+  resources :trades do
+    collection do
+      get 'buys'
+      get 'sells'
+    end
+  end
+
   resources :categories
   resources :tags
   resources :comments

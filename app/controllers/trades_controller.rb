@@ -3,17 +3,22 @@ class TradesController < ApplicationController
   layout "dashboard", :except => [:new, :show]
   # GET /trades
   # GET /trades.json
-  def index
-    # @sells = Trade.sells(current_user.id)
-    # @buys = Trade.buys(current_user.id)
-
+  def sells
     @trades = Trade.sells(current_user.id)
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @trades }
     end
   end
+
+  def buys
+    @trades = Trade.buys(current_user.id)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @trades }
+    end
+  end
+
 
   # GET /trades/1
   # GET /trades/1.json

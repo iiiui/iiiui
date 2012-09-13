@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(params[:item])
     respond_to do |format|
-      if @item.insert(current_user.id)
+      if @item.insert(current_user.id,params[:item][:user_shares_id])
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render json: @item, status: :created, location: @item }
       else

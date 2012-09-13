@@ -3,6 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
+    <%= f.input :user_shares_id,:input_html => { :value => params["share"] } %>
     <%= f.input :description %>
   </div>
 

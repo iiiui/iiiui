@@ -1,13 +1,13 @@
-  <% @items.each do |item| %>
+  <% @shares.each do |share| %>
     <div class="span3 galery">
       <div class="image-galery">
-        <a class="group" rel="group1" href="/items/<%=item.id%>">
+        <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
           <img src="<%=asset_path "4_b.jpg" %>"/>
         </a>
       </div>
       <div class="count-galery">
         <ul>
-          <li><a href="/users/<%=item.owner.id %>">User<%=item.owner.id %></a></li>
+          <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
           <li><i class="icon-comment"></i> 5</li>
           <li><i class="icon-heart"></i> 7</li>
           <li><i class="icon-star"></i> 2</li>

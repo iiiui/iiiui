@@ -1,0 +1,38 @@
+<div class="span9 content-setting">
+  <table class="table">
+    <tr>
+      <th>Status</th>
+      <th>Receiver</th>
+      <th>Receiver name</th>
+      <th>Receiver state</th>
+      <th>Receiver city</th>
+      <th>Receiver district</th>
+      <th>Receiver address</th>
+      <th>Receiver zip</th>
+      <th>Receiver mobile</th>
+      <th>Received payment</th>
+      <th>Available confirm fee</th>
+      <th>Total fee</th>
+      <th>Price</th>
+      <th>操作</th>
+    </tr>
+
+    <% @trades.each do |trade| %>
+      <tr>
+        <td><%= trade.status %></td>
+        <td><%= trade.receiver_name %></td>
+        <td><%= trade.receiver_state %></td>
+        <td><%= trade.receiver_city %></td>
+        <td><%= trade.receiver_district %></td>
+        <td><%= trade.receiver_address %></td>
+        <td><%= trade.receiver_zip %></td>
+        <td><%= trade.receiver_mobile %></td>
+        <td><%= trade.received_payment %></td>
+        <td><%= trade.available_confirm_fee %></td>
+        <td><%= trade.total_fee %></td>
+        <td><%= trade.price %></td>
+        <td><%= link_to 'Show', trade %><%= link_to 'Edit', edit_trade_path(trade) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
