@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./lib
+//= require ./lib/underscore-min
+//= require ./lib/backbone-min
+//= require ./lib/bootstrap.min
+//= require_tree ./models
+//= require_tree ./views
