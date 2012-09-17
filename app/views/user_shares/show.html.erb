@@ -3,81 +3,55 @@
     <div class="row">
       <div class="span9 image-detail">
         <div class="auto image-single">
-          <img src="<%=asset_path '4_b.jpg'%>" class="centered" />
+          <img src="<%= @user_share.photos.first.url%>" class="centered" />
         </div>
       </div>
       <div class="span9 image-description">
-        <h3>Description</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed erat tristique sem rutrum laoreet facilisis ut tortor. 
-        Cras tristique ultricies est sit amet consequat. Quisque nibh nunc, consequat at molestie vel, fermentum sit amet felis. 
-        Donec id lectus ligula, non tempus ante. Aliquam ut turpis enim, eget rhoncus arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Morbi feugiat accumsan felis, in mattis sapien fringilla et. Nullam placerat viverra massa, eu vestibulum neque blandit in. 
-        Morbi ac diam ac elit interdum tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet, enim sit amet faucibus rhoncus, eros tortor.</p>
+        <h3>描述</h3>
+        <p><%= @user_share.description %></p>
       </div>
       <div class="span9 image-comments">
         <div class="comment">
-          <h3>3 Comments On This Image</h3>
+          <h3>评论</h3>
           <ul>
-            <li>
-            <div class="avatar">
-              <a href="#"><img src="<%=asset_path 'gravatar.jpg' %>" /></a>
-              <span class="comment-name"><a href="#">John Doe</a></span>
-              <span class="comment-date"><p>July 16th, 2012 at 4:49 pm</p></span>
-            </div>
-            <div class="comment-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis condimentum dignissim. 
-              Curabitur sapien nisi, ultrices vitae iaculis quis, consectetur ac neque. Phasellus vitae lorem.</p>
-            </div>
-            </li>
+            <% @user_share.comments.each do |comment| %>
             <li class="comment-blue">
             <div class="avatar">
               <a href="#"><img src="<%=asset_path 'gravatar.jpg' %>" /></a>
-              <span class="comment-name"><a href="#">John Doe</a></span>
-              <span class="comment-date"><p>July 16th, 2012 at 5:09 pm</p></span>
+              <span class="comment-name"><a href="#"><%= comment.user.id %></a></span>
+              <span class="comment-date"><p><%= comment.created_at %></p></span>
             </div>
             <div class="comment-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis condimentum dignissim. 
-              Curabitur sapien nisi, ultrices vitae iaculis quis, consectetur ac neque. Phasellus vitae lorem.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis condimentum dignissim. 
-              Curabitur sapien nisi, ultrices vitae iaculis quis, consectetur ac neque. Phasellus vitae lorem.</p>
+              <p><%=comment.body %></p>
             </div>
             </li>
-            <li>
-            <div class="avatar">
-              <a href="#"><img src="<%=asset_path 'gravatar.jpg' %>" /></a>
-              <span class="comment-name"><a href="#">John Doe</a></span>
-              <span class="comment-date"><p>July 16th, 2012 at 5:49 pm</p></span>
-            </div>
-            <div class="comment-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis condimentum dignissim. 
-              Curabitur sapien nisi, ultrices vitae iaculis quis, consectetur ac neque. Phasellus vitae lorem.</p>
-            </div>
-            </li>
+            <% end %>
           </ul>
         </div>
 
+        <% if !@user_share.isown?(current_user.id) %>
         <br class="clearfix" />
-        <h3>Post Comment</h3>
+        <h3>发布评论</h3>
         <div class="post-comment">
-          <form class="form-horizontal">
-            <textarea rows="5" class="input-xxlarge inp-btm" name="comments" style="resize: none;" placeholder="Enter your comment here.."></textarea><br />
-          </form>
+          <%= render "comments/form", :user_share => @user_share%>
         </div>
+        <% end  %>
+
       </div>
     </div>
   </div>
 
   <div class="span3">
     <div class="row">
-      <div class="span3 sidebar-detail-menu">
+      <div class="span3 sidebar-detail-menu" >
         <% if !@user_share.isown?(current_user.id) %>
           <ul>
-            <li><a href="#" rel="tooltip" title="Share">转享</a></li>
-            <li><a href="#" rel="tooltip" title="Like">喜欢</a></li>
-          </ul>
+            <li><%=render "shares/form", :user_share => @user_share%></li>
+            <li><%=render "user_likes/form", :user_share => @user_share%></li>
             <% if @user_share.can_buy? %>
-              <%=render "cart_items/form" %>
+              <li><%=render "cart_items/form", :user_share => @user_share %></li>
             <% end %>
+          </ul>
         <% else %>
           <ul>
             <% if @user_share.can_buy? %>
@@ -101,11 +75,11 @@
       </div>
       <div class="span3 sidebar-detail-category">
         <div class="category-image">
-          <div class="cat-tags">Tags : <a href="#">Building</a>, <a href="#">Tower</a>, <a href="#">Eifel</a>, <a href="#">Wonders of the world</a>, <a href="#">Miracle</a></div>
-          <div class="cat-category">Category : <a href="#">image</a>, <a href="#">building</a>, <a href="#">photography</a> </div>
-          <div class="cat-buy">Buy by : <a href="#">John Doe</a>, <a href="#">Lisa</a>, <a href="#">Andra</a>, <a href="#">Avriq</a>, <a href="#">Aji satria</a> </div>
-          <div class="cat-liked">Liked by : <a href="#">Lisa</a>, <a href="#">John Doe</a>, <a href="#">Avriq</a>, <a href="#">Aji satria</a> </div>
-          <div class="cat-shared">Shared by : <a href="#">Nichols</a>, <a href="#">John Doe</a>, <a href="#">Avriq</a>, <a href="#">Abraham</a>, <a href="#">Jordan</a>, <a href="#">James</a> </div>
+          <div class="cat-tags">Tags : <% @user_share.tags.each do | tag | %><a href="#"><%= tag.name %></a> <% end  %></div>
+          <div class="cat-category">Category : <a href="#"><%= @user_share.category.name %></a> </div>
+          <div class="cat-buy">Buy by :  <a href="#">Aji satria</a> </div>
+          <div class="cat-liked">Liked by : <% @user_share.user_likes.each do |user_like| %><a href="#"><%= user_like.user_id %></a><% end %> </div>
+          <div class="cat-shared">Shared by : <% @user_share.shares.each do | share | %><a href="#"><%= share.user_id %></a><% end %> </div>
         </div>
       </div>
     </div>

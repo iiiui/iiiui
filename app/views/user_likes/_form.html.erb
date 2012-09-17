@@ -1,12 +1,6 @@
 <%= simple_form_for(@user_like) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :user_id %>
-    <%= f.input :item_id %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.input :user_id,:as => :hidden, :input_html => { :value => current_user.id } %>
+  <%= f.input :user_shares_id, :as => :hidden,:input_html => { :value => user_share.id }%>
+  <%= f.button :submit ,:value => "喜欢" %>
 <% end %>

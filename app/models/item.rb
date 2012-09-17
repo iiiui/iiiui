@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :description, :title, :owner_id, :user_shares_id
+  attr_accessible :description, :title, :owner_id, :user_shares_id, :price, :count, :limit_at
   belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
   validates :title,:owner_id,:user_shares_id, :presence => true
   belongs_to :user_share, :class_name => "UserShare", :foreign_key => "user_shares_id"

@@ -1,12 +1,13 @@
 <%= simple_form_for(@user_share) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :picture_url %>
-    <%= f.input :title %>
-    <%= f.text_area :description %>
-  </div>
-
+  <%= f.input :category_id, :collection => current_user.categories %>
+  <%= f.simple_fields_for :photos do |p| %>
+    <%= p.input :url, :as => :file%>
+  <% end %>
+  <h3>tags</h3>
+  <%= f.simple_fields_for :tags do |t| %>
+    <%= t.input :name %>
+  <% end %>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

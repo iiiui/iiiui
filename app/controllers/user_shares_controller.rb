@@ -16,6 +16,9 @@ class UserSharesController < ApplicationController
   def show
     @user_share = UserShare.find(params[:id])
     @cart_item = CartItem.new
+    @user_like = UserLike.new
+    @share = Share.new
+    @comment = Comment.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user_share }
@@ -26,6 +29,8 @@ class UserSharesController < ApplicationController
   # GET /user_shares/new.json
   def new
     @user_share = UserShare.new
+    @photo = @user_share.photos.build
+    3.times { @tag = @user_share.tags.build}
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user_share }

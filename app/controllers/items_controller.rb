@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     @item = Item.new(params[:item])
     respond_to do |format|
       if @item.insert(current_user.id,params[:item][:user_shares_id])
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to "/user_shares/"+@item.user_share.id.to_s, notice: 'Item was successfully created.' }
         format.json { render json: @item, status: :created, location: @item }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to "/user_shares/"+@item.user_share.id.to_s, notice: 'Item was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

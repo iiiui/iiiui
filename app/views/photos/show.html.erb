@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <img src="<%= @photo.url %>"/>
+</p>
+
+<p>
+  <b>Origin name:</b>
+  <%= @photo.origin_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

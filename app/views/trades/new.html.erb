@@ -34,6 +34,7 @@
           <thead>
             <tr>
               <th>商品名称</th>
+              <th class="value">图片</th>
               <th class="value">价格</th>
               <th class="value">数量</th>
               <th class="actions">操作</th>
@@ -42,8 +43,9 @@
           <tbody>
             <% @cart.cart_items.each do |cart_item| %>
             <tr>
-              <td><a href="">Product Name</a> <span class="meta"><%= cart_item.item_id %></span></td>
-              <td class="value">$132.00</td>
+              <td><img style="width:100px;height:100px;" src="<%= cart_item.item.user_share.photos.first.url %>"/></td>
+              <td><a href="<%= cart_item.item_id %>"><%= cart_item.item.title %></a> </td>
+              <td class="value"><%= cart_item.item.price %></td>
               <td>1</td>
               <td class="actions">
                 <input type="button" value="删除" class="btn"/>

@@ -1,5 +1,9 @@
 Iiiui::Application.routes.draw do
 
+  resources :shares
+
+  resources :photos
+
   resources :cart_items
 
   resources :carts

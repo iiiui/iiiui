@@ -46,7 +46,7 @@ class UserLikesController < ApplicationController
 
     respond_to do |format|
       if @user_like.save
-        format.html { redirect_to @user_like, notice: 'User like was successfully created.' }
+        format.html { redirect_to "/user_shares/"+@user_like.user_shares_id.to_s, notice: 'User like was successfully created.' }
         format.json { render json: @user_like, status: :created, location: @user_like }
       else
         format.html { render action: "new" }

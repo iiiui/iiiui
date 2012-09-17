@@ -17,11 +17,11 @@ class Trade < ActiveRecord::Base
   end
 
   def self.buys(buyer_id)
-    self.where(:buyer_id => buyer_id) 
+    self.where(:buyer_id => buyer_id).order("created_at desc")
   end
 
   def self.sells(seller_id)
-    self.where(:seller_id => seller_id) 
+    self.where(:seller_id => seller_id).order("created_at desc")
   end
 
 end
