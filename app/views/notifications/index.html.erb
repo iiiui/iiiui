@@ -1,31 +1,26 @@
-<h1>Listing notifications</h1>
+<div class="span9 content-setting">
+  <table class="table">
+    <tr>
+      <th>From</th>
+      <th>To</th>
+      <th>Object</th>
+      <th>Object type</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<table>
-  <tr>
-    <th>From</th>
-    <th>To</th>
-    <th>Object</th>
-    <th>Object type</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @notifications.each do |notification| %>
-  <tr>
-    <td><%= notification.from_id %></td>
-    <td><%= notification.to_id %></td>
-    <td><%= notification.object_id %></td>
-    <td><%= notification.object_type %></td>
-    <td><%= notification.description %></td>
-    <td><%= link_to 'Show', notification %></td>
-    <td><%= link_to 'Edit', edit_notification_path(notification) %></td>
-    <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Notification', new_notification_path %>
+    <% @notifications.each do |notification| %>
+      <tr>
+        <td><%= notification.from_id %></td>
+        <td><%= notification.to_id %></td>
+        <td><%= notification.object_id %></td>
+        <td><%= notification.object_type %></td>
+        <td><%= notification.description %></td>
+        <td><%= link_to 'Show', notification %></td>
+        <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

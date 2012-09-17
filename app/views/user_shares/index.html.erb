@@ -1,25 +1,21 @@
-<h1>Listing user_shares</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Item</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @user_shares.each do |user_share| %>
-  <tr>
-    <td><%= user_share.user_id %></td>
-    <td><%= user_share.item_id %></td>
-    <td><%= link_to 'Show', user_share %></td>
-    <td><%= link_to 'Edit', edit_user_share_path(user_share) %></td>
-    <td><%= link_to 'Destroy', user_share, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New User share', new_user_share_path %>
+<div class="span9 content-setting">
+  <% @user_shares.each do |share| %>
+    <div class="span3 galery">
+      <div class="image-galery">
+        <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
+          <img src="<%=share.photos.first.url %>"/>
+        </a>
+      </div>
+      <div class="count-galery">
+        <ul>
+          <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
+          <li><i class="icon-comment"></i><%=share.comments.count %> </li>
+          <li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
+        </ul>
+      </div>
+      <div class="tags-galery">
+        <p><i class="icon-tags"></i> Tags : <% share.tags.each do | tag | %><a href="#"><%= tag.name %></a> <% end  %></p>
+      </div>
+    </div>
+  <% end  %>
+</div>

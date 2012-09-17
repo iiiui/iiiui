@@ -1,25 +1,33 @@
-<h1>Listing cart_items</h1>
+  <div class="row">
+    <div class="span12">
+      <div class="slate">
+        <div class="page-header">
+          <h2>购物车</h2>
+        </div>
+        <table class="orders-table table">
+          <thead>
+            <tr>
+              <th>商品名称</th>
+              <th class="value">图片</th>
+              <th class="value">价格</th>
+              <th class="value">数量</th>
+              <th class="actions">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cart.cart_items.each do |cart_item| %>
+            <tr>
+              <td><img style="width:100px;height:100px;" src="<%= cart_item.item.user_share.photos.first.url %>"/></td>
+              <td><a href="<%= cart_item.item_id %>"><%= cart_item.item.title %></a> </td>
+              <td class="value"><%= cart_item.item.price %></td>
+              <td>1</td>
+              <td class="actions">
+                <input type="button" value="删除" class="btn"/>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-<table>
-  <tr>
-    <th>Item</th>
-    <th>Cart</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cart_items.each do |cart_item| %>
-  <tr>
-    <td><%= cart_item.item_id %></td>
-    <td><%= cart_item.cart_id %></td>
-    <td><%= link_to 'Show', cart_item %></td>
-    <td><%= link_to 'Edit', edit_cart_item_path(cart_item) %></td>
-    <td><%= link_to 'Destroy', cart_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Cart item', new_cart_item_path %>

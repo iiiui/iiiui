@@ -1,18 +1,24 @@
 <div class="span9 content-setting">
-  <table class="table">
-    <tr>
-      <th>Name</th>
-      <th>操作</th>
-    </tr>
-
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %>
-        <%= link_to 'Edit', edit_category_path(category) %>
-        <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+  <% @categories.each do |category| %>
+    <h3><%=category.name %></h3>
+    <% category.user_shares.each do |share| %>
+      <div class="span3 galery">
+        <div class="image-galery">
+          <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
+            <img src="<%=share.photos.first.url %>"/>
+          </a>
+        </div>
+        <div class="count-galery">
+          <ul>
+            <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
+            <li><i class="icon-comment"></i><%=share.comments.count %> </li>
+            <li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
+          </ul>
+        </div>
+        <div class="tags-galery">
+          <p><i class="icon-tags"></i> Tags : <% share.tags.each do | tag | %><a href="#"><%= tag.name %></a> <% end  %></p>
+        </div>
+      </div>
+    <% end  %>
   <% end %>
-</table>
-<%= link_to 'New Category', new_category_path %>
 </div>
