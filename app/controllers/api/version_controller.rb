@@ -1,5 +1,6 @@
 class Api::VersionController < ApplicationController
+  respond_to :json
   def index
-    render :json =>{"version" =>"1.0"} 
+    respond_with "1.0"
   end
 end

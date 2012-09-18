@@ -34,5 +34,6 @@
     <%= render "layouts/footer" %>
 
     <%= javascript_include_tag "application" %>
+    <%= yield(:javascript) if content_for?(:javascript) %>
   </body>
 </html>
