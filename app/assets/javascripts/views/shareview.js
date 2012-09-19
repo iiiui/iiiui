@@ -1,4 +1,5 @@
 var NewSharesView = Backbone.View.extend({
+    el: $("#new_share"),
     events: {
       'click #addShare': 'addShare'
     },
