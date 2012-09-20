@@ -32,10 +32,8 @@
       </div>
     </div>
     <%= render "layouts/footer" %>
-
     <!--share modal -->
-    <%= render 'user_shares/form'%> 
-
+    <%= render 'user_shares/form' if current_user%>
     <%= javascript_include_tag "application" %>
     <%= yield(:javascript) if content_for?(:javascript) %>
   </body>
