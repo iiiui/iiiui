@@ -22,6 +22,7 @@ class UserShare < ActiveRecord::Base
     self.user_id = user_id
     self.save
   end
+  
 
   def isown?(user_id)
     self.user_id == user_id

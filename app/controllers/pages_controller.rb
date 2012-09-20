@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
+    @user_share = UserShare.new
+    @photo = @user_share.photos.build
+    3.times { @tag = @user_share.tags.build}
     @shares = UserShare.all
     respond_to do |format|
       format.html # index.html.erb
