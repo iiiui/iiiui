@@ -15,5 +15,6 @@
 //= require ./lib/underscore-min
 //= require ./lib/backbone-min
 //= require ./lib/bootstrap.min
+//= require ./lib/jquery.form
 //= require_tree ./models
 //= require_tree ./views

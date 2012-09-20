@@ -46,14 +46,10 @@ class UserSharesController < ApplicationController
   # POST /user_shares.json
   def create
     @user_share = UserShare.new(params[:user_share])
-    respond_to do |format|
-      if @user_share.insert(current_user.id)
-        format.html { redirect_to @user_share, notice: 'User share was successfully created.' }
-        format.json { render json: @user_share, status: :created, location: @user_share }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user_share.errors, status: :unprocessable_entity }
-      end
+    if @user_share.insert(current_user.id)
+      render json: @user_share, status: :created
+    else
+      render json: @user_share.errors, status: :unprocessable_entity
     end
   end
 

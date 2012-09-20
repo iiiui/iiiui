@@ -4,7 +4,7 @@
   @photo = @user_share.photos.build
   3.times { @tag = @user_share.tags.build}
 %>
-<div class="modal hide"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal hide"  id="shareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">上传图片</h3>
@@ -21,8 +21,29 @@
       <%= t.input :name %>
   <% end %>
     <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.button :submit, :id=>'addUserShare' %>
     </div>
   <% end %>
   </div>
 </div>
+<div class="modal hide"  id="share_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">分享成功</h3>
+  </div>
+  <div class="modal-body" >
+    <a id="wantbuy">享购</a>
+    <a id="tosell" >享售</a>
+    <a id="continuesharebtn" >继续分享</a>
+    <a id="sharedetail">查看分享</a>
+    <br>
+    分享至微薄或者其他平台
+  </div>
+</div>
+<% content_for :javascript do %>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+          new NewUserSharesView();
+      });
+    </script>
+  <% end %>
