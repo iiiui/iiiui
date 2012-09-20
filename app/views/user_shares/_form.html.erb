@@ -1,4 +1,9 @@
 <!--share modal -->
+<% 
+  @user_share = UserShare.new
+  @photo = @user_share.photos.build
+  3.times { @tag = @user_share.tags.build}
+%>
 <div class="modal hide"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
