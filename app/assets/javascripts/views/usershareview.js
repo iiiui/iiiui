@@ -3,10 +3,13 @@ var NewUserSharesView = Backbone.View.extend({
   el: 'body',
   events: {
     'click #addUserShare': 'addUserShare',
-    'click #continuesharebtn' :'continueshare'
+    'click #continuesharebtn' :'continueshare',
+    'click #tosell' :'tosell',
+    'click #additem': 'additem'
   },
 
   initialize: function() {
+    usershare = new UserShare();
   },
 
   addUserShare: function(e) {
@@ -23,6 +26,7 @@ var NewUserSharesView = Backbone.View.extend({
       $('#shareModal').modal('hide');
       $('#share_success').modal('show');
       // console.log(data);
+      usershare.set("id",data.id);
       $('#sharedetail').attr('href',"/user_shares/"+data.id);
     }); 
   },
@@ -30,5 +34,24 @@ var NewUserSharesView = Backbone.View.extend({
     e.preventDefault();
     $('#shareModal').modal('show');
     $('#share_success').modal('hide');
+  },
+  tosell: function(e){
+    $('#share_success').modal('hide');
+    $('#shareModal').modal('hide');
+    console.log(usershare.get("id"));
+    $("#item_user_shares_id").val(usershare.get("id"));
+    $('#itemModal').modal('show');
+  },
+  additem: function(e) {
+    e.preventDefault();
+    var options = { 
+      // success:       showResponse  // post-submit callback 
+      dataType: 'json'        // 'xml', 'script', or 'json' (expected server response type) 
+    }; 
+    $("#new_item").ajaxForm(options).ajaxSubmit(function(data) { 
+      $('#itemModal').modal('hide');
+      $('#share_success').modal('show');
+    }); 
   }
+
 });

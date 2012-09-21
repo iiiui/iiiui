@@ -13,10 +13,11 @@ var NewLikesView = Backbone.View.extend({
       // like.set('user_id',$("#like_user_id").val());
       // like.set('user_likes_id',$("#like_user_likes_id").val());
       // like.save();
+
     },
 
-    // clearInput: function() {
-    //   console.log("success");
-    // }
+    addSuccess: function() {
+      console.log("success");
+    }
 
 });

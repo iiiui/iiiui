@@ -10,9 +10,9 @@ var NewSharesView = Backbone.View.extend({
     addShare: function(e) {
       e.preventDefault();
       share = new Share();
-      share.set('user_id',$("#share_user_id").val());
-      share.set('user_shares_id',$("#share_user_shares_id").val());
-      share.save();
+      // share.set('user_id',$("#share_user_id").val());
+      // share.set('user_shares_id',$("#share_user_shares_id").val());
+      // share.save();
     },
 
     // clearInput: function() {

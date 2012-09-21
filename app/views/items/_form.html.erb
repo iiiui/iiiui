@@ -1,16 +1,22 @@
-<%= simple_form_for(@item) do |f| %>
-  <%= f.error_notification %>
-  <h3>商品图片</h3>
-  <img src="<%= @share.photos.first.url %>">
-  <h3>商品描述</h3>
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :price %>
-    <%= f.input :count %>
-    <%= f.input :user_shares_id, :as => :hidden, :input_html => { :value =>@share.id  } %>
-    <%= f.input :description ,:input_html => { :value =>@share.description,:rows => 5  } %>
+<div class="modal hide"  id="itemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">分享成功</h3>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="modal-body" >
+    <%= simple_form_for(Item.new) do |f| %>
+    <%= f.error_notification %>
+    <h3>商品描述</h3>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :price %>
+      <%= f.input :count %>
+      <%= f.input :user_shares_id, :as => :hidden %>
+      <%= f.input :description ,:input_html => { :rows => 5  } %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit,:id => "additem" %>
+    </div>
+  <% end %>
   </div>
-<% end %>
+</div>
