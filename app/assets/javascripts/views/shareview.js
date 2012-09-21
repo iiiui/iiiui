@@ -9,14 +9,19 @@ var NewSharesView = Backbone.View.extend({
 
     addShare: function(e) {
       e.preventDefault();
-      share = new Share();
-      // share.set('user_id',$("#share_user_id").val());
-      // share.set('user_shares_id',$("#share_user_shares_id").val());
-      // share.save();
-    },
+      // share = new Share();
+      var options = { 
+      // success:       showResponse  // post-submit callback 
+        dataType: 'json'        // 'xml', 'script', or 'json' (expected server response type) 
+      }; 
+      $("#new_share").ajaxForm(options).ajaxSubmit(function(data) { 
+        $("#addShare").attr('disabled','true'); 
+        this.addSuccess;
+      });
 
-    // clearInput: function() {
-    //   console.log("success");
-    // }
+    },
+    addSuccess: function() {
+      console.log("success");
+    }
 
 });

@@ -1,5 +1,5 @@
 var NewLikesView = Backbone.View.extend({
-    el: $("#new_like"),
+    el: $("#new_user_like"),
     events: {
       'click #addLike': 'addLike'
     },
@@ -9,11 +9,15 @@ var NewLikesView = Backbone.View.extend({
 
     addLike: function(e) {
       e.preventDefault();
-      like = new Like();
-      // like.set('user_id',$("#like_user_id").val());
-      // like.set('user_likes_id',$("#like_user_likes_id").val());
-      // like.save();
-
+      // like = new Like();
+      var options = { 
+      // success:       showResponse  // post-submit callback 
+        dataType: 'json'        // 'xml', 'script', or 'json' (expected server response type) 
+      }; 
+      $("#new_user_like").ajaxForm(options).ajaxSubmit(function(data) { 
+        $("#addLike").attr('disabled','true'); 
+        this.addSuccess;
+      });
     },
 
     addSuccess: function() {

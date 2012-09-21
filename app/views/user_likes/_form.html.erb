@@ -2,5 +2,5 @@
   <%= f.error_notification %>
   <%= f.input :user_id,:as => :hidden, :input_html => { :value => current_user.id } %>
   <%= f.input :user_shares_id, :as => :hidden,:input_html => { :value => user_share.id }%>
-  <%= f.button :submit ,:value => "喜欢" %>
+  <%= f.button :submit ,:value => "喜欢",:id => "addLike" %>
 <% end %>

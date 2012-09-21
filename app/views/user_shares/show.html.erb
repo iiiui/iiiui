@@ -13,7 +13,7 @@
       <div class="span9 image-comments">
         <div class="comment">
           <h3>评论</h3>
-          <ul>
+          <ul id="comments">
             <% @user_share.comments.each do |comment| %>
             <li class="comment-blue">
             <div class="avatar">
@@ -93,6 +93,8 @@
       $(document).ready(function() {
          var shares = new Shares();
          new NewSharesView();
+         new NewCommentView();
+         new NewLikesView();
       });
     </script>
   <% end %>
