@@ -4,6 +4,7 @@ class Item < ActiveRecord::Base
   validates :title,:owner_id,:user_shares_id, :presence => true
   belongs_to :user_share, :class_name => "UserShare", :foreign_key => "user_shares_id"
   has_many :cart_items
+  has_many :orders
   before_destroy :ensure_not_referenced_by_any_cart_item
 
   def insert(owner_id,user_shares_id)

@@ -53,7 +53,7 @@ class TradesController < ApplicationController
     @trade = Trade.new(params[:trade])
     @cart = current_cart
     respond_to do |format|
-      if @trade.insert(current_user.id,@cart.cart_items.first.item.owner.id)
+      if @trade.insert(current_user.id,@cart.cart_items.first.item.owner.id,@cart)
         @cart.destroy
         format.html { redirect_to @trade, notice: 'Trade was successfully created.' }
         format.json { render json: @trade, status: :created, location: @trade }

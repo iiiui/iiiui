@@ -1,0 +1,30 @@
+<div class="span9 content-setting">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Seller</th>
+      <th>Seller mobile</th>
+      <th>Seller email</th>
+      <th>Received payment</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>下单时间</th>
+      <th>操作</th>
+    </tr>
+
+    <% @trades.each do |trade| %>
+      <tr>
+        <td><%= trade.id %></td>
+        <td><%= trade.seller.id %></td>
+        <td><%= trade.seller_mobile %></td>
+        <td><%= trade.seller.email %></td>
+        <td><%= trade.received_payment %></td>
+        <td><%= trade.total_fee %></td>
+        <td><%= trade.status %></td>
+        <td><%= trade.created_at %></td>
+        <td><%= link_to 'Show', trade %>
+        <%= link_to 'Edit', edit_trade_path(trade) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

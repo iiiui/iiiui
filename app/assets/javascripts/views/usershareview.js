@@ -5,7 +5,8 @@ var NewUserSharesView = Backbone.View.extend({
     'click #addUserShare': 'addUserShare',
     'click #continuesharebtn' :'continueshare',
     'click #tosell' :'tosell',
-    'click #additem':'additem'
+    'click #additem':'additem',
+    'click #turntosell':'turntosell'
   },
 
   initialize: function() {
@@ -52,6 +53,9 @@ var NewUserSharesView = Backbone.View.extend({
       $('#itemModal').modal('hide');
       $('#share_success').modal('show');
     });
+  },
+  turntosell: function(e) {
+    $("#item_user_shares_id").val($("#turntosell").data("id"));
   }
 
 });

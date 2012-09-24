@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_filter :isadmin
-
+  layout 'admin'
   def index
     @users = User.paginate(:page => params[:page])
   end

@@ -1,0 +1,64 @@
+<%= simple_form_for(@trade) do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="span12">
+      <div class="slate">
+        <div class="page-header">
+          <h2>配送地址</h2>
+        </div>
+        <p><%= f.input :receiver_name %></p>
+        <p><%= f.input :receiver_state %><%= f.input :receiver_city %><%= f.input :receiver_district %><%= f.input :receiver_address %></p>
+        <p><%= f.input :receiver_zip %></p>
+        <p><%= f.input :receiver_mobile %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <div class="slate">
+        <div class="page-header">
+          <h2>支付方式</h2>
+        </div>
+        <p><%= f.input :received_payment %></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="slate">
+        <div class="page-header">
+          <h2>商品</h2>
+        </div>
+        <table class="orders-table table">
+          <thead>
+            <tr>
+              <th>商品名称</th>
+              <th class="value">图片</th>
+              <th class="value">价格</th>
+              <th class="value">数量</th>
+              <th class="actions">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cart.cart_items.each do |cart_item| %>
+            <tr>
+              <td><img style="width:100px;height:100px;" src="<%= cart_item.item.user_share.photos.first.url %>"/></td>
+              <td><a href="<%= cart_item.item_id %>"><%= cart_item.item.title %></a> </td>
+              <td class="value"><%= cart_item.item.price %></td>
+              <td>1</td>
+              <td class="actions">
+                <input type="button" value="删除" class="btn"/>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="span12 listing-buttons">
+      <button type="submit" class="btn btn-primary">提交订单</button>
+    </div>
+  <% end %>
+</div>

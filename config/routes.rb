@@ -49,6 +49,7 @@ Iiiui::Application.routes.draw do
     resources :categories
     resources :tags
     resources :comments
+    resources :user_shares
   end
 
   namespace :api do

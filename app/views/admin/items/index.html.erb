@@ -1,25 +1,66 @@
-<h1>Listing items</h1>
+<div class="row-fluid">
+  <div class="widget_container">
+    <div class="well nomargin">
+      <div class="navbar navbar-static navbar_as_heading">
+        <div class="navbar-inner">
+          <div class="container" style="width: auto;">
+            <a class="brand">Pages</a>
+            <a class="btn pull-right" href="add-new-article.html">Add New</a>
+          </div>
+        </div>
+      </div>
+      <div class="subnav">
+        <div class="btn-toolbar pull-left">
+          <div class="btn-group">
+            <button class="btn btn-small active btn-duadua">All<span class="badge abs1">30</span></button>
+            <button class="btn btn-small btn-duadua"><i class="icon-ok-3"></i> Published <span class="badge badge-info abs1">30</span></button>
+            <button class="btn btn-small btn-duadua"><i class="icon-pencil"></i> Draft <span class="badge badge-warning abs1">0</span></button>
+            <button class="btn btn-small btn-duadua"><i class="icon-trash-2 btn-duadua"></i> Trash <span class="badge badge-important abs1">0</span></button>
+          </div>
+        </div>
+        <form class="navbar-search pull-right" action="">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+      </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+      <table class="table smallfont">
+        <thead>
+          <tr>
+            <td style="width:20px;"><input type="checkbox" id="chkbck" /></td>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Categories</td>
+            <td>Tags</td>
+            <td><i class="icon-large icon-comment-alt-1"></i></td>
+            <td>Date</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" class="chkbck" /></td>
+            <td>
+              <a href="#" class="post_title">Konsolidasi Konservasi ( K 2 )</a>
+              <div class="operation">
+                <div class="btn-group" style="display:none;">
+                  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
+                  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
+                  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
+                </div>
+              </div>
+            </td>
+            <td>Admin</td>
+            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
+            <td>No Tags</td>
+            <td><span class="badge badge-info">0</span></td>
+            <td>2012/05/03<br />Published</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="subnav nobg">
+        <div class="span4">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% @items.each do |item| %>
-  <tr>
-    <td><%= item.title %></td>
-    <td><%= item.description %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Item', '/admin/items/new' %>

@@ -1,4 +1,6 @@
 class Admin::CategoriesController < ApplicationController
+  before_filter :isadmin
+  layout 'admin'
   # GET /categories
   # GET /categories.json
   def index

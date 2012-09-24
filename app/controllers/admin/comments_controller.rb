@@ -1,4 +1,6 @@
-class CommentsController < ApplicationController
+class Admin::CommentsController < ApplicationController
+  before_filter :isadmin
+  layout 'admin'
   # GET /comments
   # GET /comments.json
   def index

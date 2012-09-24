@@ -32,7 +32,7 @@
     <![endif]-->
 
     <!-- bootstrap fav and touch icons, replace with your own -->
-    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="/admin/assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/admin/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/admin/assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/admin/assets/ico/apple-touch-icon-72-precomposed.png">
@@ -46,180 +46,157 @@
     <div id="header" class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="index.html"><img src="/admin/examples/logo.png" /></a>
+          <a class="brand" href="/" target="blank">Site</a>
           <div class="btn-toolbar pull-right">
             <div class="btn-group">
               <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="icon-user-1"></i> Olas Navigator
-                <span class="caret"></span>
-              </a>
+                <i class="icon-user-1"></i><%= current_user.name %>
+              <span class="caret"></span>
+            </a>
 
-              <ul class="dropdown-menu megamenu col2 ud">
-                <li class="sub">
-                <div class="img_round img_c_margin"><img width="70" height="70" src="/admin/examples/avatar-sample.png" /></div>
-                </li>
-                <li class="sub">
-                <ul>
-                  <li><a href="#"><i class="icon-large icon-cog-2"></i> Profile</a></li>
-                  <li><a href="#"><i class="icon-large icon-key"></i> Privacy Settings</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#"><i class="icon-large icon-logout-1"></i> Logout</a></li>
-                </ul>
-                </li>
+            <ul class="dropdown-menu megamenu col2 ud">
+              <li class="sub">
+              <div class="img_round img_c_margin"><img width="70" height="70" src="/admin/examples/avatar-sample.png" /></div>
+              </li>
+              <li class="sub">
+              <ul>
+                <li><a href="#"><i class="icon-large icon-cog-2"></i> Profile</a></li>
+                <li><a href="#"><i class="icon-large icon-key"></i> Privacy Settings</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="icon-large icon-logout-1"></i> Logout</a></li>
               </ul>
+              </li>
+            </ul>
 
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- top fixed navbar -->
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <!-- sidebar -->
+      <div id="sidebar" class="span2">			
+        <div class="accordion custom-acc" id="accordionSB">
+
+          <div class="accordion-group fs">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#dashboardsb">
+                <i class="icon-large icon-th-large head_icon"></i> Dashboard
+              </a>
+            </div>
+            <div id="dashboardsb" class="accordion-body collapse in">
+              <div class="accordion-inner">
+                <ul class="nav nav-list">
+                  <li class="active"><a href="/admin/dashboard"><i class="icon-large icon-th"></i> Dashboard</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#articlesb">
+                <i class="icon-large icon-th-large head_icon"></i> Shares
+              </a>
+            </div>
+            <div id="articlesb" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list">
+                  <li><a href="/admin/user_shares"><i class="icon-large icon-th"></i> List</a></li>
+                  <li><a href="/admin/categories"><i class="icon-large icon-th"></i> Categories</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#pagesb">
+                <i class="icon-large icon-th-large head_icon"></i> Pages
+              </a>
+            </div>
+            <div id="pagesb" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list">
+                  <li><a href="/admin/pages"><i class="icon-large icon-th"></i> List</a></li>
+                  <li><a href="/admin/pages/new"><i class="icon-large icon-th"></i>Add Page</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>					
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#reportsb">
+                <i class="icon-large icon-th-large head_icon"></i> Trades
+              </a>
+            </div>
+            <div id="reportsb" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list">
+                  <li><a href="/admin/trades"><i class="icon-large icon-th"></i> List</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#mediasb">
+                <i class="icon-large icon-th-large head_icon"></i> Users
+              </a>
+            </div>
+            <div id="mediasb" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list">
+                  <li><a href="/admin/users"><i class="icon-large icon-th"></i> List</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#commentsb">
+                <i class="icon-large icon-th-large head_icon"></i> Comments
+              </a>
+            </div>
+            <div id="commentsb" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list">
+                  <li><a href="/admin/comments"><i class="icon-large icon-th"></i> List</a></li>
+                </ul>
+              </div>
             </div>
           </div>
 
         </div>
-      </div>
-    </div><!-- top fixed navbar -->
+      </div><!-- sidebar -->
+      <!-- main content -->
+      <div id="main_content" class="span10">
+        <%= yield %>
+      </div><!-- main content -->
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-
-        <!-- sidebar -->
-        <div id="sidebar" class="span2">      
-          <div class="accordion custom-acc" id="accordionSB">
-
-            <div class="accordion-group fs">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#dashboardsb">
-                  <i class="icon-large icon-th-large head_icon"></i> Dashboard
-                </a>
-              </div>
-              <div id="dashboardsb" class="accordion-body collapse in">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li class="active"><a href="/"><i class="icon-large icon-th"></i> Dashboard</a></li>
-                    <li><a href="stats.html"><i class="icon-large icon-th"></i> Stats</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#articlesb">
-                  <i class="icon-large icon-th-large head_icon"></i> Shares
-                </a>
-              </div>
-              <div id="articlesb" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="/admin/shares"><i class="icon-large icon-th"></i> Share</a></li>
-                    <li><a href="/admin/shares/new"><i class="icon-large icon-th"></i> Add Share</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#articlesb">
-                  <i class="icon-large icon-th-large head_icon"></i> Items 
-                </a>
-              </div>
-              <div id="articlesb" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="/admin/items"><i class="icon-large icon-th"></i> List</a></li>
-                    <li><a href="/admin/items/new"><i class="icon-large icon-th"></i> Add New</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#pagesb">
-                  <i class="icon-large icon-th-large head_icon"></i> Pages
-                </a>
-              </div>
-              <div id="pagesb" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="/admin/pages"><i class="icon-large icon-th"></i> List</a></li>
-                    <li><a href="/admin/pages/new"><i class="icon-large icon-th"></i> Add New</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>          
-
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#commentsb">
-                  <i class="icon-large icon-th-large head_icon"></i> Comments
-                </a>
-              </div>
-              <div id="commentsb" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="comments.html"><i class="icon-large icon-th"></i> Comments</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-           <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#commentsb">
-                  <i class="icon-large icon-th-large head_icon"></i> Orders
-                </a>
-              </div>
-              <div id="commentsb" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="comments.html"><i class="icon-large icon-th"></i> Comments</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-           <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSB" href="#commentsb">
-                  <i class="icon-large icon-th-large head_icon"></i> Users
-                </a>
-              </div>
-              <div id="commentsb" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="comments.html"><i class="icon-large icon-th"></i> Comments</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div><!-- sidebar -->
-
-        <!-- main content -->
-        <div id="main_content" class="span10">
-          <%= yield %>
-        </div><!-- main content -->
-
-      </div>
     </div>
+  </div>
 
-    <!-- JS Files
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://www.google.com/jsapi"></script>  
-    <script src="/admin/assets/js/jquery.js"></script>
-    <script src="/admin/plugins/wysiwyg/wysihtml5-0.3.0_rc3.min.js"></script>
-    <script src="/admin/assets/js/bootstrap.js"></script> 
-
-    <script src="/admin/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-    <script src="/admin/plugins/colorpicker/js/bootstrap-colorpicker.js"></script>
-    <script src="/admin/plugins/wysiwyg/bootstrap-wysihtml5.js"></script>
-
-    <script src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
-    <script src="/admin/plugins/plupload/js/plupload.full.js"></script>
-    <script src="/admin/plugins/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
-
-    <script src="/admin/js/demo.js"></script>
-    <script src="/admin/js/google-chart-index.js"></script>
-
-  </body>
+  <!-- JS Files
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- <script src="https://www.google.com/jsapi"></script>   -->
+  <script src="/admin/assets/js/jquery.js"></script>
+  <script src="/admin/plugins/wysiwyg/wysihtml5-0.3.0_rc3.min.js"></script>
+  <script src="/admin/assets/js/bootstrap.js"></script> 
+  <script src="/admin/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="/admin/plugins/colorpicker/js/bootstrap-colorpicker.js"></script>
+  <script src="/admin/plugins/wysiwyg/bootstrap-wysihtml5.js"></script>
+  <!-- <script src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script> -->
+  <script src="/admin/plugins/plupload/js/plupload.full.js"></script>
+  <script src="/admin/plugins/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+  <script src="/admin/js/demo.js"></script>
+  <script src="/admin/js/google-chart-index.js"></script>
+</body>
 </html>

@@ -4,7 +4,7 @@
       <div class="navbar navbar-static navbar_as_heading">
         <div class="navbar-inner">
           <div class="container" style="width: auto;">
-            <a class="brand">Pages</a>
+            <a class="brand">Comments</a>
             <a class="btn pull-right" href="add-new-article.html">Add New</a>
           </div>
         </div>
@@ -15,7 +15,7 @@
         </form>
       </div>
 
-      <table class="table smallfont">
+      <table class="table">
         <thead>
           <tr>
             <td style="width:20px;"><input type="checkbox" id="chkbck" /></td>
@@ -28,7 +28,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @pages.each do |page| %>
+          <% @comments.each do |comment| %>
           <tr>
             <td><input type="checkbox" class="chkbck" /></td>
             <td>
@@ -47,7 +47,7 @@
             <td><span class="badge badge-info">0</span></td>
             <td>2012/05/03<br />Published</td>
           </tr>
-          <% end %>
+        <% end %>
         </tbody>
       </table>
       <div class="subnav nobg">

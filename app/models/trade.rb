@@ -10,9 +10,12 @@ class Trade < ActiveRecord::Base
   belongs_to :buyer, :class_name => "User", :foreign_key => "buyer_id"
   has_many :orders
 
-  def insert(buyer_id,seller_id)
+  def insert(buyer_id,seller_id,cart)
     self.buyer_id = buyer_id
     self.seller_id = seller_id
+    cart.cart_items.each do |cart_item|
+      self.orders.build(:item => cart_item.item)
+    end
     self.save
   end
 

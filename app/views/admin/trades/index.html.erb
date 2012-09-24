@@ -1,0 +1,69 @@
+<div class="row-fluid">
+  <div class="widget_container">
+    <div class="well nomargin">
+      <div class="navbar navbar-static navbar_as_heading">
+        <div class="navbar-inner">
+          <div class="container" style="width: auto;">
+            <a class="brand">Trades</a>
+            <a class="btn pull-right" href="add-new-article.html">Add New</a>
+          </div>
+        </div>
+      </div>
+      <div class="subnav">
+        <form class="navbar-search pull-right" action="">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <td style="width:20px;"><input type="checkbox" id="chkbck" /></td>
+            <td>商品</td>
+            <td>买家</td>
+            <td>卖家</td>
+            <td>收货地址</td>
+            <td>支付方式</td>
+            <td>配送方式</td>
+            <td>状态</td>
+            <td>价格</td>
+            <td>交易时间</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @trades.each do |trade| %>
+            <tr>
+              <td><input type="checkbox" class="chkbck" /></td>
+              <td><% trade.orders.each do |order| %><img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" /><% end %></td>
+              <td><a href="/users/<%= trade.buyer.id %>" target="blank"><%= trade.buyer.name %></a></td>
+              <td>
+                <a href="/users/<%= trade.seller.id %>" target="blank"><%= trade.seller.name %></a>
+                <%=trade.seller_mobile %>
+                <%=trade.seller_email %>
+              </td>
+              <td>
+                <%=trade.receiver_city %>
+                <%=trade.receiver_address %>
+                <%=trade.receiver_mobile %>
+                <%=trade.receiver_name %>
+                <%=trade.receiver_state  %>
+                <%=trade.receiver_district  %>
+                <%=trade.receiver_zip %>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="badge badge-info"><%=trade.price%></span></td>
+              <td><%=trade.created_at  %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="subnav nobg">
+        <div class="span4">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

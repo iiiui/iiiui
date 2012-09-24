@@ -1,11 +1,10 @@
 class Admin::TradesController < ApplicationController
-
+  layout 'admin'
   before_filter :isadmin
   # GET /trades
   # GET /trades.json
   def index
     @trades = Trade.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @trades }

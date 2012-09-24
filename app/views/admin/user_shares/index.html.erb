@@ -4,7 +4,7 @@
       <div class="navbar navbar-static navbar_as_heading">
         <div class="navbar-inner">
           <div class="container" style="width: auto;">
-            <a class="brand">Pages</a>
+            <a class="brand">所有分享</a>
             <a class="btn pull-right" href="add-new-article.html">Add New</a>
           </div>
         </div>
@@ -15,7 +15,7 @@
         </form>
       </div>
 
-      <table class="table smallfont">
+      <table class="table">
         <thead>
           <tr>
             <td style="width:20px;"><input type="checkbox" id="chkbck" /></td>
@@ -28,24 +28,17 @@
           </tr>
         </thead>
         <tbody>
-          <% @pages.each do |page| %>
+        <% @user_shares.each do | share|  %>
           <tr>
             <td><input type="checkbox" class="chkbck" /></td>
             <td>
-              <a href="#" class="post_title">Konsolidasi Konservasi ( K 2 )</a>
-              <div class="operation">
-                <div class="btn-group" style="display:none;">
-                  <button class="btn btn-small"><i class="icon-pencil-1"></i> Edit</button>
-                  <button class="btn btn-small"><i class="icon-eye-2"></i> View</button>
-                  <button class="btn btn-small"><i class="icon-trash-empty"></i> Delete</button>
-                </div>
-              </div>
+              <img src="<%=share.photos.first.url %>" alt="" style="width:100px;height:100px;" />
             </td>
-            <td>Admin</td>
-            <td><a href="#"><span class="label label-info">Breaking News</span></a></td>
-            <td>No Tags</td>
-            <td><span class="badge badge-info">0</span></td>
-            <td>2012/05/03<br />Published</td>
+            <td><%= share.owner.name %></td>
+            <td><a href="#"><span class="label label-info"><%= share.category.name %></span></a></td>
+            <td><% share.tags.each do |tag| %><span class="badge badge-info"><%= tag.name %></span><% end %></td>
+            <td><%= share.comments.count %></td>
+            <td><%= share.created_at.to_date %></td>
           </tr>
           <% end %>
         </tbody>
