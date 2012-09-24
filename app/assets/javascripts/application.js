@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require ./lib/underscore-min
 //= require ./lib/backbone-min
 //= require ./lib/bootstrap.min

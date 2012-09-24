@@ -2,7 +2,6 @@
 <% 
   @user_share = UserShare.new
   @photo = @user_share.photos.build
-  3.times { @tag = @user_share.tags.build}
 %>
 <div class="modal hide"  id="shareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-header">
@@ -16,10 +15,10 @@
     <%= f.simple_fields_for :photos do |p| %>
       <%= p.input :url, :as => :file%>
   <% end %>
-    <h3>tags</h3>
-    <%= f.simple_fields_for :tags do |t| %>
-      <%= t.input :name %>
-  <% end %>
+<div class="field">
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
+</div>
     <div class="form-actions">
       <%= f.button :submit, :id=>'addUserShare' %>
     </div>

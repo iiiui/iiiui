@@ -3,7 +3,11 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @shares = UserShare.all
+    if params[:tag]
+      @shares = UserShare.tagged_with(params[:tag])
+    else
+      @shares = UserShare.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       # format.json { render json: @pages }

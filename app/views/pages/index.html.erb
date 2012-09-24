@@ -13,7 +13,7 @@
         </ul>
       </div>
       <div class="tags-galery">
-        <p><i class="icon-tags"></i> Tags : <% share.tags.each do | tag | %><a href="#"><%= tag.name %></a> <% end  %></p>
+        <p><i class="icon-tags"></i> Tags :  <%= raw share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
       </div>
     </div>
   <% end  %>

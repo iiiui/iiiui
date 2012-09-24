@@ -16,7 +16,7 @@ Iiiui::Application.routes.draw do
   resources :user_likes
   resources :user_addresses
   resources :user_infos
-
+  get 'tags/:tag', to: 'pages#index', as: :tag
   resources :orders
 
   resources :trades do
@@ -27,7 +27,6 @@ Iiiui::Application.routes.draw do
   end
 
   resources :categories
-  resources :tags
   resources :comments
   resources :pages
   resources :items
@@ -47,7 +46,6 @@ Iiiui::Application.routes.draw do
     resources :orders
     resources :trades
     resources :categories
-    resources :tags
     resources :comments
     resources :user_shares
   end
