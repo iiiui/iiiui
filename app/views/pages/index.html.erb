@@ -1,20 +1,25 @@
-  <% @shares.each do |share| %>
-    <div class="span3 galery">
-      <div class="image-galery">
-        <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
-          <img src="<%=share.photos.first.url %>"/>
-        </a>
-      </div>
-      <div class="count-galery">
-        <ul>
-          <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
-          <li><i class="icon-comment"></i><%=share.comments.count %> </li>
-          <li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
-        </ul>
-      </div>
-      <div class="tags-galery">
-        <p><i class="icon-tags"></i> Tags :  <%= raw share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
-      </div>
+<div class="row">
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <%= link_to tag.name, '/tags/'+tag.name.to_s, :class => css_class %>
+  <% end %>
+</div>
+<% @shares.each do |share| %>
+  <div class="span3 galery">
+    <div class="image-galery">
+      <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
+        <img src="<%=share.photos.first.url %>"/>
+      </a>
     </div>
-  <% end  %>
+    <div class="count-galery">
+      <ul>
+        <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
+        <li><i class="icon-comment"></i><%=share.comments.count %> </li>
+        <li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
+      </ul>
+    </div>
+    <div class="tags-galery">
+      <p><i class="icon-tags"></i> Tags :  <%= raw share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+    </div>
+  </div>
+<% end  %>
 

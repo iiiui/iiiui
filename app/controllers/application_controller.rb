@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   #TODO mobile device token auth
   def token
   end

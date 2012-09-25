@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
+    @tags = UserShare.tag_counts_on(:tags)
     if params[:tag]
       @shares = UserShare.tagged_with(params[:tag])
     else
