@@ -14,7 +14,7 @@ class UserShare < ActiveRecord::Base
   accepts_nested_attributes_for :comments
 
   has_many :photos, :foreign_key => "user_shares_id"
-  # accepts_nested_attributes_for :photos
+  accepts_nested_attributes_for :photos
 
   def insert(user_id)
     self.user_id = user_id
