@@ -1,20 +1,14 @@
 <!--share modal -->
-<% 
-  @user_share = UserShare.new
-  @photo = @user_share.photos.build
-%>
 <div class="modal hide"  id="shareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">上传图片</h3>
   </div>
   <div class="modal-body" >
-    <%= simple_form_for(@user_share) do |f| %>
+    <%= render "photos/form" %>
+    <%= simple_form_for(UserShare.new) do |f| %>
       <%= f.error_notification %>
     <%= f.input :category_id, :collection => current_user.categories %>
-    <%= f.simple_fields_for :photos do |p| %>
-      <%= p.input :url, :as => :file%>
-  <% end %>
 <div class="field">
   <%= f.label :tag_list, "Tags (separated by commas)" %><br />
   <%= f.text_field :tag_list %>

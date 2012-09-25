@@ -1,0 +1,7 @@
+<% if @photo.new_record? %>
+  alert("Failed to upload painting: <%= j @photo.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $("#photos").append("<div class='photo'><img src='<%= @photo.url %>!big' /><div class='name'><%= @photo.origin_name %></div></div>");
+<% end %>
+
+

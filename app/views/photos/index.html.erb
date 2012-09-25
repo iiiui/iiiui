@@ -1,25 +1,25 @@
-<h1>Listing photos</h1>
+<div class="row">
+<div id="photos" class="photos">
+  <% @photos.each do |photo| %>
+    <div class="photo">
+      <img src="<%= photo.url %>!big" />
+      <div class="name"><%= photo.origin_name %></div>
+    </div>
+  <% end %>
+</div>
+</div>
 
-<table>
-  <tr>
-    <th>Url</th>
-    <th>Origin name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @photos.each do |photo| %>
-  <tr>
-    <td><img src="<%= photo.url %>!big"/></td>
-    <td><%= photo.origin_name %></td>
-    <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div class="row">
+<%= form_for Photo.new do |f| %>
+  <%= f.label :image, "Upload paintings:" %>
+  <%= f.file_field :url, multiple: true, name: "photo[url]" %>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Photo', new_photo_path %>
+<br>
+<script id="template-upload" type="text/x-tmpl">
+  <div class="upload">
+    {%=o.name%}
+    <div class="progress"><div class="bar" style="width: 0%"></div></div>
+  </div>
+</script>
+</div>

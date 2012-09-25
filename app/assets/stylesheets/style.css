@@ -983,3 +983,19 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 .css2 { font-size: 1.2em; }
 .css3 { font-size: 1.4em; }
 .css4 { font-size: 1.6em; }
+
+.photos img{
+  border: solid 1px #CCC;
+  padding: 10px;
+  float: left;
+  margin-right: 20px;     
+  margin-bottom: 20px;
+  width:100px;
+  height:100px;
+}
+.photos .name{
+  padding-top: 5px;
+  text-align: center;
+  font-weight: bold;
+} 
+

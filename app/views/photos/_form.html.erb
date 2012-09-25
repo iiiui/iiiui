@@ -1,12 +1,22 @@
-<%= simple_form_for(@photo) do |f| %>
-  <%= f.error_notification %>
+<div id="photos" class="photos">
+  <% current_user.photos.each do |photo| %>
+    <div class="photo">
+      <img src="<%= photo.url %>" />
+      <div class="name"><%= photo.origin_name %></div>
+    </div>
+  <% end %>
+</div>
 
-  <div class="form-inputs">
-    <%= f.input :url, :as => :file%>
-    <%= f.input :origin_name %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<%= form_for Photo.new do |f| %>
+  <%= f.label :image, "Upload paintings:" %>
+  <%= f.hidden_field :user_id, :value=>current_user.id %>
+  <%= f.file_field :url, multiple: true, name: "photo[url]" %>
 <% end %>
+
+<br>
+<script id="template-upload" type="text/x-tmpl">
+  <div class="upload">
+    {%=o.name%}
+    <div class="progress"><div class="bar" style="width: 0%"></div></div>
+  </div>
+</script>
