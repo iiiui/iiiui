@@ -14,13 +14,18 @@ class UserShare < ActiveRecord::Base
   accepts_nested_attributes_for :comments
 
   has_many :photos, :foreign_key => "user_shares_id"
-  accepts_nested_attributes_for :photos
+  # accepts_nested_attributes_for :photos
 
-  def insert(user_id)
+  def insert(user_id,photo_ids)
     self.user_id = user_id
     self.save
+    if photo_ids
+      photo_ids.each do |id|
+        Photo.update(id,:user_shares_id => self.id)
+      end
+    end
   end
-  
+
 
   def isown?(user_id)
     self.user_id == user_id

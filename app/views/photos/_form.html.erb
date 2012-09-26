@@ -1,14 +1,6 @@
-<div id="photos" class="photos">
-  <% current_user.photos.each do |photo| %>
-    <div class="photo">
-      <img src="<%= photo.url %>" />
-      <div class="name"><%= photo.origin_name %></div>
-    </div>
-  <% end %>
-</div>
 
 <%= form_for Photo.new do |f| %>
-  <%= f.label :image, "Upload paintings:" %>
+  <%= f.label :image, "Upload:" %>
   <%= f.hidden_field :user_id, :value=>current_user.id %>
   <%= f.file_field :url, multiple: true, name: "photo[url]" %>
 <% end %>
