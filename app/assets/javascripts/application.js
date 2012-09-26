@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require ./lib/underscore-min
@@ -20,3 +21,4 @@
 //= require ./lib/jquery.form
 //= require_tree ./models
 //= require_tree ./views
+

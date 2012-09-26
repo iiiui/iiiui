@@ -11,6 +11,10 @@ class CategoriesController < ApplicationController
       format.json { render json: @categories }
     end
   end
+  def autocomplate
+    @categories = Category.order(:name).where(:user_id => current_user.id).where("name like ?", "%#{params[:term]}%")
+    render json: @categories.map(&:name)
+  end
 
   # GET /categories/1
   # GET /categories/1.json

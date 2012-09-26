@@ -26,7 +26,12 @@ Iiiui::Application.routes.draw do
     end
   end
 
-  resources :categories
+  resources :categories do
+    collection do
+      get 'autocomplate'
+    end
+  end
+
   resources :comments
   resources :pages
   resources :items

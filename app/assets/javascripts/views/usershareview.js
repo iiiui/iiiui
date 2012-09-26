@@ -59,3 +59,8 @@ var NewUserSharesView = Backbone.View.extend({
   }
 
 });
+jQuery(function() {
+  return $('#user_share_category_name').autocomplete({
+      source: $('#user_share_category_name').data('autocomplete-source')
+    });
+});

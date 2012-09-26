@@ -1,5 +1,5 @@
 class UserShare < ActiveRecord::Base
-  attr_accessible :item_id, :user_id, :picture_url, :title, :description, :category_id, :photos_attributes, :tags_attributes, :tag_list
+  attr_accessible :item_id, :user_id, :picture_url, :title, :description, :category_id, :photos_attributes, :tags_attributes, :tag_list, :category_name
   acts_as_taggable
   belongs_to :owner, :class_name => "User", :foreign_key => "user_id"
 
@@ -15,6 +15,18 @@ class UserShare < ActiveRecord::Base
 
   has_many :photos, :foreign_key => "user_shares_id"
   # accepts_nested_attributes_for :photos
+
+
+
+  def category_name
+      category.try(:name)
+  end
+
+  def category_name=(name)
+      self.category = Category.find_or_create_by_name(name) if name.present?
+  end
+
+
 
   def insert(user_id,photo_ids)
     self.user_id = user_id
