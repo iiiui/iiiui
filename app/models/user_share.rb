@@ -36,6 +36,7 @@ class UserShare < ActiveRecord::Base
         Photo.update(id,:user_shares_id => self.id)
       end
     end
+    Category.update(self.category.id,:user_id => self.user_id)
   end
 
 
