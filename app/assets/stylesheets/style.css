@@ -28,6 +28,7 @@ body {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  background-color:#FDFDFD;
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
@@ -161,13 +162,16 @@ body {
 /* .: GALERI :. */
 
 .galery{
-  box-shadow:0 0 1px 1px #ccc;
-  -moz-box-shadow:0 0 1px 1px #ccc;
-  -o-box-shadow:0 0 1px 1px #ccc;
-  -webkit-box-shadow:0 0 1px 1px #ccc;
+  border:solid 1px #ccc;
+  box-shadow:#ccc 0px 0px 5px;
+  -webkit-box-shadow:0px 0px 5px #ccc;
+  -moz-box-shadow:0px 0px 5px #ccc;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=145, Strength=1);
   height:380px;
   margin-bottom:30px;
   background:#fff;
+  padding-left:20px;
+  padding-right:20px;
 }
 
 .galery:hover{
@@ -204,15 +208,16 @@ body {
 
 .image-galery{
   border: 1px solid #fafafa;
-  width: 225px;
-  height:210px;
-  margin: 20px auto;
+  width: auto;
+  height:220px;
+  margin:20px auto;
 }
 
 .image-galery img{
-  width:100%;
+  width:270px;
   height:100%;
   display:block;
+  /*max-width: 100%;*/
 }
 
 .count-galery{
@@ -862,12 +867,13 @@ span.login-checkbox > input[type='checkbox']:checked + label {
   box-shadow:0 0 1px 1px #ccc;
   background:#fff;
   min-height: 200px;
+
 }
 
 .account-settings{
-  width:210px;
+  width:105px;
   border: 1px solid #ccc;
-  height:230px;
+  height:103px;
   margin: 20px auto 10px auto;
   padding:5px;
 }
@@ -878,10 +884,11 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 }
 
 .account-detail{
-  width:210px;
+  width:200px;
   min-height:50px;
-  margin: 0 auto 20px auto;
-  padding:5px;
+  margin: 20px auto 20px auto;
+  padding-left:35px;
+  padding-top:5px;
 }
 
 .account-detail strong{
@@ -979,3 +986,5 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 .img-thumbnail{
   margin-right:10px;
 }
+
+

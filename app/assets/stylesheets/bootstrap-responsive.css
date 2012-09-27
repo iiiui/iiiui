@@ -230,7 +230,7 @@
     width: 600px;
   }
   .span9 {
-    width: 538px;
+    width: 910px;
   }
   .span8 {
     width: 476px;
@@ -466,7 +466,9 @@
     width: 970px;
   }
   .span9 {
-    width: 870px;
+    width: 920px;
+	margin-left:20px;
+	padding-right:20px;
   }
   .span8 {
     width: 770px;
@@ -484,7 +486,11 @@
     width: 370px;
   }
   .span3 {
+    width: 230px;
+  }
+  .span33 {
     width: 270px;
+
   }
   .span2 {
     width: 170px;

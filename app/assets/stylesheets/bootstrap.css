@@ -175,7 +175,8 @@ a:hover {
 }
 
 .row {
-  margin-left: -20px;
+  margin-left: -70px;
+  margin-right:-120px;
   *zoom: 1;
 }
 
@@ -197,7 +198,7 @@ a:hover {
 .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 940px;
+width: auto;
 }
 
 .span12 {
@@ -213,7 +214,9 @@ a:hover {
 }
 
 .span9 {
-  width: 700px;
+  width: 910px;
+  padding-top:20px;
+  padding-left:5px;
 }
 
 .span8 {
@@ -237,7 +240,7 @@ a:hover {
 }
 
 .span3 {
-  width: 220px;
+  width: 230px;
 }
 
 .span2 {
@@ -392,6 +395,7 @@ a:hover {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+  width:1040px;
 }
 
 .container:before,
@@ -405,9 +409,15 @@ a:hover {
 }
 
 .container-fluid {
-  padding-right: 20px;
-  padding-left: 20px;
-  *zoom: 1;
+	background-color:#FDFDFD;
+    border:solid 1px #969696;
+	box-shadow:#ccc 0px 0px 5px;
+	-webkit-box-shadow:0px 0px 5px #ccc;
+	-moz-box-shadow:0px 0px 5px #ccc;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=160, Strength=2);
+	padding-right: 20px;
+	padding-left: 20px;
+	*zoom: 1;
 }
 
 .container-fluid:before,
@@ -2555,6 +2565,7 @@ table .span24 {
   text-shadow: 0 1px 0 #ffffff;
   opacity: 0.2;
   filter: alpha(opacity=20);
+  margin-top:-15px;
 }
 
 .close:hover {
@@ -3579,7 +3590,7 @@ input[type="submit"].btn.btn-mini {
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #2c2c2c;
+  background-color:#FDFDFD;
   background-image: -moz-linear-gradient(top, #333333, #222222);
   background-image: -ms-linear-gradient(top, #333333, #222222);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
@@ -3590,14 +3601,11 @@ input[type="submit"].btn.btn-mini {
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-}
+
+   }
 
 .navbar .container {
-  width: auto;
+  width: 960px;
 }
 
 .nav-collapse.collapse {
@@ -3743,6 +3751,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-fixed-top,
 .navbar-fixed-bottom {
+background-color: #ffffff;
   position: fixed;
   right: 0;
   left: 0;
