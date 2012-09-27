@@ -15,26 +15,26 @@
           <h3>评论</h3>
           <ul id="comments">
             <% @user_share.comments.each do |comment| %>
-            <li class="comment-blue">
-            <div class="avatar">
-              <a href="#"><img src="<%=asset_path 'gravatar.jpg' %>" /></a>
-              <span class="comment-name"><a href="#"><%= comment.user.id %></a></span>
-              <span class="comment-date"><p><%= comment.created_at %></p></span>
-            </div>
-            <div class="comment-text">
-              <p><%=comment.body %></p>
-            </div>
-            </li>
+              <li class="comment-blue">
+              <div class="avatar">
+                <a href="#"><img src="<%=asset_path 'gravatar.jpg' %>" /></a>
+                <span class="comment-name"><a href="#"><%= comment.user.id %></a></span>
+                <span class="comment-date"><p><%= comment.created_at %></p></span>
+              </div>
+              <div class="comment-text">
+                <p><%=comment.body %></p>
+              </div>
+              </li>
             <% end %>
           </ul>
         </div>
 
         <% if !@user_share.isown?(current_user.id) %>
-        <br class="clearfix" />
-        <h3>发布评论</h3>
-        <div class="post-comment">
-          <%= render "comments/form", :user_share => @user_share%>
-        </div>
+          <br class="clearfix" />
+          <h3>发布评论</h3>
+          <div class="post-comment">
+            <%= render "comments/form", :user_share => @user_share%>
+          </div>
         <% end  %>
 
       </div>
@@ -43,45 +43,55 @@
 
   <div class="span3">
     <div class="row">
-      <div class="span3 sidebar-detail-menu" >
-        <% if !@user_share.isown?(current_user.id) %>
+      <% if @user_share.can_buy? %>
+        <div class="span3 ">
           <ul>
-            <li><%=render "shares/form", :user_share => @user_share%></li>
-            <li><%=render "user_likes/form", :user_share => @user_share%></li>
-            <% if @user_share.can_buy? %>
-              <li><%=render "cart_items/form", :user_share => @user_share %></li>
-            <% end %>
+            <li>价格：$<%=@user_share.item.price %></li>
+            <li>库存：<%=@user_share.item.count %></li>
+            <li>配送方式：<%=@user_share.item.count %></li>
+            <li>支付方式：支付宝</li>
           </ul>
-        <% else %>
-          <ul>
-            <% if @user_share.can_buy? %>
-              <li>
+       </div>
+        <% end %>
+        <div class="span3 " >
+          <% if !@user_share.isown?(current_user.id) %>
+            <ul>
+              <li><%=render "shares/form", :user_share => @user_share%></li>
+              <li><%=render "user_likes/form", :user_share => @user_share%></li>
+              <% if @user_share.can_buy? %>
+                <li><%=render "cart_items/form", :user_share => @user_share %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <ul>
+              <% if @user_share.can_buy? %>
+                <li>
                 <font color="red">正在销售中</font>
                 <a href="/items/<%=@user_share.item.id %>/edit" class="btn btn-large" >编辑</a>
-              </li>
-            <% else %>
-              <li><a href="/" class="btn btn-large" >求购</a></li>
-              <li><a id="turntosell" href="#itemModal" data-toggle="modal" data-id="<%=@user_share.id %>" class="btn btn-large" >我想卖</a></li>
-            <% end %>
-          </ul>
-        <% end  %>
-      </div>
-      <div class="span3 sidebar-detail-similiar">
-        <div class="similiar-image">
-          <h4>Similar Image</h4>
-          <a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '2_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '3_b.jpg' %>" class="img-thumbs" /></a>
-          <a href="#"><img src="<%=asset_path '4_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '5_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a>
-        </div>
-      </div>
-      <div class="span3 sidebar-detail-category">
-        <div class="category-image">
-          <div class="cat-tags">Tags :  <%= raw @user_share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
-          <div class="cat-category">Category : <a href="#"><%= @user_share.category.name %></a> </div>
-          <div class="cat-buy">Buy by :  <a href="#">Aji satria</a> </div>
-          <div class="cat-liked">Liked by : <% @user_share.user_likes.each do |user_like| %><a href="#"><%= user_like.user_id %></a><% end %> </div>
-          <div class="cat-shared">Shared by : <% @user_share.shares.each do | share | %><a href="#"><%= share.user_id %></a><% end %> </div>
-        </div>
-      </div>
+        </li>
+      <% else %>
+        <li><a href="/" class="btn btn-large" >求购</a></li>
+        <li><a id="turntosell" href="#itemModal" data-toggle="modal" data-id="<%=@user_share.id %>" class="btn btn-large" >我想卖</a></li>
+      <% end %>
+    </ul>
+  <% end  %>
+</div>
+<div class="span3 sidebar-detail-similiar">
+  <div class="similiar-image">
+    <h4>Similar Image</h4>
+    <a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '2_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '3_b.jpg' %>" class="img-thumbs" /></a>
+    <a href="#"><img src="<%=asset_path '4_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '5_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a>
+  </div>
+</div>
+<div class="span3 sidebar-detail-category">
+  <div class="category-image">
+    <div class="cat-tags">Tags :  <%= raw @user_share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+    <div class="cat-category">Category : <a href="#"><%= @user_share.category.name %></a> </div>
+    <div class="cat-buy">Buy by :  <a href="#">Aji satria</a> </div>
+    <div class="cat-liked">Liked by : <% @user_share.user_likes.each do |user_like| %><a href="#"><%= user_like.user_id %></a><% end %> </div>
+    <div class="cat-shared">Shared by : <% @user_share.shares.each do | share | %><a href="#"><%= share.user_id %></a><% end %> </div>
+  </div>
+</div>
     </div>
   </div>
 
@@ -91,10 +101,10 @@
   <% content_for :javascript do %>
     <script type="text/javascript" charset="utf-8">
       $(document).ready(function() {
-         var shares = new Shares();
-         new NewSharesView();
-         new NewCommentView();
-         new NewLikesView();
-      });
-    </script>
-  <% end %>
+          var shares = new Shares();
+          new NewSharesView();
+          new NewCommentView();
+          new NewLikesView();
+          });
+        </script>
+      <% end %>

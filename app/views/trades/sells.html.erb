@@ -1,28 +1,27 @@
 <div class="span9 content-setting">
   <table class="table">
     <tr>
-      <th>ID</th>
-      <th>Status</th>
-      <th>Receiver</th>
-      <th>Received payment</th>
-      <th>Available confirm fee</th>
-      <th>Total fee</th>
-      <th>Price</th>
-      <th>下单时间</th>
-      <th>操作</th>
+      <td>商品信息</td>
+      <td>买家信息</td>
+      <td>收货地址</td>
+      <td>价格</td>
+      <td>下单时间</td>
     </tr>
-
     <% @trades.each do |trade| %>
       <tr>
-        <td><%= trade.id %></td>
-        <td><%= trade.status %></td>
-        <td><%= trade.buyer.email %></td>
-        <td><%= trade.received_payment %></td>
-        <td><%= trade.available_confirm_fee %></td>
-        <td><%= trade.total_fee %></td>
-        <td><%= trade.price %></td>
-        <td><%= trade.created_at %></td>
-        <td><%= link_to 'Show', trade %><%= link_to 'Edit', edit_trade_path(trade) %></td>
+        <td><% trade.orders.each do |order| %><%=order.count %><img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" /><% end %></td>
+        <td><a href="/users/<%= trade.buyer.id %>" target="blank"><%= trade.buyer.name %></a></td>
+        <td>
+          <%=trade.receiver_city %>
+          <%=trade.receiver_address %>
+          <%=trade.receiver_mobile %>
+          <%=trade.receiver_name %>
+          <%=trade.receiver_state  %>
+          <%=trade.receiver_district  %>
+          <%=trade.receiver_zip %>
+        </td>
+        <td><span class="badge badge-info"><%=trade.price%></span></td>
+        <td><%=trade.created_at  %></td>
       </tr>
     <% end %>
   </table>

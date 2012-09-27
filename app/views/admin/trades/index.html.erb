@@ -34,7 +34,7 @@
           <% @trades.each do |trade| %>
             <tr>
               <td><input type="checkbox" class="chkbck" /></td>
-              <td><% trade.orders.each do |order| %><img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" /><% end %></td>
+              <td><% trade.orders.each do |order| %><%=order.count %><img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" /><% end %></td>
               <td><a href="/users/<%= trade.buyer.id %>" target="blank"><%= trade.buyer.name %></a></td>
               <td>
                 <a href="/users/<%= trade.seller.id %>" target="blank"><%= trade.seller.name %></a>

@@ -1,29 +1,26 @@
 <div class="span9 content-setting">
   <table class="table">
     <tr>
-      <th>ID</th>
-      <th>Seller</th>
-      <th>Seller mobile</th>
-      <th>Seller email</th>
-      <th>Received payment</th>
-      <th>Price</th>
-      <th>Status</th>
-      <th>下单时间</th>
-      <th>操作</th>
+      <td>商品</td>
+      <td>卖家信息</td>
+      <td>价格</td>
+      <td>下单时间</td>
     </tr>
-
     <% @trades.each do |trade| %>
       <tr>
-        <td><%= trade.id %></td>
-        <td><%= trade.seller.id %></td>
-        <td><%= trade.seller_mobile %></td>
-        <td><%= trade.seller.email %></td>
-        <td><%= trade.received_payment %></td>
-        <td><%= trade.total_fee %></td>
-        <td><%= trade.status %></td>
-        <td><%= trade.created_at %></td>
-        <td><%= link_to 'Show', trade %>
-        <%= link_to 'Edit', edit_trade_path(trade) %></td>
+        <td>
+          <% trade.orders.each do |order| %>
+            <img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" />
+            数量：<%=order.count %>
+          <% end %>
+        </td>
+        <td>
+          <a href="/users/<%= trade.seller.id %>" target="blank"><%= trade.seller.name %></a>
+          <%=trade.seller_mobile %>
+          <%=trade.seller_email %>
+        </td>
+        <td><span class="badge badge-info"><%=trade.price%></span></td>
+        <td><%=trade.created_at  %></td>
       </tr>
     <% end %>
   </table>

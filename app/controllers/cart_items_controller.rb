@@ -42,17 +42,22 @@ class CartItemsController < ApplicationController
   # POST /cart_items.json
   def create
     @cart = current_cart
-    item = Item.find(params[:cart_item][:item_id])
-    # @cart_item = CartItem.new(params[:cart_item])
-    @cart_item = @cart.cart_items.build(:item => item)
-
-    respond_to do |format|
-      if @cart_item.save
-        format.html { redirect_to "/trades/new" }
-      else
-        format.html { render action: "new" }
+    update_flag = false
+    @cart.cart_items.each do | cart_item|
+      # p cart_item.item.id.to_s
+      # p params[:cart_item][:item_id].to_s
+      if cart_item.item.id.to_s == params[:cart_item][:item_id].to_s
+        update_flag = true
+        CartItem.update(cart_item.id,:count => cart_item.count + Integer(params[:cart_item][:count]))
       end
     end
+    if !update_flag
+      item = Item.find(params[:cart_item][:item_id])
+      @cart_item = @cart.cart_items.build(:item => item)
+      @cart_item.count = params[:cart_item][:count]  
+      @cart_item.save
+    end
+    redirect_to cart_items_url, notice: 'created successfully.'
   end
 
   # PUT /cart_items/1

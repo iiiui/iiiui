@@ -46,7 +46,7 @@
               <td><img style="width:100px;height:100px;" src="<%= cart_item.item.user_share.photos.first.url %>"/></td>
               <td><a href="<%= cart_item.item_id %>"><%= cart_item.item.title %></a> </td>
               <td class="value"><%= cart_item.item.price %></td>
-              <td>1</td>
+              <td><%= cart_item.count %></td>
               <td class="actions">
                 <input type="button" value="删除" class="btn"/>
               </td>

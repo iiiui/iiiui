@@ -13,10 +13,16 @@ class Trade < ActiveRecord::Base
   def insert(buyer_id,seller_id,cart)
     self.buyer_id = buyer_id
     self.seller_id = seller_id
-    cart.cart_items.each do |cart_item|
-      self.orders.build(:item => cart_item.item)
-    end
     self.save
+    cart.cart_items.each do |cart_item|
+      # self.orders.build(:item => cart_item.item)
+      order = Order.new
+      order.count = cart_item.count
+      order.item_id = cart_item.item_id
+      order.price = cart_item.price
+      order.trade_id = self.id
+      order.save
+    end
   end
 
   def self.buys(buyer_id)
