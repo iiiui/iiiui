@@ -6,31 +6,42 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="/">iiiui</a>
+      <a id="logo" class="brand" href="/">iiiui</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <form class="navbar-search pull-left" action="">
-            <input type="text" class="search-query span2" placeholder="Search" required>
-          </form>
+		  <li class="divider-vertical"></li>
+		  <li><a href="#">首页</a></li>
+		  <li class="divider-vertical"></li>
+		  <li><a href="#">享售</a></li>
+		  <li class="divider-vertical"></li>
+		  <li><a href="#">生活</a></li>
+		  <li class="divider-vertical"></li>
+		  <li><a href="#">享购</a></li>
+		  <li class="divider-vertical"></li>
+		  <li><a href="#">邀请</a></li>
+		  <li class="divider-vertical"></li>
+          <li><form class="navbar-search pull-left" action="">
+            <input type="text" class="search-query span2" placeholder="搜索" required>
+          </form></li>
         </ul>
         <ul class="nav pull-right">
-            <li class="divider-vertical"></li>
-            <li><a href="/cart_items"><i class="icon-shopping-cart"></i> Cart</a></li>
+			<li class="divider-vertical"></li>
+            <li><a href="/cart_items"><i class="icon-shopping-cart"></i> 购物车</a></li>
           <% if !user_signed_in? %>
-            <li class="divider-vertical"></li>
-            <li><a href="<%= new_user_session_path %>"><i class="icon-lock"></i> Sign in</a></li>
-            <li class="divider-vertical"></li>
-            <li><a href="<%= new_user_registration_path %>"><i class="icon-edit"></i> Sign up</a></li>
+			<li class="divider-vertical"></li>
+            <li><a href="<%= new_user_session_path %>"><i class="icon-lock"></i> 登录</a></li>
+			<li class="divider-vertical"></li>
+            <li><a href="<%= new_user_registration_path %>"><i class="icon-edit"></i> 注册</a></li>
           <% end %>
           <% if user_signed_in? %>
-            <li class="divider-vertical"></li>
+			<li class="divider-vertical"></li>
             <li><a href="#shareModal" data-toggle="modal">分享</a></li>
-            <li class="divider-vertical"></li>
+			<li class="divider-vertical"></li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="/users/<%=current_user.id %>">Show</a></li>
-              <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/users/<%=current_user.id %>">浏览</a></li>
+              <li><a href="/dashboard">设置</a></li>
               <li class="divider"></li>
               <li>
               <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
@@ -38,7 +49,7 @@
             </ul>
             </li>
           <% end %>
-          <li class="divider-vertical"></li>
+		  <li class="divider-vertical"></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

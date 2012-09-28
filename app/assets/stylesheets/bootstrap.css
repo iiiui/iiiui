@@ -160,17 +160,17 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  color: #333333;
+  color: #383539;
   background-color: #ffffff;
 }
 
 a {
-  color: #0088cc;
+  color: #401241;
   text-decoration: none;
 }
 
 a:hover {
-  color: #005580;
+  color: #88168A;
   text-decoration: underline;
 }
 
@@ -523,7 +523,8 @@ h6 {
 ul,
 ol {
   padding: 0;
-  margin: 0 0 9px 25px;
+  margin: 0;
+  list-style: none;
 }
 
 ul ul,
@@ -531,14 +532,6 @@ ul ol,
 ol ol,
 ol ul {
   margin-bottom: 0;
-}
-
-ul {
-  list-style: disc;
-}
-
-ol {
-  list-style: decimal;
 }
 
 li {
@@ -3605,7 +3598,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar {
-  color: #999999;
+  color: #747C7E;
 }
 
 .navbar .brand:hover {
