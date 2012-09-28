@@ -33,7 +33,7 @@ body {
 
 .navbar-inner #logo {
   height: 30px;
-  margin: 7px 7px 0 0;
+  margin: 7px 7px 0;
   width: 50px;
   padding: 0;
   background: url(logo.png) no-repeat;
@@ -62,7 +62,7 @@ body {
 
 .navbar .nav > li > a:hover {
   color: #88168a;
-  text-decoration: none;
+  text-decoration: underline;
   background-color: none;
   background:none;
 }
@@ -673,12 +673,9 @@ div[class*=sidebar-detail-]{
 .account-container {
   width: 389px; 
   display: block;
-  margin: 60px auto 65px auto;
-
+  margin: 50px auto 55px auto;
   background: #fff;
-
   border: 1px solid #ddd;
-
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -790,7 +787,14 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 }
 
 
-.btn-signin {display: inline-block; float: right; margin-top: 18px; margin-right:10px;}
+.btn-signin {
+  display: inline-block; 
+  float: right; 
+  margin-top: 18px; 
+  margin-right:10px;
+  padding: 5px 30px; 
+  font: bold 16px Microsoft YaHei, "微软雅黑", Arial, sans-serif, \5b8b\4f53; 
+}
 
 
 .register .login-social {
