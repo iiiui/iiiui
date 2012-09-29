@@ -7,4 +7,8 @@ author:
 email:    jibinhou@gmail.com
 -------------------------------------------------------*/
 
+.navbar-inner {
+	background: #ffffff;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+}
 

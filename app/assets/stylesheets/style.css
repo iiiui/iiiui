@@ -734,7 +734,8 @@ div[class*=sidebar-detail-]{
 
 span.login-checkbox {
   float: left;
-  margin-top: 22px;
+  margin-top: 25px;
+  color: #AAA3AF;
 }
 
 span.login-checkbox > input[type='checkbox'] {
@@ -745,17 +746,13 @@ span.login-checkbox > input[type='checkbox'] {
 
 span.login-checkbox > input[type='checkbox'] + label {    
   clear: none;
-
   height: 15px; 
   display: block;
   padding: 0 0 0 22px;
   margin: 0;
-
   font-size: 12px;
   line-height: 1.2em;
-
   background: url(../img/check.png) no-repeat 0 0;
-
   cursor: pointer;
 }
 
@@ -768,10 +765,8 @@ span.login-checkbox > input[type='checkbox']:checked + label {
   display: block; 
   width: 300px; 
   margin: 1.5em auto;
-
   text-align: center;
   line-height: 19px; 
-
   text-shadow: 1px 1px 0px #fff; 	
 }
 
@@ -789,9 +784,9 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 
 .btn-signin {
   display: inline-block; 
-  float: right; 
+  float: left; 
   margin-top: 18px; 
-  margin-right:10px;
+  margin-right:20px;
   padding: 5px 30px; 
   font: bold 16px Microsoft YaHei, "微软雅黑", Arial, sans-serif, \5b8b\4f53; 
 }
