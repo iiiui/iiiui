@@ -732,6 +732,10 @@ div[class*=sidebar-detail-]{
   padding: 10px 0 15px;
 }
 
+.login-social .btn {
+  min-width: 200px;
+}
+
 span.login-checkbox {
   float: left;
   margin-top: 25px;

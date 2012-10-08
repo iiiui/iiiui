@@ -2,31 +2,35 @@
   <div class="form-content clearfix">
     <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
-      <h1><i class="iconbig-note-write"></i> Sign Up</h1>	
+      <h1><i class="iconbig-note-write"></i> 注册</h1>	
+	  
+	  <div class="login-social marg10-btm">
+		<p><a href="#" class="btn"><img src="<%= asset_path 'twitter-18.png' %>" /> 使用 twitter 账号登录</a></p>
+		<p><a href="#" class="btn"><img src="<%= asset_path 'facebook-18.png' %>" /> 使用 facebook 账号登录</a></p>			
+	  </div>
+	  
       <div class="login-fields">
-        <p>Sign up manually:</p>
         <div class="field">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" required />
+          <label for="username">用户名:</label>
+          <input type="text" id="username" name="username" value="" placeholder="用户名" class="login username-field" required />
         </div> <!-- /field -->
         <div class="field">
-          <label for="email">Email:</label>
-          <input type="email" id="user[email]" name="user[email]" value="" placeholder="Email" class="login email-field" required />
+          <label for="email">邮箱:</label>
+          <input type="email" id="user[email]" name="user[email]" value="" placeholder="邮箱" class="login email-field" required />
         </div> <!-- /field -->
 
         <div class="field">
-          <label for="password">Password:</label>
-          <input type="password" id="user[password]" name="user[password]" value="" placeholder="Password" class="login password-field" required />
+          <label for="password">密码:</label>
+          <input type="password" id="user[password]" name="user[password]" value="" placeholder="密码" class="login password-field" required />
         </div> <!-- /password -->
 
       </div> <!-- /login-fields -->			
 
       <div class="login-actions">
-        <input type="submit" name="submit" value="Sign up" class="btn-signin btn btn-primary" />
+        <input type="submit" name="Sign up" value="注册" class="btn-signin btn btn-primary" />
 
     </div> <!-- .actions -->
       <% end %>
-    <%= render "devise/shared/links" %>
 
 </div> <!-- /form-content -->
 
