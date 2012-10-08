@@ -60,6 +60,7 @@ Iiiui::Application.routes.draw do
     devise_scope :user do
       match 'users/sign_up' => 'registrations#create', :via=> :post
       match 'users/sign_in' => 'sessions#create', :via => :post
+      match 'users/loginerror' => 'sessions#loginerror', :via =>:get
       match 'users/islogin' => 'users#islogin',:via=>:get
       match 'callback/weibo' => 'omniauth_callbacks#weibo',:via=>:get
     end
