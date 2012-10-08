@@ -80,7 +80,7 @@ body {
   font-family: Microsoft YaHei, "微软雅黑", Arial, sans-serif, \5b8b\4f53;
   font-size: 13px;
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.5;
   color: #888;
   border: 1px solid #AAA3AF;
   border-radius: 6px;
@@ -241,6 +241,60 @@ body {
 .pagination ul{
   background: #fff;
 }
+
+
+/* .: bg wrap :. */
+
+.wrap-container{
+	padding-bottom: 20px;
+}
+
+.bg-content{
+	background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+
+/* .: cart :. */
+
+.cart-title{
+	margin: 0 0 34px;
+}
+
+.cart-title h2{
+    text-indent: 1px;
+	font-size: 30px;
+    text-shadow: 0 1px 2px white;
+	float: left;
+	font-weight: normal;
+	color: #AAA3AF;
+    margin: -19px 20px 0 0;
+}
+
+.cart .breadcrumb .active{
+	color: #88168a;
+}
+
+.bar-total{
+	text-align: right;
+}
+
+.total-price{
+	position: relative;
+    top: 6px;
+	right: 20px;
+}
+
+.total-money{
+	font-size: 30px;
+    text-shadow: 0 1px 1px #999;
+	font-weight: bold;
+	color: #88168A;
+	padding-right: 10px;
+}
+
 
 
 /* .: FOOTER :. */

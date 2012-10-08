@@ -1,4 +1,4 @@
-<div class="row">
+<div class="span12">
   <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
     <%= link_to tag.name, '/tags/'+tag.name.to_s, :class => css_class %>
   <% end %>
