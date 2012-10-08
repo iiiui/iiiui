@@ -216,6 +216,7 @@ ActiveRecord::Schema.define(:version => 20121008035500) do
     t.datetime "updated_at",                             :null => false
     t.string   "name"
     t.string   "authentication_token"
+    t.string   "device_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
