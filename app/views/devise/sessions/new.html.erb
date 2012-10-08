@@ -27,10 +27,11 @@
       </div> <!-- /login-fields -->			
 
       <div class="login-actions">
+	  <%= f.button :submit, "登录" ,:class=>"btn-signin btn btn-primary" %>
         <span class="login-checkbox">
-          <%= f.input :remember_me, :label => "记住我", :as => :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, :label => "记住密码", :as => :boolean if devise_mapping.rememberable? %>
         </span>
-        <%= f.button :submit, "登录" ,:class=>"btn-signin btn btn-primary" %>
+        
       </div> <!-- .actions -->
     <% end %>
 
