@@ -2672,6 +2672,7 @@ button.close {
   font-size: 16px;
   font-weight: bold;
   line-height: normal;
+  font-family: Microsoft YaHei,"微软雅黑",Arial,sans-serif,"宋体";
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;

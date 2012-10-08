@@ -243,27 +243,21 @@ body {
 }
 
 
-/* .: bg wrap :. */
+/* .: trades :. */
 
-.wrap-container{
-	padding-bottom: 20px;
-}
-
-.bg-content{
-	background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+.trades h3{
+	font-size: 20px;
+	font-weight: normal;
+	color: #AAA3AF;
     margin-bottom: 10px;
-    padding: 20px;
+	padding: 1px 8px 1px 0;
 }
 
-
-/* .: cart :. */
-
-.cart-title{
+.trades-title{
 	margin: 0 0 34px;
 }
 
-.cart-title h2{
+.trades-title h2{
     text-indent: 1px;
 	font-size: 30px;
     text-shadow: 0 1px 2px white;
@@ -273,7 +267,7 @@ body {
     margin: -19px 20px 0 0;
 }
 
-.cart .breadcrumb .active{
+.trades .breadcrumb .active{
 	color: #88168a;
 }
 
@@ -295,6 +289,19 @@ body {
 	padding-right: 10px;
 }
 
+
+/* .: bg wrap :. */
+
+.wrap-container{
+	padding-bottom: 20px;
+}
+
+.bg-content{
+	background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    padding: 20px;
+}
 
 
 /* .: FOOTER :. */
