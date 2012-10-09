@@ -2,6 +2,7 @@
   <%= f.error_notification %>
     <div class="span12 wrap-container">
       <div class="trades">
+	  
 		<div class="trades-title">
 		  <h2>购买商品</h2>
 		  <hr/>
@@ -15,30 +16,73 @@
 		
 		
         <h3>配送地址</h3>
-		<section class="bg-content clearfix">
-			<p><%= f.input :receiver_name %></p>
-			<p><%= f.input :receiver_state %><%= f.input :receiver_city %><%= f.input :receiver_district %><%= f.input :receiver_address %></p>
-			<p><%= f.input :receiver_zip %></p>
-			<p><%= f.input :receiver_mobile %></p>
+		<section class="form-horizontal bg-content clearfix">
+			
+			<div class="control-group">
+				<label class="control-label" for="receiver_name">收货人姓名</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" id="receiver_name">
+					<span class="help-inline">正常状态</span>
+					<p class="help-block">自己的姓名</p>
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="receiver_state">所在地区</label>
+				<div class="controls">
+					<select id="receiver_state">
+						<option>北京</option>
+						<option>新疆维吾尔自治区</option>
+					</select> 
+					<select>
+						<option>北京市</option>
+					</select> 
+					<select>
+						<option>朝阳区</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="control-group warning">
+				<label class="control-label" for="receiver_address">街道地址</label>
+				<div class="controls">
+					<textarea rows="3" id="receiver_address" class="input-xxlarge"></textarea>
+					<span class="help-inline">警告信息</span>
+					<p class="help-block">不需要重复填写省/市/区</p>
+				</div>
+			</div>
+			
+			<div class="control-group error">
+				<label class="control-label" for="receiver_zip">邮政编码</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" id="receiver_zip">
+					<span class="help-inline">错误信息</span>
+					<p class="help-block">大陆以外地区可不填写</p>	
+				</div>
+			</div>
+			
+			<div class="control-group success">
+				<label class="control-label" for="receiver_mobile">手机号码</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" id="receiver_mobile">
+					<span class="help-inline">耶！</span>
+					<p class="help-block">自己的手机号码11位阿拉伯数字</p>
+				</div>
+			</div>
+				
 		</section>
-
-
-        <h3>支付方式</h3>
-		<section class="bg-content clearfix">
-			<p><%= f.input :received_payment %></p>
-		</section>
-
+		
 
         <h3>商品</h3>
 		<section class="bg-content clearfix">
-			<table class="orders-table table">
+			<table class="table">
 			  <thead>
 				<tr>
-				  <th>商品名称</th>
-				  <th class="value">图片</th>
-				  <th class="value">价格</th>
-				  <th class="value">数量</th>
-				  <th class="actions">操作</th>
+				  <th><a href="#">flowerJoy旗舰店</a></th>
+				  <th>名称</th>
+				  <th>价格</th>
+				  <th>数量</th>
+				  <th>操作</th>
 				</tr>
 			  </thead>
 			  <tbody>
@@ -48,7 +92,7 @@
 				  <td><a href="<%= cart_item.item_id %>"><%= cart_item.item.title %></a> </td>
 				  <td class="value"><%= cart_item.item.price %></td>
 				  <td><%= cart_item.count %></td>
-				  <td class="actions">
+				  <td>
 					<a href="#">删除</a>
 				  </td>
 				</tr>
@@ -60,5 +104,6 @@
 			</div>
 		</section>
   <% end %>
+  
   </div>
 </div>
