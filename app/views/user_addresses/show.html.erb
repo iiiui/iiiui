@@ -1,40 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="span9 content-setting">
+  <p id="notice"><%= notice %></p>
 
-<p>
+  <p>
   <b>Name:</b>
   <%= @user_address.name %>
-</p>
+  </p>
 
-<p>
+  <p>
   <b>State:</b>
   <%= @user_address.state %>
-</p>
+  </p>
 
-<p>
+  <p>
   <b>City:</b>
   <%= @user_address.city %>
-</p>
+  </p>
 
-<p>
+  <p>
   <b>District:</b>
   <%= @user_address.district %>
-</p>
+  </p>
 
-<p>
+  <p>
   <b>Address:</b>
   <%= @user_address.address %>
-</p>
+  </p>
 
-<p>
+  <p>
   <b>Zip:</b>
   <%= @user_address.zip %>
-</p>
+  </p>
 
-<p>
+  <p>
   <b>Mobile:</b>
   <%= @user_address.mobile %>
-</p>
+  </p>
 
 
-<%= link_to 'Edit', edit_user_address_path(@user_address) %> |
-<%= link_to 'Back', user_addresses_path %>
+  <%= link_to 'Edit', edit_user_address_path(@user_address) %> |
+  <%= link_to 'Back', user_addresses_path %>
+</div>

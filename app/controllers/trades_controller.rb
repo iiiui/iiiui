@@ -1,3 +1,4 @@
+#encoding: utf-8
 class TradesController < ApplicationController
   before_filter :authenticate_user!
   layout "dashboard", :except => [:new, :show]
@@ -36,9 +37,10 @@ class TradesController < ApplicationController
   def new
     @trade = Trade.new
     @cart = current_cart
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @trade }
+    if @cart.cart_items.count == 0
+      redirect_to "/cart_items",:notice => "购物车为空"
+    else
+      render "new"
     end
   end
 
@@ -55,7 +57,7 @@ class TradesController < ApplicationController
     respond_to do |format|
       if @trade.insert(current_user.id,@cart.cart_items.first.item.owner.id,@cart)
         @cart.destroy
-        format.html { redirect_to @trade, notice: 'Trade was successfully created.' }
+        format.html { redirect_to @trade, notice: '操作成功' }
         format.json { render json: @trade, status: :created, location: @trade }
       else
         format.html { render action: "new" }

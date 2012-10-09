@@ -1,6 +1,7 @@
+<div class="span9 content-setting">
 <h1>Listing user_addresses</h1>
-
-<table>
+<%= link_to 'New User address', new_user_address_path %>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>State</th>
@@ -29,7 +30,5 @@
   </tr>
 <% end %>
 </table>
+</div>
 
-<br />
-
-<%= link_to 'New User address', new_user_address_path %>

@@ -1,3 +1,4 @@
+#encoding:utf-8
 class CartItemsController < ApplicationController
   # GET /cart_items
   # GET /cart_items.json
@@ -57,7 +58,7 @@ class CartItemsController < ApplicationController
       @cart_item.count = params[:cart_item][:count]  
       @cart_item.save
     end
-    redirect_to cart_items_url, notice: 'created successfully.'
+    redirect_to cart_items_url, notice: '添加成功'
   end
 
   # PUT /cart_items/1

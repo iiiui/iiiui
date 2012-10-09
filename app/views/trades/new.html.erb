@@ -78,7 +78,8 @@
 			<table class="table">
 			  <thead>
 				<tr>
-				  <th><a href="#">flowerJoy旗舰店</a></th>
+				  <th>卖家</th>
+          <th>图片</th>
 				  <th>名称</th>
 				  <th>价格</th>
 				  <th>数量</th>
@@ -88,6 +89,7 @@
 			  <tbody>
 				<% @cart.cart_items.each do |cart_item| %>
 				<tr>
+			    <td><a target="blank" href="/users/<%= cart_item.item.owner.id %>"><%= cart_item.item.owner.email %></a></td>
 				  <td><img style="width:100px;height:100px;" src="<%= cart_item.item.user_share.photos.first.url %>"/></td>
 				  <td><a href="<%= cart_item.item_id %>"><%= cart_item.item.title %></a> </td>
 				  <td class="value"><%= cart_item.item.price %></td>
@@ -100,7 +102,7 @@
 			  </tbody>
 			</table>
 			<div class="bar-total">
-				<span class="total-price">商品总价(不含运费)：<em class="total-money">108.30</em>元</span><button type="submit" class="btn btn-large btn-primary">提交订单</button>
+				<span class="total-price">商品总价(不含运费)：<em class="total-money"><%=@cart.total_price %></em>元</span><button type="submit" class="btn btn-large btn-primary">提交订单</button>
 			</div>
 		</section>
   <% end %>
