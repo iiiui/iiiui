@@ -1,23 +1,128 @@
-<div class="span12 more-images">
-  <h3>More Images from <a href="#"><%=@user.email %></a></h3>
+<div class="span12 user-show clearfix">
+	<div class="row user-show-hd">
+		<div class="span6">
+			<div class="row">
+				<div class="span2">
+					<div class="user-face">
+						<a href="#"><img src="/assets/pic-userface.jpg" alt="用户头像" /></a>
+					</div>
+				</div>
+				<div class="span4">
+					<p><a href="#"><%=@user.email %></a></p>
+					<p><a href="#" class="btn">个人中心</a></p>
+					<p><a href="#">新浪微博</a></p>
+					<p><a href="#">北京市 东城区</a></p>
+					<p><a href="#">哗啦啦啦天在下雨，哗啦啦啦天在下雨</p>
+				</div>
+			</div>
+		</div>
+		<div class="span6">
+			<div class="row">
+				<div class="span2">
+					<div class="user-photos">
+						<a href="#"><img src="/assets/pic-userface.jpg" alt="第1个相册" /></a>
+					</div>
+				</div>
+				<div class="span2">
+					<div class="user-photos">
+						<a href="#"><img src="/assets/pic-userface.jpg" alt="第2个相册" /></a>
+					</div>
+				</div>
+				<div class="span2">
+					<div class="user-photos">
+						<a href="#"><img src="/assets/pic-userface.jpg" alt="第3个相册" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="user-show-menu">
+		<ul>
+			<li><a href="#">专辑</a></li>
+			<li><a href="#">分享</a></li>
+			<li><a href="#">喜欢</a></li>
+			<li><a href="#">消息</a></li>
+			<li><a href="#">已卖的</a></li>
+			<li><a href="#">已买的</a></li>
+			<li><a href="#">关注 19780</a></li>
+			<li><a href="#">粉丝 287342</a></li>
+		</ul>
+  </div>
 </div>
+
+<div class="span4">
 <% @user.user_shares.each do |share| %>
-    <div class="span3 galery">
+    <div class="galery clearfix">
       <div class="image-galery">
         <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
           <img src="<%=share.photos.first.url %>"/>
         </a>
       </div>
       <div class="count-galery">
-        <ul>
-          <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
+        <ul class="clearfix">
           <li><i class="icon-comment"></i><%=share.comments.count %> </li>
           <li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
+		  <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
         </ul>
+		<div class="tags-galery">
+			<p>花朵, 大自然, 清新<% share.tags.each do | tag | %><a href="#"><%= tag.name %></a> <% end  %></p>
+		</div>
       </div>
-      <div class="tags-galery">
-        <p><i class="icon-tags"></i> Tags : <% share.tags.each do | tag | %><a href="#"><%= tag.name %></a> <% end  %></p>
-      </div>
+      <div class="collect-galery">
+		转享信息转享信息转享信息转享信息
+	  </div>
     </div>
-  <% end  %>
+	<% end  %>
+</div>
+
+<div class="span4">
+<% @user.user_shares.each do |share| %>
+    <div class="galery clearfix">
+      <div class="image-galery">
+        <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
+          <img src="<%=share.photos.first.url %>"/>
+        </a>
+      </div>
+      <div class="count-galery">
+        <ul class="clearfix">
+          <li><i class="icon-comment"></i><%=share.comments.count %> </li>
+          <li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
+		  <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
+        </ul>
+		<div class="tags-galery">
+			<p>花朵, 大自然, 清新<% share.tags.each do | tag | %><a href="#"><%= tag.name %></a> <% end  %></p>
+		</div>
+      </div>
+      <div class="collect-galery">
+		转享信息转享信息转享信息转享信息
+	  </div>
+    </div>
+	<% end  %>
+</div>
+
+<div class="span4">
+<% @user.user_shares.each do |share| %>
+    <div class="galery clearfix">
+      <div class="image-galery">
+        <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
+          <img src="<%=share.photos.first.url %>"/>
+        </a>
+      </div>
+      <div class="count-galery">
+        <ul class="clearfix">
+          <li><i class="icon-comment"></i><%=share.comments.count %> </li>
+          <li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
+		  <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
+        </ul>
+		<div class="tags-galery">
+			<p>花朵, 大自然, 清新<% share.tags.each do | tag | %><a href="#"><%= tag.name %></a> <% end  %></p>
+		</div>
+      </div>
+      <div class="collect-galery">
+		转享信息转享信息转享信息转享信息
+	  </div>
+    </div>
+	<% end  %>
+</div>
+
 

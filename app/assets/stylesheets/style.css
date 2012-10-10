@@ -720,15 +720,43 @@ div[class*=sidebar-detail-]{
   text-decoration:underline;
 }
 
-/* .: MORE IMAGE :. */
+/* .: user show :. */
 
-.more-images{
-  margin-top: 60px;
-  text-align:center;
+.user-show{
+  margin-top: 10px;
   margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.more-images a:hover{
+.user-show-hd{
+	padding: 15px 0;
+}
+
+.user-face{
+	margin-left: 15px;
+}
+
+.user-photos{
+	margin-right: 15px;
+}
+
+.user-face img{
+	border-radius: 5px;
+}
+
+.user-show-menu{
+	border-top: 1px solid #ccc;
+}
+
+.user-show-menu ul li{
+	padding: 15px 3%;
+	display: inline-block;
+	zoom: 1; 
+	*display: inline;
+}
+
+.user-show a:hover{
   color:#555;
 }
 
