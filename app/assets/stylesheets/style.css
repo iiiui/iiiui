@@ -724,25 +724,31 @@ div[class*=sidebar-detail-]{
 
 .user-show{
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .user-show-hd{
-	padding: 15px 0;
+	padding: 15px 0 10px;
 }
 
 .user-face{
-	margin-left: 15px;
-}
-
-.user-photos{
-	margin-right: 15px;
+	margin: 0 15px;
 }
 
 .user-face img{
 	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.user-info{
+	padding: 0 15px;
+}
+
+.user-photos{
+	margin: 0 15px 10px;
 }
 
 .user-show-menu{
@@ -962,17 +968,13 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 
 /* .: LEFT :. */
 .left-sidebar{
-  box-shadow:0 0 1px 1px #ccc;
   background:#fff;
-  min-height: 200px;
+  min-height: 300px;
+  margin-bottom: 30px;
 }
 
 .account-settings{
-  width:105px;
-  border: 1px solid #ccc;
-  height:103px;
-  margin: 20px auto 10px auto;
-  padding:5px;
+  padding: 10px;
 }
 
 .account-settings img{
@@ -981,10 +983,9 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 }
 
 .account-detail{
-  width:210px;
-  min-height:50px;
-  margin: 0 auto 20px auto;
-  padding:5px;
+  min-height: 200px;
+  margin: 0 auto 20px;
+  padding: 10px;
 }
 
 .account-detail strong{
@@ -993,10 +994,9 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 
 /* .: RIGHT :. */
 .content-setting{
-  box-shadow:0 0 1px 1px #ccc;
-  background:#fff;
-  min-height:150px;
-  font-family:segoeui;
+  min-height:300px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .content-settings{
