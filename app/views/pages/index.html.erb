@@ -1,25 +1,36 @@
-<div class="span12">
+<div class="span12 pagination-centered">
   <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
     <%= link_to tag.name, '/tags/'+tag.name.to_s, :class => css_class %>
   <% end %>
+  <section class="bar-menu bg-content clearfix">
+	<ul>
+		<li><a href="#">最新</a></li>
+		<li><a href="#">标签</a></li>
+		<li><a href="#">关注</a></li>
+		<li><a href="#">所有</a></li>
+		<li><a href="#">热门</a></li>
+	</ul>
+  </section>
 </div>
 <% @shares.each do |share| %>
-  <div class="span3 galery">
+  <div class="span4 galery">
     <div class="image-galery">
       <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
         <img src="<%=share.photos.first.url %>"/>
       </a>
     </div>
     <div class="count-galery">
-      <ul>
-        <li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
+      <ul class="clearfix">
         <li><i class="icon-comment"></i><%=share.comments.count %> </li>
         <li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
+		<li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
       </ul>
+	  <div class="tags-galery">
+		<p>花朵, 大自然, 清新<%= raw share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+	  </div>
     </div>
-    <div class="tags-galery">
-      <p><i class="icon-tags"></i> Tags :  <%= raw share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
-    </div>
+	<div class="collect-galery">
+		转享信息转享信息转享信息转享信息
+	</div>
   </div>
 <% end  %>
-
