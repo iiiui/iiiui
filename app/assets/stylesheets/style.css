@@ -1084,20 +1084,21 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 .css3 { font-size: 1.4em; }
 .css4 { font-size: 1.6em; }
 
+.new_photo  .upload {
+	margin-top: 10px;
+}
+
 .photos img{
-  border: solid 1px #CCC;
-  padding: 10px;
+  border: solid 1px #ccc;
+  padding: 6px;
   float: left;
-  margin-right: 20px;     
-  margin-bottom: 20px;
+  margin-right: 14px;     
+  margin-bottom: 14px;
   width:100px;
   height:100px;
+  border-radius: 3px;
 }
-.photos .name{
-  padding-top: 5px;
-  text-align: center;
-  font-weight: bold;
-} 
+
 ul.ui-autocomplete {
   position: absolute;
   list-style: none;

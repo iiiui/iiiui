@@ -1,14 +1,15 @@
 
 <%= form_for Photo.new do |f| %>
-  <%= f.label :image, "Upload:" %>
+  <%= f.label :image, "选择你电脑中的一张图片" %>
   <%= f.hidden_field :user_id, :value=>current_user.id %>
   <%= f.file_field :url, multiple: true, name: "photo[url]" %>
 <% end %>
 
-<br>
+<hr />
+ 
 <script id="template-upload" type="text/x-tmpl">
   <div class="upload">
-    {%=o.name%}
+    <p>{%=o.name%}</p>
     <div class="progress"><div class="bar" style="width: 0%"></div></div>
   </div>
 </script>
