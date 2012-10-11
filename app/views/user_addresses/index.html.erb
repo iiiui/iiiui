@@ -1,34 +1,38 @@
-<div class="span9 content-setting">
-<h1>Listing user_addresses</h1>
-<%= link_to 'New User address', new_user_address_path %>
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>State</th>
-    <th>City</th>
-    <th>District</th>
-    <th>Address</th>
-    <th>Zip</th>
-    <th>Mobile</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="span10 content-setting">
 
-<% @user_addresses.each do |user_address| %>
-  <tr>
-    <td><%= user_address.name %></td>
-    <td><%= user_address.state %></td>
-    <td><%= user_address.city %></td>
-    <td><%= user_address.district %></td>
-    <td><%= user_address.address %></td>
-    <td><%= user_address.zip %></td>
-    <td><%= user_address.mobile %></td>
-    <td><%= link_to 'Show', user_address %></td>
-    <td><%= link_to 'Edit', edit_user_address_path(user_address) %></td>
-    <td><%= link_to 'Destroy', user_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+	<h3>收货地址</h3>	
+	<div class="bg-content">
+		<a class="btn btn-primary" href=""/user_address/new"">添加新地址</a>
+		<table class="table">
+		  <tr>
+			<th>Name</th>
+			<th>State</th>
+			<th>City</th>
+			<th>District</th>
+			<th>Address</th>
+			<th>Zip</th>
+			<th>Mobile</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		  </tr>
+
+		<% @user_addresses.each do |user_address| %>
+		  <tr>
+			<td><%= user_address.name %></td>
+			<td><%= user_address.state %></td>
+			<td><%= user_address.city %></td>
+			<td><%= user_address.district %></td>
+			<td><%= user_address.address %></td>
+			<td><%= user_address.zip %></td>
+			<td><%= user_address.mobile %></td>
+			<td><%= link_to 'Show', user_address %></td>
+			<td><%= link_to 'Edit', edit_user_address_path(user_address) %></td>
+			<td><%= link_to 'Destroy', user_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  </tr>
+		<% end %>
+		</table>
+	</div>
+
 </div>
 
