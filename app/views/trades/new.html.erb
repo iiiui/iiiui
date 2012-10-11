@@ -18,57 +18,86 @@
         <h3>配送地址</h3>
 		<section class="form-horizontal bg-content clearfix">
 			
-			<div class="control-group">
-				<label class="control-label" for="receiver_name">收货人姓名</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" id="receiver_name">
-					<span class="help-inline">正常状态</span>
-					<p class="help-block">自己的姓名</p>
-				</div>
-			</div>
+			<p>
+				<a class="btn" href="#">使用新地址</a>
+			</p>
 			
-			<div class="control-group">
-				<label class="control-label" for="receiver_state">所在地区</label>
-				<div class="controls">
-					<select id="receiver_state">
-						<option>北京</option>
-						<option>新疆维吾尔自治区</option>
-					</select> 
-					<select>
-						<option>北京市</option>
-					</select> 
-					<select>
-						<option>朝阳区</option>
-					</select>
-				</div>
-			</div>
+			<table class="table table-striped table-bordered">
+				<thead>
+				  <tr>
+					<th>收货人</th>
+					<th>详细地址</th>
+					<th>手机号码</th>
+					<th>邮政编码</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr>
+					<td>卡卡西</td>
+					<td>中国 北京 北京 北京朝阳区国贸</td>
+					<td>123456</td>
+					<td>100000</td>
+				  </tr>
+				</tbody>
+			</table>
+			<!--/.table-address -->
+
 			
-			<div class="control-group warning">
-				<label class="control-label" for="receiver_address">街道地址</label>
-				<div class="controls">
-					<textarea rows="3" id="receiver_address" class="input-xxlarge"></textarea>
-					<span class="help-inline">警告信息</span>
-					<p class="help-block">不需要重复填写省/市/区</p>
+			<div style="display:none">
+				<div class="control-group">
+					<label class="control-label" for="receiver_name">收货人姓名</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="receiver_name">
+						<span class="help-inline">正常状态</span>
+						<p class="help-block">自己的姓名</p>
+					</div>
 				</div>
-			</div>
-			
-			<div class="control-group error">
-				<label class="control-label" for="receiver_zip">邮政编码</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" id="receiver_zip">
-					<span class="help-inline">错误信息</span>
-					<p class="help-block">大陆以外地区可不填写</p>	
+				
+				<div class="control-group">
+					<label class="control-label" for="receiver_state">所在地区</label>
+					<div class="controls">
+						<select id="receiver_state">
+							<option>北京</option>
+							<option>新疆维吾尔自治区</option>
+						</select> 
+						<select>
+							<option>北京市</option>
+						</select> 
+						<select>
+							<option>朝阳区</option>
+						</select>
+					</div>
 				</div>
-			</div>
-			
-			<div class="control-group success">
-				<label class="control-label" for="receiver_mobile">手机号码</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" id="receiver_mobile">
-					<span class="help-inline">耶！</span>
-					<p class="help-block">自己的手机号码11位阿拉伯数字</p>
+				
+				<div class="control-group warning">
+					<label class="control-label" for="receiver_address">街道地址</label>
+					<div class="controls">
+						<textarea rows="3" id="receiver_address" class="input-xxlarge"></textarea>
+						<span class="help-inline">警告信息</span>
+						<p class="help-block">不需要重复填写省/市/区</p>
+					</div>
 				</div>
+				
+				<div class="control-group success">
+					<label class="control-label" for="receiver_mobile">手机号码</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="receiver_mobile">
+						<span class="help-inline">耶！</span>
+						<p class="help-block">自己的手机号码11位阿拉伯数字</p>
+					</div>
+				</div>
+				
+				<div class="control-group error">
+					<label class="control-label" for="receiver_zip">邮政编码</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="receiver_zip">
+						<span class="help-inline">错误信息</span>
+						<p class="help-block">大陆以外地区可不填写</p>	
+					</div>
+				</div>
+				
 			</div>
+			<!--/.from-address -->
 				
 		</section>
 		

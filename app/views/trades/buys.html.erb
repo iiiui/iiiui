@@ -1,27 +1,38 @@
-<div class="span9 content-setting">
-  <table class="table">
-    <tr>
-      <td>商品</td>
-      <td>卖家信息</td>
-      <td>价格</td>
-      <td>下单时间</td>
-    </tr>
-    <% @trades.each do |trade| %>
-      <tr>
-        <td>
-          <% trade.orders.each do |order| %>
-            <img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" />
-            数量：<%=order.count %>
-          <% end %>
-        </td>
-        <td>
-          <a href="/users/<%= trade.seller.id %>" target="blank"><%= trade.seller.name %></a>
-          <%=trade.seller_mobile %>
-          <%=trade.seller_email %>
-        </td>
-        <td><span class="badge badge-info"><%=trade.price%></span></td>
-        <td><%=trade.created_at  %></td>
-      </tr>
-    <% end %>
-  </table>
+<div class="span10 content-setting">
+	<h3>已买到的商品</h3>	
+	<div class="bg-content">
+
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>商品</th>
+					<th>卖家信息</th>
+					<th>价格</th>
+					<th>下单时间</th>
+				</tr>
+			<thead>
+			<tbody>
+				<% @trades.each do |trade| %>
+				<tr>
+					<td>
+					<% trade.orders.each do |order| %>
+					<img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" />
+					数量：<%=order.count %>
+					<% end %>
+					</td>
+					<td>
+					<a href="/users/<%= trade.seller.id %>" target="blank"><%= trade.seller.name %></a>
+					<%=trade.seller_mobile %>
+					<%=trade.seller_email %>
+					</td>
+					<td><span class="badge badge-info"><%=trade.price%></span></td>
+					<td><%=trade.created_at  %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+
+	</div>
+	<!--/.bg-content -->
 </div>
+<!--/.span10 -->

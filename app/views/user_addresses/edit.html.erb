@@ -1,9 +1,15 @@
-
-<div class="span9 content-setting">
-  <h1>Editing user_address</h1>
-
-  <%= render 'form' %>
-
-  <%= link_to 'Show', @user_address %> |
-  <%= link_to 'Back', user_addresses_path %>
+<div class="span10 content-setting">
+  
+	<h3>编辑收货地址</h3>	
+	<div class="bg-content">
+		
+		<%= render 'form' %>
+		
+		<p class="pagination-right">
+			<a class="btn btn-large btn-primary" href="/user_addresses/1">保存</a>
+		</p>
+		  
+	</div>
+	<!--/.bg-content -->
 </div>
+<!--/.span10 -->

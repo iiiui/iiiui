@@ -1,26 +1,37 @@
-<div class="span9 content-setting">
-  <table class="table">
-    <tr>
-      <th>From</th>
-      <th>To</th>
-      <th>Object</th>
-      <th>Object type</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
-    <% @notifications.each do |notification| %>
-      <tr>
-        <td><%= notification.from_id %></td>
-        <td><%= notification.to_id %></td>
-        <td><%= notification.object_id %></td>
-        <td><%= notification.object_type %></td>
-        <td><%= notification.description %></td>
-        <td><%= link_to 'Show', notification %></td>
-        <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </table>
+<div class="span10 content-setting">
+  
+	<h3>我的消息</h3>	
+	<div class="bg-content">
+  
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>发件人</th>
+				<th>收件人</th>
+				<th>消息主题</th>
+				<th>消息类型</th>
+				<th>消息内容</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @notifications.each do |notification| %>
+		<tr>
+			<td><%= notification.from_id %></td>
+			<td><%= notification.to_id %></td>
+			<td><%= notification.object_id %></td>
+			<td><%= notification.object_type %></td>
+			<td><%= notification.description %></td>
+			<td>
+				<a href="#"><i class="icon-search"></i>查看</a>
+				<a href="#"><i class=" icon-remove"></i>删除</a>
+			</td>
+		</tr>
+		<% end %>
+		</tbody>
+	</table>
+  
+	</div>
+	<!--/.bg-content -->
 </div>
+<!--/.span10 -->

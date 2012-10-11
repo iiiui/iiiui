@@ -1,38 +1,39 @@
 <div class="span10 content-setting">
 
 	<h3>收货地址</h3>	
-	<div class="bg-content">
-		<a class="btn btn-primary" href=""/user_address/new"">添加新地址</a>
-		<table class="table">
-		  <tr>
-			<th>Name</th>
-			<th>State</th>
-			<th>City</th>
-			<th>District</th>
-			<th>Address</th>
-			<th>Zip</th>
-			<th>Mobile</th>
-			<th></th>
-			<th></th>
-			<th></th>
-		  </tr>
-
-		<% @user_addresses.each do |user_address| %>
-		  <tr>
-			<td><%= user_address.name %></td>
-			<td><%= user_address.state %></td>
-			<td><%= user_address.city %></td>
-			<td><%= user_address.district %></td>
-			<td><%= user_address.address %></td>
-			<td><%= user_address.zip %></td>
-			<td><%= user_address.mobile %></td>
-			<td><%= link_to 'Show', user_address %></td>
-			<td><%= link_to 'Edit', edit_user_address_path(user_address) %></td>
-			<td><%= link_to 'Destroy', user_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		  </tr>
-		<% end %>
+	<div class="bg-content">	
+		<p>
+			<a class="btn btn-primary" href="/user_addresses/new">新增收货地址</a>
+		</p>
+		
+		<table class="table table-striped table-bordered">
+			<thead>
+			  <tr>
+				<th>收货人</th>
+				<th>详细地址</th>
+				<th>手机号码</th>
+				<th>邮政编码</th>
+				<th>操作</th>
+			  </tr>
+			</thead>
+			<tbody>
+			<% @user_addresses.each do |user_address| %>
+			  <tr>
+				<td><%= user_address.name %></td>
+				<td><%= user_address.state %> <%= user_address.city %> <%= user_address.district %> <%= user_address.address %></td>
+				<td><%= user_address.mobile %></td>
+				<td><%= user_address.zip %></td>
+				<td>
+					<a href="/user_addresses/1"><i class="icon-search"></i>查看</a>
+					<a href="/user_addresses/1/edit"><i class="icon-edit"></i>编辑</a>
+					<a href="/user_addresses/1"><i class=" icon-remove"></i>删除</a>
+				</td>
+			  </tr>
+			<% end %>
+			</tbody>
 		</table>
+
 	</div>
-
+	<!--/.bg-content -->
 </div>
-
+<!--/.span10 -->

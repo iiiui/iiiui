@@ -1,28 +1,39 @@
-<div class="span9 content-setting">
-  <table class="table">
-    <tr>
-      <td>商品信息</td>
-      <td>买家信息</td>
-      <td>收货地址</td>
-      <td>价格</td>
-      <td>下单时间</td>
-    </tr>
-    <% @trades.each do |trade| %>
-      <tr>
-        <td><% trade.orders.each do |order| %><%=order.count %><img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" /><% end %></td>
-        <td><a href="/users/<%= trade.buyer.id %>" target="blank"><%= trade.buyer.name %></a></td>
-        <td>
-          <%=trade.receiver_city %>
-          <%=trade.receiver_address %>
-          <%=trade.receiver_mobile %>
-          <%=trade.receiver_name %>
-          <%=trade.receiver_state  %>
-          <%=trade.receiver_district  %>
-          <%=trade.receiver_zip %>
-        </td>
-        <td><span class="badge badge-info"><%=trade.price%></span></td>
-        <td><%=trade.created_at  %></td>
-      </tr>
-    <% end %>
-  </table>
+<div class="span10 content-setting">
+	<h3>订单管理</h3>	
+	<div class="bg-content">
+
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>商品信息</th>
+					<th>买家信息</th>
+					<th>收货地址</th>
+					<th>价格</th>
+					<th>下单时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @trades.each do |trade| %>
+				<tr>
+					<td><% trade.orders.each do |order| %><%=order.count %><img src="<%= order.item.user_share.photos.first.url %>" style="width:100px;height:100px" /><% end %></td>
+					<td><a href="/users/<%= trade.buyer.id %>" target="blank"><%= trade.buyer.name %></a></td>
+					<td>
+						<%=trade.receiver_city %>
+						<%=trade.receiver_address %>
+						<%=trade.receiver_mobile %>
+						<%=trade.receiver_name %>
+						<%=trade.receiver_state  %>
+						<%=trade.receiver_district  %>
+						<%=trade.receiver_zip %>
+					</td>
+					<td><span class="badge badge-info"><%=trade.price%></span></td>
+					<td><%=trade.created_at  %></td>
+				</tr>
+				<% end %>
+			<tbody>
+		</table>
+	  
+	</div>
+	<!--/.bg-content -->
 </div>
+<!--/.span10 -->
