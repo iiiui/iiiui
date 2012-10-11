@@ -17,6 +17,7 @@ Iiiui::Application.routes.draw do
   resources :user_addresses
   resources :user_infos
   get 'tags/:tag', to: 'pages#index', as: :tag
+  get 'tags', to: 'tags#index'
   resources :orders
 
   resources :trades do

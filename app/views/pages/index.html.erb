@@ -1,11 +1,8 @@
 <div class="span12 pagination-centered">
-  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-    <%= link_to tag.name, '/tags/'+tag.name.to_s, :class => css_class %>
-  <% end %>
   <section class="bar-menu bg-content clearfix">
 	<ul>
 		<li><a href="#">最新</a></li>
-		<li><a href="#">标签</a></li>
+		<li><a href="/tags">标签</a></li>
 		<li><a href="#">关注</a></li>
 		<li><a href="#">所有</a></li>
 		<li><a href="#">热门</a></li>

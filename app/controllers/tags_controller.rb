@@ -4,7 +4,8 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
+    # @tags = Tag.all
+    @tags = UserShare.tag_counts_on(:tags)
 
     respond_to do |format|
       format.html # index.html.erb
