@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008035500) do
+ActiveRecord::Schema.define(:version => 20121011064234) do
 
   create_table "activities", :force => true do |t|
     t.integer  "from_id"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(:version => 20121008035500) do
     t.integer  "user_id"
   end
 
+  create_table "cities", :force => true do |t|
+    t.string  "name"
+    t.integer "region_id"
+  end
+
+  add_index "cities", ["region_id"], :name => "index_cities_on_region_id"
+
   create_table "comments", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -53,6 +60,13 @@ ActiveRecord::Schema.define(:version => 20121008035500) do
     t.integer  "user_shares_id"
     t.integer  "user_id"
   end
+
+  create_table "districts", :force => true do |t|
+    t.string  "name"
+    t.integer "city_id"
+  end
+
+  add_index "districts", ["city_id"], :name => "index_districts_on_city_id"
 
   create_table "items", :force => true do |t|
     t.string   "title"
@@ -104,6 +118,10 @@ ActiveRecord::Schema.define(:version => 20121008035500) do
     t.integer  "item_id"
     t.integer  "user_id"
     t.integer  "user_shares_id"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string "name"
   end
 
   create_table "roles", :force => true do |t|
