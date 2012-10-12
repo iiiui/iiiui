@@ -65,6 +65,7 @@ Iiiui::Application.routes.draw do
       match 'users/islogin' => 'users#islogin',:via=>:get
       match 'callback/weibo' => 'omniauth_callbacks#weibo',:via=>:get
     end
+    resources :user_shares
   end
 
   resources :users
