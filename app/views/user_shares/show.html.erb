@@ -63,7 +63,7 @@
 <div class="span3 show-sidebar">
 
 	<% if @user_share.can_buy? %>
-	<div class=" ">
+	<div class="m15">
 	  <ul>
 		<li>价格：$<%=@user_share.item.price %></li>
 		<li>库存：<%=@user_share.item.count %></li>
@@ -73,10 +73,10 @@
    </div>
    <% end %>
 	
-	<div class=" " >
+	<div class="m15">
 	  <% if !@user_share.isown?(current_user.id) %>
 		<ul>
-		  <li><%=render "shares/form", :user_share => @user_share%></li>
+		  <li class="pull-left"><%=render "shares/form", :user_share => @user_share%></li>
 		  <li><%=render "user_likes/form", :user_share => @user_share%></li>
 		  <% if @user_share.can_buy? %>
 			<li><%=render "cart_items/form", :user_share => @user_share %></li>
@@ -86,32 +86,38 @@
 		<ul>
 		  <% if @user_share.can_buy? %>
 			<li>
-				<font color="red">正在销售中</font>
-				<a href="/items/<%=@user_share.item.id %>/edit" class="btn btn-large" >编辑</a>
+				<font color="red">销售中</font>
+				<a href="/items/<%=@user_share.item.id %>/edit" class="btn">编辑</a>
 			</li>
 		  <% else %>
-			<li><a href="/" class="btn btn-large" >求购</a></li>
-			<li><a id="turntosell" href="#itemModal" data-toggle="modal" data-id="<%=@user_share.id %>" class="btn btn-large" >我想卖</a></li>
+			<li><a href="/" class="btn">求购</a></li>
+			<li><a id="turntosell" href="#itemModal" data-toggle="modal" data-id="<%=@user_share.id %>" class="btn">我想卖</a></li>
 		  <% end %>
 		</ul>
 	  <% end  %>
 	</div>
 	
-	<div class=" sidebar-detail-similiar">
+	<div class="sidebar-detail-similiar m15">
 	  <div class="similiar-image">
-		<h4>Similar Image</h4>
-		<a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '2_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '3_b.jpg' %>" class="img-thumbs" /></a>
-		<a href="#"><img src="<%=asset_path '4_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '5_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a>
+		<h4>相关图片</h4>
+		<div class="clearfix">
+			<div class="img-thumbs"><a href="#"><img src="<%=asset_path '1_b.jpg' %>" /></a></div>
+			<div class="img-thumbs"><a href="#"><img src="<%=asset_path '2_b.jpg' %>" /></a></div>
+			<div class="img-thumbs"><a href="#"><img src="<%=asset_path '3_b.jpg' %>" /></a></div>
+			<div class="img-thumbs"><a href="#"><img src="<%=asset_path '4_b.jpg' %>" /></a></div>
+			<div class="img-thumbs"><a href="#"><img src="<%=asset_path '5_b.jpg' %>" /></a></div>
+			<div class="img-thumbs"><a href="#"><img src="<%=asset_path '1_b.jpg' %>" /></a></div>
+		</div>
 	  </div>
 	</div>
 	
-	<div class=" sidebar-detail-category">
+	<div class="sidebar-detail-category m15">
 	  <div class="category-image">
-		<div class="cat-tags">Tags :  <%= raw @user_share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
-		<div class="cat-category">Category : <a href="#"><%= @user_share.category.name %></a> </div>
-		<div class="cat-buy">Buy by :  <a href="#">Aji satria</a> </div>
-		<div class="cat-liked">Liked by : <% @user_share.user_likes.each do |user_like| %><a href="#"><%= user_like.user_id %></a><% end %> </div>
-		<div class="cat-shared">Shared by : <% @user_share.shares.each do | share | %><a href="#"><%= share.user_id %></a><% end %> </div>
+		<div class="cat-tags">标签 :  <%= raw @user_share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+		<div class="cat-category">分类 : <a href="#"><%= @user_share.category.name %></a> </div>
+		<div class="cat-buy">买家 :  <a href="#">Aji satria</a> </div>
+		<div class="cat-liked">收藏家 : <% @user_share.user_likes.each do |user_like| %><a href="#"><%= user_like.user_id %></a><% end %> </div>
+		<div class="cat-shared">分享家 : <% @user_share.shares.each do | share | %><a href="#"><%= share.user_id %></a><% end %> </div>
 	  </div>
 	</div>
 	
