@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :items, :foreign_key => "owner_id"
   has_many :user_shares, :foreign_key => "user_id"
   has_many :user_likes, :foreign_key => "user_id"
+  has_many :user_addresses, :foreign_key => "user_id"
   has_many :shares, :foreign_key => "user_id"
   has_many :comments, :foreign_key => "user_id"
   has_many :categories, :foreign_key => "user_id"

@@ -1,4 +1,4 @@
-<%= simple_form_for(@user_address) do |f| %>
+<%= simple_form_for(UserAddress.new) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-horizontal">
@@ -6,7 +6,7 @@
     <div class="control-group">
       <label class="control-label" for="receiver_name">收货人姓名</label>
       <div class="controls">
-        <input type="text" name="user_address[name]" value="<%=@user_address.name%>" >
+        <input type="text" name="user_address[name]" value="<%=@user_address.name if @user_address%>" >
       </div>
     </div>
 
@@ -24,14 +24,14 @@
         <select name="user_address[district]">
           <option value="">朝阳区</option>
         </select>
-        <input  name="user_address[address]" class="input-xlarge" value="<%=@user_address.address%>"/>
+        <input  name="user_address[address]" class="input-xlarge" value="<%=@user_address.address if @user_address%>"/>
       </div>
     </div>
 
     <div class="control-group ">
       <label class="control-label" for="receiver_mobile">手机号码</label>
       <div class="controls">
-        <input type="text" name="user_address[mobile]" class="input-xlarge" value="<%=@user_address.mobile%>">
+        <input type="text" name="user_address[mobile]" class="input-xlarge" value="<%=@user_address.mobile if @user_address%>">
         <p class="help-block">11位数字</p>
       </div>
     </div>
@@ -39,13 +39,14 @@
     <div class="control-group ">
       <label class="control-label" for="receiver_zip">邮政编码</label>
       <div class="controls">
-        <input type="text" name="user_address[zip]" class="input-xlarge" value="<%=@user_address.zip%>">
+        <input type="text" name="user_address[zip]" class="input-xlarge" value="<%=@user_address.zip if @user_address%>">
         <p class="help-block">大陆以外地区可不填写</p>	
       </div>
     </div>
 
     <p class="pagination-right">
       <input type="submit" class="btn btn-large btn-primary" value="保存"/>
+      <input type="button" class="btn btn-large btn-primary" value="取消"/>
     </p>
   </div>
 
