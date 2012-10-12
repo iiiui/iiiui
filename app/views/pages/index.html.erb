@@ -14,21 +14,28 @@
 <div class="span4 galery">
 	<div class="image-galery">
 	  <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
-		<img src="<%=share.photos.first.url %>"/>
+		<img src="<%=share.photos.first.url %>" style="height:200px"/>
 	  </a>
 	</div>
-	<div class="count-galery">
+	<div class="count-galery" >
 	  <ul class="clearfix">
 		<li><i class="icon-comment"></i><%=share.comments.count %> </li>
 		<li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
 		<li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
-	  </ul>
-	  <div class="tags-galery">
-		<p>花朵, 大自然, 清新<%= raw share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
-	  </div>
-	</div>
-	<div class="collect-galery">
-		转享信息转享信息转享信息转享信息
-	</div>
+    <% if !share.isown?(current_user.id) %>
+      <li style="display:none;"><%=render "user_likes/form", :user_share => share%></li>
+    <% end %>
+    <% if share.can_buy? %>
+      <li>$<%=share.item.price %></li>
+    <% end %>
+  </ul>
+  <div class="tags-galery">
+    <p><%= raw share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+  </div>
+</div>
+<div class="collect-galery">
+  <%="User"+share.comments.first.user_id.to_s if share.comments.first %>
+  <%=share.comments.first.body if share.comments.first %>
+</div>
 </div>
 <% end  %>
