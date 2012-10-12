@@ -1,39 +1,10 @@
 <div class="span10 content-setting">
   <h3>我的专辑</h3>	
   <div class="bg-content">
-  
-	  <p>
-		<a class="btn btn-primary" href="/categories/new">新增专辑</a>
-	  </p>
-	  <% @categories.each do |category| %>
-	  
-	  <h3><%=category.name %></h3>
-	  
-	  <div class="row">
-	  <% category.user_shares.each do |share| %>
-		<div class="span3 galery">
-			<div class="image-galery">
-			  <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
-				<img src="<%=share.photos.first.url %>"/>
-			  </a>
-			</div>
-			<div class="count-galery">
-			  <ul class="clearfix">
-				<li><a href="/users/<%=share.owner.id %>">User<%=share.owner.id %></a></li>
-				<li><i class="icon-comment"></i><%=share.comments.count %> </li>
-				<li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
-			  </ul>
-			  <div class="tags-galery">
-				<p>花朵, 大自然, 清新<%= raw share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
-			  </div>
-			</div>
-	    </div>
-	  <% end  %>
-	  <% end %>
-	  </div>
-	  
-  </div>
-  <!--/.bg-content -->
-</div>
-<!--/.span10 -->
+    <a class="btn btn-primary" href="/categories/new">新增专辑</a>
+    <% @categories.each do |category| %>
+      <h3><%=category.name %></h3>
+    <% end %>
+  </div><!--/.bg-content -->
+</div><!--/.span10 -->
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121011064234) do
+ActiveRecord::Schema.define(:version => 20121011104115) do
 
   create_table "activities", :force => true do |t|
     t.integer  "from_id"
@@ -159,15 +159,24 @@ ActiveRecord::Schema.define(:version => 20121011064234) do
     t.string "name"
   end
 
+  create_table "trade_addresses", :force => true do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.integer  "city_id"
+    t.string   "state"
+    t.integer  "trade_id"
+    t.string   "city"
+    t.integer  "district_id"
+    t.string   "district"
+    t.string   "address"
+    t.string   "zip"
+    t.string   "mobile"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "trades", :force => true do |t|
     t.string   "status"
-    t.string   "receiver_name"
-    t.string   "receiver_state"
-    t.string   "receiver_city"
-    t.string   "receiver_district"
-    t.string   "receiver_address"
-    t.string   "receiver_zip"
-    t.string   "receiver_mobile"
     t.string   "seller_mobile"
     t.string   "seller_email"
     t.integer  "seller_id"
