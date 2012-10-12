@@ -1,7 +1,7 @@
 <%= simple_form_for(@comment) do |f| %>
   <%= f.error_notification %>
+  <div class="user-face-small mr10 mb10 pull-left"><img alt="用户头像" src="/assets/pic-userface.jpg" /></div>
   <%= f.input :user_id,:as => :hidden, :input_html => { :value => current_user.id } %>
   <%= f.input :user_shares_id, :as => :hidden,:input_html => { :value => user_share.id }%>
-  <textarea name="comment[body]" rows="5" class="input-xxlarge inp-btm" name="comments" style="resize: none;" placeholder="Enter your comment here.."></textarea><br />
-  <%= f.button :submit,:value=>"发布评论",:id => "addComment" %>
+  <textarea name="comment[body]" rows="5" class="textarea-comments" name="comments" style="resize: none;" placeholder="看了图片后我想说..."></textarea><input class="btn btn-large btn-primary btn-commit" id="addComment" type="submit" name="commit" value="发布" />
 <% end %>

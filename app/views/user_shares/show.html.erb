@@ -1,110 +1,130 @@
-<div class="row">
-  <div class="span9">
-    <div class="row">
-      <div class="span9 image-detail">
-        <div class="auto image-single">
-          <img src="<%= @user_share.photos.first.url%>" class="centered" />
-        </div>
-      </div>
-      <div class="span9 image-description">
-        <h3>描述</h3>
-        <p><%= @user_share.description %></p>
-      </div>
-      <div class="span9 image-comments">
-        <div class="comment">
-          <h3>评论</h3>
-          <ul id="comments">
-            <% @user_share.comments.each do |comment| %>
-              <li class="comment-blue">
-              <div class="avatar">
-                <a href="#"><img src="<%=asset_path 'gravatar.jpg' %>" /></a>
-                <span class="comment-name"><a href="#"><%= comment.user.id %></a></span>
-                <span class="comment-date"><p><%= comment.created_at %></p></span>
-              </div>
-              <div class="comment-text">
-                <p><%=comment.body %></p>
-              </div>
-              </li>
-            <% end %>
-          </ul>
-        </div>
+<div class="span9 show-detail"> 
 
-        <% if !@user_share.isown?(current_user.id) %>
-          <br class="clearfix" />
-          <h3>发布评论</h3>
-          <div class="post-comment">
-            <%= render "comments/form", :user_share => @user_share%>
-          </div>
-        <% end  %>
+  <div class=" image-detail">
+	<div class="auto image-single">
+	  <img src="<%= @user_share.photos.first.url%>" class="centered" />
+	</div>
+  </div>
+  
+  <hr />
+  
+  <div class=" image-description">
+	<h3>物品描述</h3>
+	<p>
+		配色：装修时尚简约风格，需要遵守的配色准则，色彩选择面较大，可采用冷暖对比和同色系，
+		突出空间主题。色彩搭配:白色、灰色为主色调.相似色和对比色的合理使用。暖色系,通过家具、
+		软装、灯饰来体现。居室空间：居室空间是根据相互间的功能关系组合而成的，而且功能空间相互渗透，
+		空间的利用率达到最高。空间组织不再是以房间组合为主，空间的划分也不再局限于硬质墙体，而是更注重会客、
+		餐饮、学习、睡眠等功能空间的逻辑关系。家具配饰：家具配饰的选型要服从整体空间的设计主题，家具应依据人体结构来选择、
+		设计，从而减少肌肉的疲劳。灯光设计主要有两大特点：一是根据功能细分为照明灯光、背景灯光和艺术灯光三类；二是灯光控制的智能化、
+		模式化，通过设定视听、会客、餐饮、学习、睡眠等组合灯光模式来选择最佳的效果。陈列品应尽量突出个性和美感。
+		<%= @user_share.description %>
+	</p>
+  </div>
+	
+  <div class=" image-comments">  
+  
+	<% if !@user_share.isown?(current_user.id) %>
+	  <h3>我有话说</h3>
+	  <div class="post-comment">
+		<%= render "comments/form", :user_share => @user_share%>
+	  </div>
+	<% end  %>
+	
+	<div class="comment">
+	  <% @user_share.comments.each do |comment| %>
+	  <table id="comments" class="comment-list">
+		<tr>
+			<td rowspan="2" class="vt" width="8%">
+				<div class="user-face-small mr10 mb10">
+					<a href="#"><img src="<%=asset_path 'gravatar.jpg' %>" /></a>
+			    </div>
+			</td>
+			<td class="comment-info" width="92%">
+				<span class="comment-name"><a href="#"><%= comment.user.id %></a></span>
+				<span class="comment-date"><%= comment.created_at %></span>
+			</td>
+		</tr>
+		<tr>
+			<td class="vt">
+				<div class="comment-text">
+					<%=comment.body %>
+				</div>
+			</td>
+		</tr>
+	  </table>
+	  <% end %>
+	</div>
+  </div>
+	
+</div>
+<!--/.span9 -->
 
-      </div>
-    </div>
-  </div>
+<div class="span3 show-sidebar">
 
-  <div class="span3">
-    <div class="row">
-      <% if @user_share.can_buy? %>
-        <div class="span3 ">
-          <ul>
-            <li>价格：$<%=@user_share.item.price %></li>
-            <li>库存：<%=@user_share.item.count %></li>
-            <li>配送方式：<%=@user_share.item.count %></li>
-            <li>支付方式：支付宝</li>
-          </ul>
-       </div>
-        <% end %>
-        <div class="span3 " >
-          <% if !@user_share.isown?(current_user.id) %>
-            <ul>
-              <li><%=render "shares/form", :user_share => @user_share%></li>
-              <li><%=render "user_likes/form", :user_share => @user_share%></li>
-              <% if @user_share.can_buy? %>
-                <li><%=render "cart_items/form", :user_share => @user_share %></li>
-              <% end %>
-            </ul>
-          <% else %>
-            <ul>
-              <% if @user_share.can_buy? %>
-                <li>
-                <font color="red">正在销售中</font>
-                <a href="/items/<%=@user_share.item.id %>/edit" class="btn btn-large" >编辑</a>
-        </li>
-      <% else %>
-        <li><a href="/" class="btn btn-large" >求购</a></li>
-        <li><a id="turntosell" href="#itemModal" data-toggle="modal" data-id="<%=@user_share.id %>" class="btn btn-large" >我想卖</a></li>
-      <% end %>
-    </ul>
-  <% end  %>
+	<% if @user_share.can_buy? %>
+	<div class=" ">
+	  <ul>
+		<li>价格：$<%=@user_share.item.price %></li>
+		<li>库存：<%=@user_share.item.count %></li>
+		<li>配送方式：<%=@user_share.item.count %></li>
+		<li>支付方式：支付宝</li>
+	  </ul>
+   </div>
+   <% end %>
+	
+	<div class=" " >
+	  <% if !@user_share.isown?(current_user.id) %>
+		<ul>
+		  <li><%=render "shares/form", :user_share => @user_share%></li>
+		  <li><%=render "user_likes/form", :user_share => @user_share%></li>
+		  <% if @user_share.can_buy? %>
+			<li><%=render "cart_items/form", :user_share => @user_share %></li>
+		  <% end %>
+		</ul>
+	  <% else %>
+		<ul>
+		  <% if @user_share.can_buy? %>
+			<li>
+				<font color="red">正在销售中</font>
+				<a href="/items/<%=@user_share.item.id %>/edit" class="btn btn-large" >编辑</a>
+			</li>
+		  <% else %>
+			<li><a href="/" class="btn btn-large" >求购</a></li>
+			<li><a id="turntosell" href="#itemModal" data-toggle="modal" data-id="<%=@user_share.id %>" class="btn btn-large" >我想卖</a></li>
+		  <% end %>
+		</ul>
+	  <% end  %>
+	</div>
+	
+	<div class=" sidebar-detail-similiar">
+	  <div class="similiar-image">
+		<h4>Similar Image</h4>
+		<a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '2_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '3_b.jpg' %>" class="img-thumbs" /></a>
+		<a href="#"><img src="<%=asset_path '4_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '5_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a>
+	  </div>
+	</div>
+	
+	<div class=" sidebar-detail-category">
+	  <div class="category-image">
+		<div class="cat-tags">Tags :  <%= raw @user_share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+		<div class="cat-category">Category : <a href="#"><%= @user_share.category.name %></a> </div>
+		<div class="cat-buy">Buy by :  <a href="#">Aji satria</a> </div>
+		<div class="cat-liked">Liked by : <% @user_share.user_likes.each do |user_like| %><a href="#"><%= user_like.user_id %></a><% end %> </div>
+		<div class="cat-shared">Shared by : <% @user_share.shares.each do | share | %><a href="#"><%= share.user_id %></a><% end %> </div>
+	  </div>
+	</div>
+	
 </div>
-<div class="span3 sidebar-detail-similiar">
-  <div class="similiar-image">
-    <h4>Similar Image</h4>
-    <a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '2_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '3_b.jpg' %>" class="img-thumbs" /></a>
-    <a href="#"><img src="<%=asset_path '4_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '5_b.jpg' %>" class="img-thumbs" /></a><a href="#"><img src="<%=asset_path '1_b.jpg' %>" class="img-thumbs" /></a>
-  </div>
-</div>
-<div class="span3 sidebar-detail-category">
-  <div class="category-image">
-    <div class="cat-tags">Tags :  <%= raw @user_share.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
-    <div class="cat-category">Category : <a href="#"><%= @user_share.category.name %></a> </div>
-    <div class="cat-buy">Buy by :  <a href="#">Aji satria</a> </div>
-    <div class="cat-liked">Liked by : <% @user_share.user_likes.each do |user_like| %><a href="#"><%= user_like.user_id %></a><% end %> </div>
-    <div class="cat-shared">Shared by : <% @user_share.shares.each do | share | %><a href="#"><%= share.user_id %></a><% end %> </div>
-  </div>
-</div>
-    </div>
-  </div>
-
-</div>
-    </div>
-  </div>
-  <% content_for :javascript do %>
-    <script type="text/javascript" charset="utf-8">
-      $(document).ready(function() {
-          var shares = new Shares();
-          new NewSharesView();
-          new NewCommentView();
-          new NewLikesView();
-          });
-        </script>
-      <% end %>
+<!--/.span3 -->
+  
+<% content_for :javascript do %>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+	  var shares = new Shares();
+	  new NewSharesView();
+	  new NewCommentView();
+	  new NewLikesView();
+	  });
+</script>
+<% end %>
