@@ -14,10 +14,10 @@
 <div class="span4 galery">
 	<div class="image-galery">
 	  <a class="group" rel="group1" href="/user_shares/<%=share.id%>">
-		<img src="<%=share.photos.first.url %>"/>
+		<img src="<%=share.photos.first.url %>" style="height:200px"/>
 	  </a>
 	</div>
-	<div class="count-galery">
+	<div class="count-galery" >
 	  <ul class="clearfix">
 		<li><i class="icon-comment"></i><%=share.comments.count %> </li>
 		<li><i class="icon-heart"></i><%=share.user_likes.count %> </li>
