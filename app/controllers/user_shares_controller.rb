@@ -47,8 +47,9 @@ class UserSharesController < ApplicationController
   def create
     @user_share = UserShare.new(params[:user_share])
     photo_ids =  params[:photo][:id]
-    
     if @user_share.insert(current_user.id,photo_ids)
+      url = Photo.where(:user_shares_id => @user_share.id).first.url
+      UserShare.update(@user_share.id, :picture_url => url.to_s)
       render json: @user_share, status: :created
     else
       render json: @user_share.errors, status: :unprocessable_entity

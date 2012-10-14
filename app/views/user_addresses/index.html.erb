@@ -1,5 +1,4 @@
 <div class="span10 content-setting">
-
 	<h3>收货地址</h3>	
 	<div class="bg-content">	
 		<p>
@@ -20,13 +19,13 @@
 			<% @user_addresses.each do |user_address| %>
 			  <tr>
 				<td><%= user_address.name %></td>
-				<td><%= user_address.state %> <%= user_address.city %> <%= user_address.district %> <%= user_address.address %></td>
+				<td><%= user_address.state %>省<%= user_address.city %>市<%= user_address.district %> 区<%= user_address.address %></td>
 				<td><%= user_address.mobile %></td>
 				<td><%= user_address.zip %></td>
 				<td>
-					<a href="/user_addresses/1"><i class="icon-search"></i>查看</a>
-					<a href="/user_addresses/1/edit"><i class="icon-edit"></i>编辑</a>
-					<a href="/user_addresses/1"><i class=" icon-remove"></i>删除</a>
+					<a href="/user_addresses/<%= user_address.id %>"><i class="icon-search"></i>查看</a>
+					<a href="/user_addresses/<%= user_address.id %>/edit"><i class="icon-edit"></i>编辑</a>
+          <%= link_to '删除', user_address, method: :delete, data: { confirm: '确认删除？' } %>
 				</td>
 			  </tr>
 			<% end %>

@@ -15,15 +15,14 @@
       <% current_user.photos.where(:user_shares_id => nil).each do |photo| %>
         <div class="photo">
           <input type='hidden' name='photo[id][]' value='<%= photo.id %>'/>
-          <img src="<%= photo.url %>" />
+          <div class="photo-img"><img src="<%= photo.url %>" /></div>
         </div>
       <% end %>
     </div>
-
       <%= f.error_notification %>
-      <%= f.text_field :category_name, data: {autocomplete_source: "categories/autocomplate"} %>
+      <%= f.text_field :category_name, data: {autocomplete_source: "categories/autocomplate"} %> 分类
       <div class="field">
-        <%= f.text_field :tag_list %> 标签用逗号隔开
+        <%= f.text_field :tag_list %> 标签 (逗号隔开)
       </div>
       <p>
         <input class="btn btn-large btn-primary" type="submit" id="addUserShare" value="上传" />

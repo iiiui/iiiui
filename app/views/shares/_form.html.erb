@@ -1,6 +1,6 @@
-<%= simple_form_for(@share) do |f| %>
+<%= simple_form_for(Share.new) do |f| %>
   <%= f.error_notification %>
   <%= f.input :user_id,:as => :hidden, :input_html => { :value => current_user.id } %>
   <%= f.input :user_shares_id, :as => :hidden,:input_html => { :value => user_share.id }%>
-  <input type="button" id="addShare" value="转享" class="btn"/>
+  <input type="button" id="addShare" value="转享" class="btn"/>&nbsp;&nbsp;&nbsp;
 <% end %>

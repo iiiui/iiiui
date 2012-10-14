@@ -1,5 +1,5 @@
 <%= simple_form_for(@cart_item) do |f| %>
   <%= f.input :item_id, :as => :hidden, :input_html => { :value =>@user_share.item.id }%>
-  <%= f.input :count, :input_html => { :class => "span1",:value => 1 }  %>
+  <%= f.input :count, :label => "数量", :input_html => { :class => "span1",:value => 1 }  %>
   <%= f.button :submit,:value => "我要买" %>
 <% end %>
