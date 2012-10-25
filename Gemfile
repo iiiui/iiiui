@@ -11,6 +11,7 @@ gem 'carrierwave-upyun'
 gem 'acts-as-taggable-on', '~> 2.3.1'
 gem 'jquery-fileupload-rails', :group => [:assets]
 
+
 gem 'sqlite3', :group => [:development, :test]
 gem 'quiet_assets', :group => [:development, :test]
 gem 'thin', :group => [:development]
