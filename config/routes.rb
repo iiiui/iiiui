@@ -4,6 +4,7 @@ Iiiui::Application.routes.draw do
 
   resources :photos
 
+ 
   resources :cart_items
 
   resources :carts
